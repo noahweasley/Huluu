@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "866597824773",
+    "project_id": "zeechat-eb887",
+    "storage_bucket": "zeechat-eb887.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:866597824773:android:acbd279ae1a4c29fd7af6c",
+        "android_client_info": {
+          "package_name": "com.retrytech.orange"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "866597824773-muhdffoi48t5qdlur3smlsnad4oi0djj.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.retrytech.orange",
+            "certificate_hash": "59272b87d95d6fbee5aa2b33baee7594c784b9dd"
+          }
+        },
+        {
+          "client_id": "866597824773-tga6emo6ibc9457rnksinipktbctde9p.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDDZZ2d546rXLPo3bH5POCXcugOiMjQpBc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "866597824773-tga6emo6ibc9457rnksinipktbctde9p.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
