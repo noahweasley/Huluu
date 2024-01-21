@@ -33,23 +33,19 @@ class MessageLookup extends MessageLookupByLibrary {
         "amount": MessageLookupByLibrary.simpleMessage("支付的金额："),
         "and": MessageLookupByLibrary.simpleMessage("和"),
         "anonymous": MessageLookupByLibrary.simpleMessage("去匿名"),
-        "anonymousData": MessageLookupByLibrary.simpleMessage(
-            "如果您不想在应用程序的任何地方被看到，请打开。例如：搜索、卡片堆。"),
+        "anonymousData": MessageLookupByLibrary.simpleMessage("如果您不想在应用程序的任何地方被看到，请打开。例如：搜索、卡片堆。"),
         "appLanguages": MessageLookupByLibrary.simpleMessage("应用语言"),
         "application": MessageLookupByLibrary.simpleMessage("  应用"),
         "apply": MessageLookupByLibrary.simpleMessage("申请"),
         "areYou": MessageLookupByLibrary.simpleMessage("你是"),
         "areYouSure": MessageLookupByLibrary.simpleMessage("你确定吗"),
-        "areYouSureYouEtc":
-            MessageLookupByLibrary.simpleMessage("你确定要删除这条消息吗 ？"),
-        "areYouSureYouWantToEnd":
-            MessageLookupByLibrary.simpleMessage("您确定要结束直播视频吗？"),
+        "areYouSureYouEtc": MessageLookupByLibrary.simpleMessage("你确定要删除这条消息吗 ？"),
+        "areYouSureYouWantToEnd": MessageLookupByLibrary.simpleMessage("您确定要结束直播视频吗？"),
         "artist": MessageLookupByLibrary.simpleMessage("艺术家"),
         "attach": MessageLookupByLibrary.simpleMessage("附"),
         "automatically": MessageLookupByLibrary.simpleMessage("自动地"),
         "bankTransfer": MessageLookupByLibrary.simpleMessage("银行转帐"),
-        "bayContinuingThePurchaseEtc":
-            MessageLookupByLibrary.simpleMessage("继续购买即表示您同意我们的"),
+        "bayContinuingThePurchaseEtc": MessageLookupByLibrary.simpleMessage("继续购买即表示您同意我们的"),
         "bio": MessageLookupByLibrary.simpleMessage("生物信息学"),
         "block": MessageLookupByLibrary.simpleMessage("堵塞"),
         "both": MessageLookupByLibrary.simpleMessage("两个都"),
@@ -62,12 +58,9 @@ class MessageLookup extends MessageLookupByLibrary {
         "checkOutThisProfile": MessageLookupByLibrary.simpleMessage("查看此配置文件"),
         "chef": MessageLookupByLibrary.simpleMessage("厨师"),
         "close": MessageLookupByLibrary.simpleMessage("关闭"),
-        "coinsPerMinutesPleaseConfirmIfYouToContinueOr":
-            MessageLookupByLibrary.simpleMessage("每分钟硬币，请确认是否继续"),
-        "coinsPerMsgPleaseConfirmIfYouToContinueOr":
-            MessageLookupByLibrary.simpleMessage("每个消息的硬币，请确认是否继续"),
-        "coinsPleaseConfirmIfYouToContinueOrNot":
-            MessageLookupByLibrary.simpleMessage("币，请确认是否继续"),
+        "coinsPerMinutesPleaseConfirmIfYouToContinueOr": MessageLookupByLibrary.simpleMessage("每分钟硬币，请确认是否继续"),
+        "coinsPerMsgPleaseConfirmIfYouToContinueOr": MessageLookupByLibrary.simpleMessage("每个消息的硬币，请确认是否继续"),
+        "coinsPleaseConfirmIfYouToContinueOrNot": MessageLookupByLibrary.simpleMessage("币，请确认是否继续"),
         "collected": MessageLookupByLibrary.simpleMessage("集"),
         "comment": MessageLookupByLibrary.simpleMessage("评论..."),
         "complete": MessageLookupByLibrary.simpleMessage("完全的"),
@@ -76,8 +69,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "continuePlease": MessageLookupByLibrary.simpleMessage("  请继续"),
         "continueText": MessageLookupByLibrary.simpleMessage("继续"),
         "continueWithApple": MessageLookupByLibrary.simpleMessage("继续使用苹果"),
-        "continueWithFacebook":
-            MessageLookupByLibrary.simpleMessage("继续使用 Facebook"),
+        "continueWithFacebook": MessageLookupByLibrary.simpleMessage("继续使用 Facebook"),
         "continueWithGoogle": MessageLookupByLibrary.simpleMessage("继续谷歌"),
         "couldNotLaunch": MessageLookupByLibrary.simpleMessage("无法启动"),
         "cyberbullying": MessageLookupByLibrary.simpleMessage("网络欺凌"),
@@ -86,8 +78,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "deleteAccount": MessageLookupByLibrary.simpleMessage("删除帐户"),
         "deleteCap": MessageLookupByLibrary.simpleMessage("删除"),
         "deleteChat": MessageLookupByLibrary.simpleMessage("删除聊天"),
-        "deleteDialogDis": MessageLookupByLibrary.simpleMessage(
-            "您真的要删除您的帐户吗？ 您以后将无法恢复它，数据将永远丢失"),
+        "deleteDialogDis": MessageLookupByLibrary.simpleMessage("您真的要删除您的帐户吗？ 您以后将无法恢复它，数据将永远丢失"),
         "deleteMessage": MessageLookupByLibrary.simpleMessage("删除消息"),
         "deleteThisChat": MessageLookupByLibrary.simpleMessage("删除此聊天"),
         "diamond": MessageLookupByLibrary.simpleMessage("  收集的钻石："),
@@ -95,8 +86,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "diamondCap": MessageLookupByLibrary.simpleMessage("钻石"),
         "diamonds": MessageLookupByLibrary.simpleMessage("钻石"),
         "diamondsCamel": MessageLookupByLibrary.simpleMessage("钻石"),
-        "doYouReallyWantToLive":
-            MessageLookupByLibrary.simpleMessage("你真的想活吗。 请继续直播"),
+        "doYouReallyWantToLive": MessageLookupByLibrary.simpleMessage("你真的想活吗。 请继续直播"),
         "docType": MessageLookupByLibrary.simpleMessage("文件类型"),
         "donTHaveAnAccount": MessageLookupByLibrary.simpleMessage("没有帐户？"),
         "drivingLicence": MessageLookupByLibrary.simpleMessage("驾驶执照"),
@@ -105,8 +95,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "eligibility": MessageLookupByLibrary.simpleMessage("直播资格"),
         "eligible": MessageLookupByLibrary.simpleMessage("有资格的"),
         "email": MessageLookupByLibrary.simpleMessage("电子邮件"),
-        "emailSentSuccessfully":
-            MessageLookupByLibrary.simpleMessage("邮件发送成功..."),
+        "emailSentSuccessfully": MessageLookupByLibrary.simpleMessage("邮件发送成功..."),
         "empty": MessageLookupByLibrary.simpleMessage("空的"),
         "end": MessageLookupByLibrary.simpleMessage("结尾"),
         "enterAbout": MessageLookupByLibrary.simpleMessage("输入关于"),
@@ -119,22 +108,18 @@ class MessageLookup extends MessageLookupByLibrary {
         "enterFullName": MessageLookupByLibrary.simpleMessage("输入全名"),
         "enterFullReason": MessageLookupByLibrary.simpleMessage("输入完整原因"),
         "enterPassword": MessageLookupByLibrary.simpleMessage("输入密码"),
-        "enterThePasswordForTheAccountNwithTheEmailBelow":
-            MessageLookupByLibrary.simpleMessage("使用下面的电子邮件输入帐户密码\n"),
+        "enterThePasswordForTheAccountNwithTheEmailBelow": MessageLookupByLibrary.simpleMessage("使用下面的电子邮件输入帐户密码\n"),
         "enterYourMailOnWhichYouHaveNcreatedAnAccount":
-            MessageLookupByLibrary.simpleMessage(
-                "输入您已\n创建帐户的邮件。 我们将发送一个链接\n以重置您的密码"),
+            MessageLookupByLibrary.simpleMessage("输入您已\n创建帐户的邮件。 我们将发送一个链接\n以重置您的密码"),
         "exit": MessageLookupByLibrary.simpleMessage("出口"),
         "explainMore": MessageLookupByLibrary.simpleMessage("解释更多"),
         "explore": MessageLookupByLibrary.simpleMessage("探索"),
         "exploreProfiles": MessageLookupByLibrary.simpleMessage("探索个人资料"),
         "facebook": MessageLookupByLibrary.simpleMessage("FACEBOOK"),
         "failedPayment": MessageLookupByLibrary.simpleMessage("支付失败"),
-        "failedToLoadVideo":
-            MessageLookupByLibrary.simpleMessage("无法加载视频：无法打开"),
+        "failedToLoadVideo": MessageLookupByLibrary.simpleMessage("无法加载视频：无法打开"),
         "female": MessageLookupByLibrary.simpleMessage("女性"),
-        "findSomeoneRandomly":
-            MessageLookupByLibrary.simpleMessage("随机找人\n并检查他们的个人资料"),
+        "findSomeoneRandomly": MessageLookupByLibrary.simpleMessage("随机找人\n并检查他们的个人资料"),
         "fitness": MessageLookupByLibrary.simpleMessage("健康"),
         "foodies": MessageLookupByLibrary.simpleMessage("吃货"),
         "forgotPassword": MessageLookupByLibrary.simpleMessage("忘记密码？"),
@@ -143,20 +128,15 @@ class MessageLookup extends MessageLookupByLibrary {
         "fullNameCap": MessageLookupByLibrary.simpleMessage("全名"),
         "gender": MessageLookupByLibrary.simpleMessage("性别"),
         "getAccess": MessageLookupByLibrary.simpleMessage("获得现场直播的权限"),
-        "getStarted1Subtitle":
-            MessageLookupByLibrary.simpleMessage("查找：呼叫：聊天：流"),
-        "getStarted2Subtitle": MessageLookupByLibrary.simpleMessage(
-            "根据\n不同的兴趣创建您的个人资料并找到\n志同道合的人"),
-        "getStarted3Subtitle": MessageLookupByLibrary.simpleMessage(
-            "允许访问以获取您的位置\n并找到附近的当地人\n并与他们联系。"),
-        "getStarted4Subtitle": MessageLookupByLibrary.simpleMessage(
-            "直播您自己并分享\n您的生活以及加入其他主播，\n发表评论并送出礼物"),
+        "getStarted1Subtitle": MessageLookupByLibrary.simpleMessage("查找：呼叫：聊天：流"),
+        "getStarted2Subtitle": MessageLookupByLibrary.simpleMessage("根据\n不同的兴趣创建您的个人资料并找到\n志同道合的人"),
+        "getStarted3Subtitle": MessageLookupByLibrary.simpleMessage("允许访问以获取您的位置\n并找到附近的当地人\n并与他们联系。"),
+        "getStarted4Subtitle": MessageLookupByLibrary.simpleMessage("直播您自己并分享\n您的生活以及加入其他主播，\n发表评论并送出礼物"),
         "girls": MessageLookupByLibrary.simpleMessage("女孩们"),
         "go": MessageLookupByLibrary.simpleMessage("去"),
         "goLive": MessageLookupByLibrary.simpleMessage("上线"),
         "harassment": MessageLookupByLibrary.simpleMessage("骚扰"),
-        "hasLikedYourProfileYouShouldCheckTheirProfile":
-            MessageLookupByLibrary.simpleMessage("  喜欢你的个人资料，你应该检查他们的个人资料！"),
+        "hasLikedYourProfileYouShouldCheckTheirProfile": MessageLookupByLibrary.simpleMessage("  喜欢你的个人资料，你应该检查他们的个人资料！"),
         "hide": MessageLookupByLibrary.simpleMessage("隐藏"),
         "hideInfo": MessageLookupByLibrary.simpleMessage("隐藏信息"),
         "history": MessageLookupByLibrary.simpleMessage("  历史"),
@@ -165,20 +145,17 @@ class MessageLookup extends MessageLookupByLibrary {
         "image": MessageLookupByLibrary.simpleMessage("图像"),
         "imageIsEmpty": MessageLookupByLibrary.simpleMessage("图片为空"),
         "inappropriateContent": MessageLookupByLibrary.simpleMessage("不适当的内容"),
-        "incorrectPasswordOrUserid":
-            MessageLookupByLibrary.simpleMessage("密码或用户 ID 不正确"),
+        "incorrectPasswordOrUserid": MessageLookupByLibrary.simpleMessage("密码或用户 ID 不正确"),
         "instagram": MessageLookupByLibrary.simpleMessage("Instagram的"),
         "interest": MessageLookupByLibrary.simpleMessage("兴趣"),
         "intro": MessageLookupByLibrary.simpleMessage("简短介绍视频"),
-        "itLooksLikeEtc": MessageLookupByLibrary.simpleMessage(
-            "您的钱包似乎没有足够的硬币来执行此操作。 让我们为它充电以享受此功能。"),
+        "itLooksLikeEtc": MessageLookupByLibrary.simpleMessage("您的钱包似乎没有足够的硬币来执行此操作。 让我们为它充电以享受此功能。"),
         "join": MessageLookupByLibrary.simpleMessage("加入"),
         "joinLive": MessageLookupByLibrary.simpleMessage("生活"),
         "km": MessageLookupByLibrary.simpleMessage("公里"),
         "kmsAway": MessageLookupByLibrary.simpleMessage("公里数"),
         "languages": MessageLookupByLibrary.simpleMessage("语言"),
-        "languagesDetail":
-            MessageLookupByLibrary.simpleMessage("流式传输时您会说的语言.."),
+        "languagesDetail": MessageLookupByLibrary.simpleMessage("流式传输时您会说的语言.."),
         "languagesYouEtc": MessageLookupByLibrary.simpleMessage("你会说的语言"),
         "legal": MessageLookupByLibrary.simpleMessage("合法的"),
         "live": MessageLookupByLibrary.simpleMessage("居住"),
@@ -186,8 +163,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "liveCap": MessageLookupByLibrary.simpleMessage("居住"),
         "liveStreamCap": MessageLookupByLibrary.simpleMessage("现场直播"),
         "liveStreamEnded": MessageLookupByLibrary.simpleMessage("直播结束"),
-        "liveStreamPriceWillCostYou":
-            MessageLookupByLibrary.simpleMessage("直播价格会让你付出代价"),
+        "liveStreamPriceWillCostYou": MessageLookupByLibrary.simpleMessage("直播价格会让你付出代价"),
         "liveVerification": MessageLookupByLibrary.simpleMessage("现场验证"),
         "livestream": MessageLookupByLibrary.simpleMessage("钱包/直播仪表盘"),
         "logIn": MessageLookupByLibrary.simpleMessage("登录"),
@@ -198,10 +174,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "male": MessageLookupByLibrary.simpleMessage("男性"),
         "map": MessageLookupByLibrary.simpleMessage("地图"),
         "message": MessageLookupByLibrary.simpleMessage("信息"),
-        "messagePriceWillCostYou":
-            MessageLookupByLibrary.simpleMessage("留言价格将花费您"),
-        "messageWillOnlyBeRemoved":
-            MessageLookupByLibrary.simpleMessage("消息只会从此设备中删除\n你确定吗？"),
+        "messagePriceWillCostYou": MessageLookupByLibrary.simpleMessage("留言价格将花费您"),
+        "messageWillOnlyBeRemoved": MessageLookupByLibrary.simpleMessage("消息只会从此设备中删除\n你确定吗？"),
         "moreInfo": MessageLookupByLibrary.simpleMessage("更多信息"),
         "movies": MessageLookupByLibrary.simpleMessage("电影"),
         "music": MessageLookupByLibrary.simpleMessage("音乐"),
@@ -215,8 +189,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "noUsersAreLive": MessageLookupByLibrary.simpleMessage("没有用户在线"),
         "notEligible": MessageLookupByLibrary.simpleMessage("不容忽视"),
         "notification": MessageLookupByLibrary.simpleMessage("通知"),
-        "notificationData":
-            MessageLookupByLibrary.simpleMessage("如果您想收到通知，请保持开启状态"),
+        "notificationData": MessageLookupByLibrary.simpleMessage("如果您想收到通知，请保持开启状态"),
         "nowCap": MessageLookupByLibrary.simpleMessage("现在"),
         "ok": MessageLookupByLibrary.simpleMessage("好的"),
         "optional": MessageLookupByLibrary.simpleMessage("选修的"),
@@ -233,22 +206,18 @@ class MessageLookup extends MessageLookupByLibrary {
         "photos": MessageLookupByLibrary.simpleMessage("相片"),
         "photosCap": MessageLookupByLibrary.simpleMessage("相片"),
         "platform": MessageLookupByLibrary.simpleMessage("平台"),
-        "pleaseAddAtLeastEtc":
-            MessageLookupByLibrary.simpleMessage("请添加至少 1 张图片"),
-        "pleaseAddAtLeastInterest":
-            MessageLookupByLibrary.simpleMessage("请添加至少 1 个兴趣"),
+        "pleaseAddAtLeastEtc": MessageLookupByLibrary.simpleMessage("请添加至少 1 张图片"),
+        "pleaseAddAtLeastInterest": MessageLookupByLibrary.simpleMessage("请添加至少 1 个兴趣"),
         "pleaseAddSelfiePhoto": MessageLookupByLibrary.simpleMessage("请添加自拍照片"),
         "pleaseAddSocialLinks": MessageLookupByLibrary.simpleMessage("请添加社交链接"),
         "pleaseApplyForLiveStreamFromLivestreamDashboardFromProfile":
             MessageLookupByLibrary.simpleMessage("请从个人资料的直播仪表板申请直播！"),
         "pleaseCheckTerm": MessageLookupByLibrary.simpleMessage("请检查条款和条件"),
         "pleaseEnterEmail": MessageLookupByLibrary.simpleMessage("请输入邮箱...！"),
-        "pleaseEnterValidEmailAddress":
-            MessageLookupByLibrary.simpleMessage("请输入有效的电子邮件地址"),
+        "pleaseEnterValidEmailAddress": MessageLookupByLibrary.simpleMessage("请输入有效的电子邮件地址"),
         "pleaseSelectImage": MessageLookupByLibrary.simpleMessage("请选择图片"),
         "pleaseValidEmail": MessageLookupByLibrary.simpleMessage("请有效的电子邮件"),
-        "pleaseVerifyYourEmailFromYourInbox":
-            MessageLookupByLibrary.simpleMessage("请从您的收件箱验证您的电子邮件"),
+        "pleaseVerifyYourEmailFromYourInbox": MessageLookupByLibrary.simpleMessage("请从您的收件箱验证您的电子邮件"),
         "policy1": MessageLookupByLibrary.simpleMessage("通过在下面选择同意并继续，\n 我同意"),
         "policy2": MessageLookupByLibrary.simpleMessage("使用条款"),
         "policy3": MessageLookupByLibrary.simpleMessage("  和"),
@@ -266,10 +235,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "redeemCap": MessageLookupByLibrary.simpleMessage("赎回"),
         "redeemRequests": MessageLookupByLibrary.simpleMessage("兑换请求"),
         "register": MessageLookupByLibrary.simpleMessage("登记"),
-        "registerInfoText":
-            MessageLookupByLibrary.simpleMessage("看起来你没有帐户。 \n让我们创建新帐户"),
-        "registrationSuccessfully":
-            MessageLookupByLibrary.simpleMessage("注册成功"),
+        "registerInfoText": MessageLookupByLibrary.simpleMessage("看起来你没有帐户。 \n让我们创建新帐户"),
+        "registrationSuccessfully": MessageLookupByLibrary.simpleMessage("注册成功"),
         "report": MessageLookupByLibrary.simpleMessage("报告"),
         "reportCap": MessageLookupByLibrary.simpleMessage("报告"),
         "reportUser": MessageLookupByLibrary.simpleMessage("举报用户"),
@@ -277,8 +244,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "requests": MessageLookupByLibrary.simpleMessage("  要求"),
         "reset": MessageLookupByLibrary.simpleMessage("重置"),
         "reverse": MessageLookupByLibrary.simpleMessage("撤销"),
-        "reverseSwipeWillCostYou":
-            MessageLookupByLibrary.simpleMessage("反向滑动会让你付出代价"),
+        "reverseSwipeWillCostYou": MessageLookupByLibrary.simpleMessage("反向滑动会让你付出代价"),
         "save": MessageLookupByLibrary.simpleMessage("节省"),
         "searching": MessageLookupByLibrary.simpleMessage("正在搜索..."),
         "selectAnother": MessageLookupByLibrary.simpleMessage("选择另一个"),
@@ -294,32 +260,27 @@ class MessageLookup extends MessageLookupByLibrary {
         "singing": MessageLookupByLibrary.simpleMessage("唱歌"),
         "skip": MessageLookupByLibrary.simpleMessage("跳过"),
         "social": MessageLookupByLibrary.simpleMessage("社交资料链接"),
-        "socialData": MessageLookupByLibrary.simpleMessage(
-            "链接到您的一些社交媒体资料，这有助于我们更多地了解您的粉丝关注情况。"),
+        "socialData": MessageLookupByLibrary.simpleMessage("链接到您的一些社交媒体资料，这有助于我们更多地了解您的粉丝关注情况。"),
         "something": MessageLookupByLibrary.simpleMessage("关于你的一些事？"),
         "startMatching": MessageLookupByLibrary.simpleMessage("开始配对"),
-        "startingProfileInfoText": MessageLookupByLibrary.simpleMessage(
-            "用令人惊叹的照片、兴趣简介制作您的个人资料，并从其他人中脱颖而出！"),
+        "startingProfileInfoText": MessageLookupByLibrary.simpleMessage("用令人惊叹的照片、兴趣简介制作您的个人资料，并从其他人中脱颖而出！"),
         "streamCap": MessageLookupByLibrary.simpleMessage("溪流"),
         "streamFor": MessageLookupByLibrary.simpleMessage("流式传输"),
         "streamYourself": MessageLookupByLibrary.simpleMessage("直播自己"),
         "streamed": MessageLookupByLibrary.simpleMessage("  流媒体："),
         "submit": MessageLookupByLibrary.simpleMessage("提交"),
-        "subscribeToProEtc":
-            MessageLookupByLibrary.simpleMessage("订阅 PRO - 没有限制"),
+        "subscribeToProEtc": MessageLookupByLibrary.simpleMessage("订阅 PRO - 没有限制"),
         "sure": MessageLookupByLibrary.simpleMessage("  当然？"),
         "swipe": MessageLookupByLibrary.simpleMessage("滑动"),
         "switchMap": MessageLookupByLibrary.simpleMessage("在地图上显示我"),
-        "switchMapData":
-            MessageLookupByLibrary.simpleMessage("如果您想在地图上看到，请保持开启状态"),
+        "switchMapData": MessageLookupByLibrary.simpleMessage("如果您想在地图上看到，请保持开启状态"),
         "takePhoto": MessageLookupByLibrary.simpleMessage("拍照"),
         "termAndCondition": MessageLookupByLibrary.simpleMessage("  条款和条件，"),
         "terms": MessageLookupByLibrary.simpleMessage("条款"),
         "termsOfUse": MessageLookupByLibrary.simpleMessage("使用条款"),
         "thatGreat": MessageLookupByLibrary.simpleMessage("那太棒了"),
         "thisUserBlockYou": MessageLookupByLibrary.simpleMessage("\'这个用户阻止你\'"),
-        "thisVideoIsGreaterThan50MbnpleaseSelectAnother":
-            MessageLookupByLibrary.simpleMessage("该视频大于 50 mb\n请选择另一个..."),
+        "thisVideoIsGreaterThan50MbnpleaseSelectAnother": MessageLookupByLibrary.simpleMessage("该视频大于 50 mb\n请选择另一个..."),
         "threshold": MessageLookupByLibrary.simpleMessage("最低门槛："),
         "time": MessageLookupByLibrary.simpleMessage("  时间："),
         "toSendMessage": MessageLookupByLibrary.simpleMessage("发送消息。"),
@@ -336,8 +297,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "users": MessageLookupByLibrary.simpleMessage("用户"),
         "validEmail": MessageLookupByLibrary.simpleMessage("输入有效的邮箱"),
         "verification": MessageLookupByLibrary.simpleMessage("申请验证"),
-        "verifiedAccountsHaveBlueEtc": MessageLookupByLibrary.simpleMessage(
-            "经过验证的帐户名称旁边有蓝色复选标记，表明我们已确认他们是公众人物或名人的真实存在。"),
+        "verifiedAccountsHaveBlueEtc": MessageLookupByLibrary.simpleMessage("经过验证的帐户名称旁边有蓝色复选标记，表明我们已确认他们是公众人物或名人的真实存在。"),
         "versionText": MessageLookupByLibrary.simpleMessage("版本 1.0.0"),
         "video": MessageLookupByLibrary.simpleMessage("视频？"),
         "videoCall": MessageLookupByLibrary.simpleMessage("视频电话"),
@@ -350,8 +310,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "wallet": MessageLookupByLibrary.simpleMessage("钻石钱包"),
         "walletCap": MessageLookupByLibrary.simpleMessage("钱包"),
         "whereDoYouLive": MessageLookupByLibrary.simpleMessage("你住在哪里 ？"),
-        "whichItemWouldYouLikeEtc":
-            MessageLookupByLibrary.simpleMessage("您要选择哪个项目？\n选择一个项目"),
+        "whichItemWouldYouLikeEtc": MessageLookupByLibrary.simpleMessage("您要选择哪个项目？\n选择一个项目"),
         "writeMessage": MessageLookupByLibrary.simpleMessage("写信息"),
         "yes": MessageLookupByLibrary.simpleMessage("是的"),
         "yesterday": MessageLookupByLibrary.simpleMessage("昨天"),
@@ -362,10 +321,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "youMust18": MessageLookupByLibrary.simpleMessage("你必须年满 18 岁"),
         "youMustBe18": MessageLookupByLibrary.simpleMessage("你必须年满 18 岁"),
         "youWillBeSentEtc": MessageLookupByLibrary.simpleMessage("你很快就会被送到外面"),
-        "yourApplicationIsPendingPleaseWait":
-            MessageLookupByLibrary.simpleMessage("您的申请正在等待处理中，请稍候"),
-        "yourLiveStreamHasBeenEndednbelowIsASummaryOf":
-            MessageLookupByLibrary.simpleMessage("您的直播已结束！\n以下是直播的摘要。"),
+        "yourApplicationIsPendingPleaseWait": MessageLookupByLibrary.simpleMessage("您的申请正在等待处理中，请稍候"),
+        "yourLiveStreamHasBeenEndednbelowIsASummaryOf": MessageLookupByLibrary.simpleMessage("您的直播已结束！\n以下是直播的摘要。"),
         "yourSelfie": MessageLookupByLibrary.simpleMessage("你的自拍"),
         "youtube": MessageLookupByLibrary.simpleMessage("YOUTUBE")
       };

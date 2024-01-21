@@ -7,9 +7,7 @@ class TopStoryLine extends StatefulWidget {
   final List<Images> images;
   final PageController pageController;
 
-  const TopStoryLine(
-      {Key? key, required this.images, required this.pageController})
-      : super(key: key);
+  const TopStoryLine({Key? key, required this.images, required this.pageController}) : super(key: key);
 
   @override
   State<TopStoryLine> createState() => _TopStoryLineState();
@@ -40,9 +38,7 @@ class _TopStoryLineState extends State<TopStoryLine> {
               height: 2.7,
               width: (Get.width - 62) / widget.images.length,
               decoration: BoxDecoration(
-                color: currentPosition == index
-                    ? ColorRes.white
-                    : ColorRes.white.withOpacity(0.30),
+                color: currentPosition == index ? ColorRes.white : ColorRes.white.withOpacity(0.30),
                 borderRadius: BorderRadius.circular(10),
               ),
             ),

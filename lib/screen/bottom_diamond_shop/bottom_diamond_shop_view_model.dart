@@ -44,8 +44,7 @@ class BottomDiamondShopViewModel extends BaseViewModel {
   }
 
   void onDiamondPurchase(GetDiamondPackData? data) {
-    BubblyCamera.inAppPurchase(
-        Platform.isAndroid ? data?.androidProductId : data?.iosProductId);
+    BubblyCamera.inAppPurchase(Platform.isAndroid ? data?.androidProductId : data?.iosProductId);
     coinValue = data?.amount;
   }
 }

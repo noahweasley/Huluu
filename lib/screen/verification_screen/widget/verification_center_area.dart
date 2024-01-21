@@ -63,8 +63,7 @@ class VerificationCenterArea extends StatelessWidget {
                 children: [
                   Text(
                     '${userIdentity?.fullname} ',
-                    style:
-                        const TextStyle(fontFamily: FontRes.bold, fontSize: 15),
+                    style: const TextStyle(fontFamily: FontRes.bold, fontSize: 15),
                   ),
                   const SizedBox(
                     width: 5,
@@ -115,13 +114,9 @@ class VerificationCenterArea extends StatelessWidget {
                     fontSize: 14,
                   ),
                   decoration: InputDecoration(
-                    hintText: fullNameError == ''
-                        ? S.current.enterFullName
-                        : fullNameError,
+                    hintText: fullNameError == '' ? S.current.enterFullName : fullNameError,
                     hintStyle: TextStyle(
-                      color: fullNameError == ""
-                          ? ColorRes.dimGrey2
-                          : ColorRes.red,
+                      color: fullNameError == "" ? ColorRes.dimGrey2 : ColorRes.red,
                     ),
                     border: InputBorder.none,
                     contentPadding: const EdgeInsets.only(bottom: 10, left: 10),
@@ -186,9 +181,7 @@ class VerificationCenterArea extends StatelessWidget {
                         height: 15,
                       ),
                       Visibility(
-                        visible: imagesName == null || imagesName!.isEmpty
-                            ? true
-                            : false,
+                        visible: imagesName == null || imagesName!.isEmpty ? true : false,
                         child: InkWell(
                           onTap: onDocumentTap,
                           child: Container(
@@ -198,9 +191,7 @@ class VerificationCenterArea extends StatelessWidget {
                               border: Border.all(
                                   color: ColorRes.darkOrange,
                                   width: 2,
-                                  style: !isDocFile
-                                      ? BorderStyle.none
-                                      : BorderStyle.solid),
+                                  style: !isDocFile ? BorderStyle.none : BorderStyle.solid),
                               color: ColorRes.lightGrey2,
                               borderRadius: BorderRadius.circular(10),
                             ),
@@ -219,9 +210,7 @@ class VerificationCenterArea extends StatelessWidget {
                         height: 10,
                       ),
                       Visibility(
-                        visible: imagesName == null || imagesName!.isEmpty
-                            ? false
-                            : true,
+                        visible: imagesName == null || imagesName!.isEmpty ? false : true,
                         child: InkWell(
                           onTap: onDocumentTap,
                           child: Container(
@@ -235,8 +224,7 @@ class VerificationCenterArea extends StatelessWidget {
                               children: [
                                 Expanded(
                                   child: Padding(
-                                    padding: const EdgeInsets.symmetric(
-                                        horizontal: 20.0),
+                                    padding: const EdgeInsets.symmetric(horizontal: 20.0),
                                     child: Text(
                                       '$imagesName',
                                       style: const TextStyle(
@@ -252,9 +240,8 @@ class VerificationCenterArea extends StatelessWidget {
                                 Container(
                                   height: 30,
                                   width: 30,
-                                  decoration: BoxDecoration(
-                                      color: ColorRes.lightGrey,
-                                      borderRadius: BorderRadius.circular(30)),
+                                  decoration:
+                                      BoxDecoration(color: ColorRes.lightGrey, borderRadius: BorderRadius.circular(30)),
                                   child: const Icon(
                                     Icons.edit,
                                     size: 20,

@@ -48,9 +48,7 @@ class DocTypeDropDown extends StatelessWidget {
                   child: Text(
                     S.current.drivingLicence,
                     style: TextStyle(
-                      color: docType == S.current.drivingLicence
-                          ? ColorRes.orange
-                          : ColorRes.grey,
+                      color: docType == S.current.drivingLicence ? ColorRes.orange : ColorRes.grey,
                     ),
                   ),
                 ),
@@ -66,9 +64,7 @@ class DocTypeDropDown extends StatelessWidget {
                   child: Text(
                     S.current.idCard,
                     style: TextStyle(
-                      color: docType == S.current.idCard
-                          ? ColorRes.orange
-                          : ColorRes.grey,
+                      color: docType == S.current.idCard ? ColorRes.orange : ColorRes.grey,
                     ),
                   ),
                 ),

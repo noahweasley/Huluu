@@ -102,9 +102,8 @@ class ImageViewPage extends StatelessWidget {
                 ],
               ),
               Text(
-                DateFormat('${AppRes.dMY}, ${AppRes.hhMmA}').format(
-                    DateTime.fromMillisecondsSinceEpoch(
-                        userData!.time!.toInt())),
+                DateFormat('${AppRes.dMY}, ${AppRes.hhMmA}')
+                    .format(DateTime.fromMillisecondsSinceEpoch(userData!.time!.toInt())),
                 style: const TextStyle(
                   color: ColorRes.white,
                   fontSize: 11,

@@ -12,9 +12,7 @@ class ProfileDetailCard extends StatelessWidget {
   final VoidCallback onImageTap;
   final RegistrationUserData? userData;
 
-  const ProfileDetailCard(
-      {Key? key, required this.userData, required this.onImageTap})
-      : super(key: key);
+  const ProfileDetailCard({Key? key, required this.userData, required this.onImageTap}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -80,9 +78,7 @@ class ProfileDetailCard extends StatelessWidget {
                     ],
                   ),
                   Visibility(
-                    visible: userData?.live == null || userData!.live!.isEmpty
-                        ? false
-                        : true,
+                    visible: userData?.live == null || userData!.live!.isEmpty ? false : true,
                     child: Row(
                       children: [
                         GradientWidget(

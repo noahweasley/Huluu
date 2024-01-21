@@ -47,8 +47,7 @@ class Data {
   Data.fromJson(dynamic json) {
     _channelExist = json['channel_exist'];
     _mode = json['mode'];
-    _broadcasters =
-        json['broadcasters'] != null ? json['broadcasters'].cast<int>() : [];
+    _broadcasters = json['broadcasters'] != null ? json['broadcasters'].cast<int>() : [];
     _audience = json['audience'] != null ? json['audience'].cast<int>() : [];
     _audienceTotal = json['audience_total'];
   }

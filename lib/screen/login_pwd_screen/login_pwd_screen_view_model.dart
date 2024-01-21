@@ -53,26 +53,19 @@ class LoginPwdScreenViewModel extends BaseViewModel {
       if (!GetUtils.isEmail(email)) {
         Loader().lottieLoader();
         ApiProvider()
-            .registration(
-                email: email,
-                fullName: '',
-                deviceToken: tokenId,
-                loginType: 4,
-                password: pwdController.text)
+            .registration(email: email, fullName: '', deviceToken: tokenId, loginType: 4, password: pwdController.text)
             .then((value) async {
           if (value.data != null) {
             Get.back();
             PrefService.userId = value.data!.id!;
-            await PrefService.saveString(
-                PrefConst.password, pwdController.text);
+            await PrefService.saveString(PrefConst.password, pwdController.text);
             await PrefService.setLoginText(true);
             await PrefService.saveUser(value.data);
             await PrefService.setFullName('${value.data?.fullname}');
             checkScreenCondition(value.data);
           } else {
             Get.back();
-            SnackBarWidget()
-                .snackBarWidget(S.current.incorrectPasswordOrUserid);
+            SnackBarWidget().snackBarWidget(S.current.incorrectPasswordOrUserid);
           }
         });
       } else {
@@ -82,13 +75,7 @@ class LoginPwdScreenViewModel extends BaseViewModel {
             if (value?.user?.emailVerified == true) {
               Get.back();
               Loader().lottieLoader();
-              ApiProvider()
-                  .registration(
-                      email: email,
-                      fullName: '',
-                      deviceToken: tokenId,
-                      loginType: 4)
-                  .then((value) async {
+              ApiProvider().registration(email: email, fullName: '', deviceToken: tokenId, loginType: 4).then((value) async {
                 Get.back();
                 PrefService.userId = value.data!.id!;
                 // print(ConstRes.aUserId);
@@ -99,8 +86,7 @@ class LoginPwdScreenViewModel extends BaseViewModel {
               });
             } else {
               Get.back();
-              SnackBarWidget()
-                  .snackBarWidget(S.current.pleaseVerifyYourEmailFromYourInbox);
+              SnackBarWidget().snackBarWidget(S.current.pleaseVerifyYourEmailFromYourInbox);
             }
           }
         });
@@ -141,19 +127,14 @@ class LoginPwdScreenViewModel extends BaseViewModel {
 
   void onForgotPwdTap() {
     Get.bottomSheet(
-      ForgotPassword(
-          resetBtnClick: resetBtnClick,
-          resetFocusNode: resetFocusNode,
-          email: email),
+      ForgotPassword(resetBtnClick: resetBtnClick, resetFocusNode: resetFocusNode, email: email),
     );
   }
 
   //SIGN IN METHOD
-  Future<UserCredential?> signIn(
-      {required String email, required String password}) async {
+  Future<UserCredential?> signIn({required String email, required String password}) async {
     try {
-      return await _auth.signInWithEmailAndPassword(
-          email: email, password: password);
+      return await _auth.signInWithEmailAndPassword(email: email, password: password);
     } on FirebaseAuthException catch (e) {
       SnackBarWidget().snackBarWidget('${e.message}');
       return null;

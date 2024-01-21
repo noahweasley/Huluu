@@ -23,8 +23,7 @@ class LiveStreamDashBoard extends StatelessWidget {
           backgroundColor: ColorRes.white,
           body: Column(
             children: [
-              TopBarArea(
-                  title: S.current.liveStreamCap, title2: S.current.dashboard),
+              TopBarArea(title: S.current.liveStreamCap, title2: S.current.dashboard),
               Container(
                 height: 1,
                 margin: const EdgeInsets.symmetric(horizontal: 7),
@@ -42,8 +41,7 @@ class LiveStreamDashBoard extends StatelessWidget {
                       // onAddCoinsBtnTap: model.onAddCoinsBtnTap,
                       onApplyBtnTap: model.onApplyBtnTap,
                       wallet: model.userData?.wallet,
-                      totalCollection:
-                          model.userData?.totalCollected.toString(),
+                      totalCollection: model.userData?.totalCollected.toString(),
                       totalStream: model.userData?.totalStreams.toString(),
                     ),
               const SizedBox(

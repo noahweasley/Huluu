@@ -9,11 +9,7 @@ class UnblockUserDialog extends StatelessWidget {
   final VoidCallback onCancelBtnClick;
   final String? name;
 
-  const UnblockUserDialog(
-      {Key? key,
-      required this.onCancelBtnClick,
-      required this.unblockUser,
-      this.name})
+  const UnblockUserDialog({Key? key, required this.onCancelBtnClick, required this.unblockUser, this.name})
       : super(key: key);
 
   @override
@@ -29,10 +25,7 @@ class UnblockUserDialog extends StatelessWidget {
               const Spacer(),
               Text(
                 '${S.current.unBlock} $name ${S.current.toSendMessage}',
-                style: const TextStyle(
-                    color: ColorRes.grey14,
-                    fontSize: 16,
-                    fontFamily: FontRes.medium),
+                style: const TextStyle(color: ColorRes.grey14, fontSize: 16, fontFamily: FontRes.medium),
               ),
               const Spacer(),
               Row(
@@ -44,8 +37,7 @@ class UnblockUserDialog extends StatelessWidget {
                     highlightColor: ColorRes.transparent,
                     child: Text(
                       S.current.cancelCap,
-                      style: const TextStyle(
-                          color: ColorRes.grey, fontFamily: FontRes.bold),
+                      style: const TextStyle(color: ColorRes.grey, fontFamily: FontRes.bold),
                     ),
                   ),
                   const SizedBox(
@@ -58,8 +50,7 @@ class UnblockUserDialog extends StatelessWidget {
                     },
                     child: Text(
                       S.current.unblockCap,
-                      style: const TextStyle(
-                          color: ColorRes.orange2, fontFamily: FontRes.bold),
+                      style: const TextStyle(color: ColorRes.orange2, fontFamily: FontRes.bold),
                     ),
                   ),
                 ],

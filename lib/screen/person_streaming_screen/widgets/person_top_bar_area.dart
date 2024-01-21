@@ -52,10 +52,8 @@ class PersonTopBarArea extends StatelessWidget {
                     child: ClipRRect(
                       borderRadius: BorderRadius.circular(30),
                       child: CachedNetworkImage(
-                        imageUrl:
-                            '${ConstRes.aImageBaseUrl}${liveStreamUser?.userImage}',
-                        cacheKey:
-                            '${ConstRes.aImageBaseUrl}${liveStreamUser?.userImage}',
+                        imageUrl: '${ConstRes.aImageBaseUrl}${liveStreamUser?.userImage}',
+                        cacheKey: '${ConstRes.aImageBaseUrl}${liveStreamUser?.userImage}',
                         errorWidget: (context, error, stackTrace) {
                           return Image.asset(
                             AssetRes.themeLabel,

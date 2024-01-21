@@ -41,11 +41,9 @@ class HobbiesClips extends StatelessWidget {
           onClipTap(label.id.toString());
         },
         child: Container(
-          padding:
-              const EdgeInsets.only(right: 22, left: 22, top: 10, bottom: 8),
+          padding: const EdgeInsets.only(right: 22, left: 22, top: 10, bottom: 8),
           decoration: BoxDecoration(
-            color:
-                selected ? ColorRes.white : ColorRes.orange2.withOpacity(0.06),
+            color: selected ? ColorRes.white : ColorRes.orange2.withOpacity(0.06),
             borderRadius: BorderRadius.circular(30),
             gradient: selected
                 ? const LinearGradient(

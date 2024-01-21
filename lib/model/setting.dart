@@ -57,8 +57,7 @@ class SettingData {
   }
 
   SettingData.fromJson(dynamic json) {
-    _appdata =
-        json['appdata'] != null ? Appdata.fromJson(json['appdata']) : null;
+    _appdata = json['appdata'] != null ? Appdata.fromJson(json['appdata']) : null;
     if (json['gifts'] != null) {
       _gifts = [];
       json['gifts'].forEach((v) {

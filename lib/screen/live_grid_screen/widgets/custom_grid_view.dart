@@ -36,9 +36,7 @@ class CustomGridView extends StatelessWidget {
                           ? gridTile(
                               data: e,
                               width: (Get.width / 2) - 18,
-                              height: index % 4 == 0
-                                  ? (Get.width * 0.65)
-                                  : (Get.width * 0.49),
+                              height: index % 4 == 0 ? (Get.width * 0.65) : (Get.width * 0.49),
                               margin: const EdgeInsets.fromLTRB(12, 0, 12, 12),
                             )
                           : const SizedBox();
@@ -51,9 +49,7 @@ class CustomGridView extends StatelessWidget {
                           ? gridTile(
                               data: e,
                               width: (Get.width / 2) - 18,
-                              height: (index + 1) % 4 == 0
-                                  ? (Get.width * 0.65)
-                                  : (Get.width * 0.49),
+                              height: (index + 1) % 4 == 0 ? (Get.width * 0.65) : (Get.width * 0.49),
                               margin: const EdgeInsets.fromLTRB(0, 0, 12, 12),
                             )
                           : const SizedBox();
@@ -169,11 +165,7 @@ class CustomGridView extends StatelessWidget {
       children: [
         Text(
           S.current.noUsersAreLive,
-          style: const TextStyle(
-              fontFamily: FontRes.medium,
-              fontSize: 20,
-              color: ColorRes.grey,
-              letterSpacing: 1),
+          style: const TextStyle(fontFamily: FontRes.medium, fontSize: 20, color: ColorRes.grey, letterSpacing: 1),
         ),
       ],
     );

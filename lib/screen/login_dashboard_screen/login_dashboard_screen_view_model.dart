@@ -70,10 +70,7 @@ class LoginDashboardScreenViewModel extends BaseViewModel {
       }
       // if (value?.user?.email == null||value!.user!.email!.isEmpty) return;
       Get.back();
-      registrationApiCall(
-          email: value.user?.email,
-          name: value.user?.displayName,
-          loginType: 1);
+      registrationApiCall(email: value.user?.email, name: value.user?.displayName, loginType: 1);
     });
   }
 
@@ -83,8 +80,7 @@ class LoginDashboardScreenViewModel extends BaseViewModel {
         return;
       }
       String appleFullName = await PrefService.getFullName() ?? '';
-      registrationApiCall(
-          email: value.user?.email, name: appleFullName, loginType: 2);
+      registrationApiCall(email: value.user?.email, name: appleFullName, loginType: 2);
       notifyListeners();
     });
   }
@@ -157,19 +153,15 @@ class LoginDashboardScreenViewModel extends BaseViewModel {
     // Trigger the authentication flow
     final GoogleSignIn googleSignIn = GoogleSignIn();
 
-    final GoogleSignInAccount? googleSignInAccount =
-        await googleSignIn.signIn();
+    final GoogleSignInAccount? googleSignInAccount = await googleSignIn.signIn();
 
     //final GoogleSignInAccount? googleUser = await GoogleSignIn().signIn();
 
     // Obtain the auth details from the request
-    final GoogleSignInAuthentication? googleAuth =
-        await googleSignInAccount?.authentication;
+    final GoogleSignInAuthentication? googleAuth = await googleSignInAccount?.authentication;
 
     // Create a new credential
-    if (googleAuth == null ||
-        googleAuth.accessToken == null ||
-        googleAuth.idToken == null) {
+    if (googleAuth == null || googleAuth.accessToken == null || googleAuth.idToken == null) {
       Get.back();
       return null;
     }
@@ -181,16 +173,10 @@ class LoginDashboardScreenViewModel extends BaseViewModel {
     return user;
   }
 
-  void registrationApiCall(
-      {required String? email, required String? name, required int loginType}) {
+  void registrationApiCall({required String? email, required String? name, required int loginType}) {
     Loader().lottieLoader();
     ApiProvider()
-        .registration(
-            email: email,
-            fullName: name,
-            deviceToken: tokenId,
-            loginType: loginType,
-            password: '')
+        .registration(email: email, fullName: name, deviceToken: tokenId, loginType: loginType, password: '')
         .then((value) async {
       if (value.status == true) {
         PrefService.userId = value.data!.id!;

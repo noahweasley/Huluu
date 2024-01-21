@@ -80,8 +80,7 @@ class RegisterCard extends StatelessWidget {
               const SizedBox(height: 25),
               policyText(),
               const SizedBox(height: 30),
-              SubmitButton1(
-                  title: S.current.agreeNContinue, onTap: model.onContinueTap),
+              SubmitButton1(title: S.current.agreeNContinue, onTap: model.onContinueTap),
             ],
           ),
         ),
@@ -175,8 +174,7 @@ class RegisterCard extends StatelessWidget {
           ),
           TextSpan(
             text: S.current.policy4,
-            recognizer: TapGestureRecognizer()
-              ..onTap = model.onPrivacyPolicyTap,
+            recognizer: TapGestureRecognizer()..onTap = model.onPrivacyPolicyTap,
             style: const TextStyle(
               color: ColorRes.lightOrange3,
               fontSize: 13,

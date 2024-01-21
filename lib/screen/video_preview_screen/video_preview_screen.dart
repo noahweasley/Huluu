@@ -37,8 +37,7 @@ class VideoPreviewScreen extends StatelessWidget {
                       )
                     : Center(
                         child: AspectRatio(
-                          aspectRatio:
-                              model.videoPlayerController.value.aspectRatio,
+                          aspectRatio: model.videoPlayerController.value.aspectRatio,
                           child: VideoPlayer(model.videoPlayerController),
                         ),
                       ),
@@ -64,9 +63,7 @@ class VideoPreviewScreen extends StatelessWidget {
                         opacity: model.isUIVisible == true ? 0.0 : 1.0,
                         duration: const Duration(milliseconds: 500),
                         child: Icon(
-                          model.videoPlayerController.value.isPlaying
-                              ? Icons.pause
-                              : Icons.play_arrow,
+                          model.videoPlayerController.value.isPlaying ? Icons.pause : Icons.play_arrow,
                           color: ColorRes.white,
                           size: 35,
                         ),

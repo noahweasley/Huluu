@@ -34,21 +34,15 @@ class RandomsScreenViewModel extends BaseViewModel {
   }
 
   void onNotificationTap() {
-    data?.isBlock == 1
-        ? SnackBarWidget().snackBarWidget(S.current.userBlock)
-        : Get.to(() => const NotificationScreen());
+    data?.isBlock == 1 ? SnackBarWidget().snackBarWidget(S.current.userBlock) : Get.to(() => const NotificationScreen());
   }
 
   void onSearchBtnTap() {
-    data?.isBlock == 1
-        ? SnackBarWidget().snackBarWidget(S.current.userBlock)
-        : Get.to(() => const SearchScreen());
+    data?.isBlock == 1 ? SnackBarWidget().snackBarWidget(S.current.userBlock) : Get.to(() => const SearchScreen());
   }
 
   void onGenderChange(String value) {
-    data?.isBlock == 1
-        ? SnackBarWidget().snackBarWidget(S.current.userBlock)
-        : selectedGender = value;
+    data?.isBlock == 1 ? SnackBarWidget().snackBarWidget(S.current.userBlock) : selectedGender = value;
     notifyListeners();
   }
 
@@ -56,10 +50,7 @@ class RandomsScreenViewModel extends BaseViewModel {
     data?.isBlock == 1
         ? SnackBarWidget().snackBarWidget(S.current.userBlock)
         : Get.to(() => const RandomsSearchScreen(), arguments: [
-            {
-              Urls.aGender: selectedGender,
-              FirebaseRes.image: data?.images?[0].image ?? ''
-            }
+            {Urls.aGender: selectedGender, FirebaseRes.image: data?.images?[0].image ?? ''}
           ]);
   }
 

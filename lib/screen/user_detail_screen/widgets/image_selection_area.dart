@@ -48,11 +48,8 @@ class ImageSelectionArea extends StatelessWidget {
           joinBtnChip(),
           const Spacer(),
           Visibility(
-              visible: PrefService.settingData?.appdata?.isDating == 0
-                  ? false
-                  : true,
-              child: LikeUnlikeBtn(
-                  like: like, onLikeBtnTap: onLikeBtnTap, userId: userId)),
+              visible: PrefService.settingData?.appdata?.isDating == 0 ? false : true,
+              child: LikeUnlikeBtn(like: like, onLikeBtnTap: onLikeBtnTap, userId: userId)),
           const SizedBox(height: 15),
           imageListArea(),
           const SizedBox(height: 20),
@@ -147,8 +144,7 @@ class ImageSelectionArea extends StatelessWidget {
             child: Container(
               height: 58,
               width: 58,
-              margin: EdgeInsets.only(
-                  right: index != (imageList.length - 1) ? 8.33 : 0),
+              margin: EdgeInsets.only(right: index != (imageList.length - 1) ? 8.33 : 0),
               decoration: BoxDecoration(
                 border: selectedImgIndex == index
                     ? Border.all(
@@ -161,13 +157,11 @@ class ImageSelectionArea extends StatelessWidget {
               child: ClipRRect(
                 borderRadius: BorderRadius.circular(10),
                 child: CachedNetworkImage(
-                  imageUrl:
-                      '${ConstRes.aImageBaseUrl}${imageList[index].image}',
+                  imageUrl: '${ConstRes.aImageBaseUrl}${imageList[index].image}',
                   height: 58,
                   width: 58,
                   fit: BoxFit.cover,
-                  cacheKey:
-                      '${ConstRes.aImageBaseUrl}${imageList[index].image}',
+                  cacheKey: '${ConstRes.aImageBaseUrl}${imageList[index].image}',
                   errorWidget: (context, url, error) {
                     return Image.asset(
                       AssetRes.themeLabel,
@@ -190,18 +184,15 @@ class LikeUnlikeBtn extends StatefulWidget {
   final bool like;
   final int? userId;
 
-  const LikeUnlikeBtn(
-      {Key? key, required this.like, required this.onLikeBtnTap, this.userId})
-      : super(key: key);
+  const LikeUnlikeBtn({Key? key, required this.like, required this.onLikeBtnTap, this.userId}) : super(key: key);
 
   @override
   State<LikeUnlikeBtn> createState() => _LikeUnlikeBtnState();
 }
 
-class _LikeUnlikeBtnState extends State<LikeUnlikeBtn>
-    with SingleTickerProviderStateMixin {
-  late final AnimationController _controller = AnimationController(
-      duration: const Duration(milliseconds: 350), vsync: this, value: 1.0);
+class _LikeUnlikeBtnState extends State<LikeUnlikeBtn> with SingleTickerProviderStateMixin {
+  late final AnimationController _controller =
+      AnimationController(duration: const Duration(milliseconds: 350), vsync: this, value: 1.0);
 
   @override
   void dispose() {
@@ -237,9 +228,8 @@ class _LikeUnlikeBtnState extends State<LikeUnlikeBtn>
               ),
               child: widget.like
                   ? ScaleTransition(
-                      scale: Tween(begin: 0.7, end: 1.0).animate(
-                          CurvedAnimation(
-                              parent: _controller, curve: Curves.easeOut)),
+                      scale:
+                          Tween(begin: 0.7, end: 1.0).animate(CurvedAnimation(parent: _controller, curve: Curves.easeOut)),
                       child: const GradientWidget(
                         child: Icon(
                           Icons.favorite,
@@ -249,9 +239,8 @@ class _LikeUnlikeBtnState extends State<LikeUnlikeBtn>
                       ),
                     )
                   : ScaleTransition(
-                      scale: Tween(begin: 0.7, end: 1.0).animate(
-                          CurvedAnimation(
-                              parent: _controller, curve: Curves.easeOut)),
+                      scale:
+                          Tween(begin: 0.7, end: 1.0).animate(CurvedAnimation(parent: _controller, curve: Curves.easeOut)),
                       child: const Icon(
                         Icons.favorite,
                         color: ColorRes.white,
@@ -270,15 +259,13 @@ class _LikeUnlikeBtnState extends State<LikeUnlikeBtn>
 class BottomMoreBtn extends StatefulWidget {
   final VoidCallback onMoreInfoTap;
 
-  const BottomMoreBtn({Key? key, required this.onMoreInfoTap})
-      : super(key: key);
+  const BottomMoreBtn({Key? key, required this.onMoreInfoTap}) : super(key: key);
 
   @override
   State<BottomMoreBtn> createState() => _BottomMoreBtnState();
 }
 
-class _BottomMoreBtnState extends State<BottomMoreBtn>
-    with SingleTickerProviderStateMixin {
+class _BottomMoreBtnState extends State<BottomMoreBtn> with SingleTickerProviderStateMixin {
   double? _scale;
   AnimationController? _controller;
 
@@ -387,19 +374,14 @@ class ImageListArea extends StatefulWidget {
   final Function(int index) onImgSelect;
   final int selectedImgIndex;
 
-  const ImageListArea(
-      {Key? key,
-      required this.imageList,
-      required this.onImgSelect,
-      required this.selectedImgIndex})
+  const ImageListArea({Key? key, required this.imageList, required this.onImgSelect, required this.selectedImgIndex})
       : super(key: key);
 
   @override
   State<ImageListArea> createState() => _ImageListAreaState();
 }
 
-class _ImageListAreaState extends State<ImageListArea>
-    with SingleTickerProviderStateMixin {
+class _ImageListAreaState extends State<ImageListArea> with SingleTickerProviderStateMixin {
   double? _scale;
   AnimationController? _controller;
 
@@ -455,8 +437,7 @@ class _ImageListAreaState extends State<ImageListArea>
               child: Container(
                 height: 58,
                 width: 58,
-                margin: EdgeInsets.only(
-                    right: index != (widget.imageList.length - 1) ? 8.33 : 0),
+                margin: EdgeInsets.only(right: index != (widget.imageList.length - 1) ? 8.33 : 0),
                 decoration: BoxDecoration(
                   border: widget.selectedImgIndex == index
                       ? Border.all(
@@ -467,8 +448,7 @@ class _ImageListAreaState extends State<ImageListArea>
                   borderRadius: BorderRadius.circular(10),
                   image: DecorationImage(
                     fit: BoxFit.cover,
-                    image: NetworkImage(
-                        '${ConstRes.aImageBaseUrl}${widget.imageList[index].image}'),
+                    image: NetworkImage('${ConstRes.aImageBaseUrl}${widget.imageList[index].image}'),
                   ),
                 ),
               ),

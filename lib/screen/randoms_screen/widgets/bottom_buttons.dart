@@ -60,19 +60,14 @@ class BottomButtons extends StatelessWidget {
                         ? Alignment.center
                         : Alignment.centerRight,
                 child: Container(
-                  width: (Get.width / genderList.length) -
-                      14 -
-                      (genderList.length * 5),
+                  width: (Get.width / genderList.length) - 14 - (genderList.length * 5),
                   margin: const EdgeInsets.all(5.0),
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(7),
-                    gradient: const LinearGradient(
-                        begin: Alignment.topCenter,
-                        end: Alignment.bottomCenter,
-                        colors: [
-                          ColorRes.lightOrange1,
-                          ColorRes.darkOrange,
-                        ]),
+                    gradient: const LinearGradient(begin: Alignment.topCenter, end: Alignment.bottomCenter, colors: [
+                      ColorRes.lightOrange1,
+                      ColorRes.darkOrange,
+                    ]),
                   ),
                 ),
               ),
@@ -86,16 +81,12 @@ class BottomButtons extends StatelessWidget {
                         onGenderSelect(S.current.boys);
                       },
                       child: SizedBox(
-                        width: (Get.width / genderList.length) -
-                            14 -
-                            (genderList.length * 5),
+                        width: (Get.width / genderList.length) - 14 - (genderList.length * 5),
                         child: Center(
                           child: AnimatedDefaultTextStyle(
                             duration: const Duration(milliseconds: 200),
                             style: TextStyle(
-                              color: selectedGender == S.current.boys
-                                  ? ColorRes.white
-                                  : ColorRes.darkGrey3,
+                              color: selectedGender == S.current.boys ? ColorRes.white : ColorRes.darkGrey3,
                               fontSize: 13,
                               fontFamily: FontRes.bold,
                             ),
@@ -113,16 +104,12 @@ class BottomButtons extends StatelessWidget {
                         onGenderSelect(S.current.both);
                       },
                       child: SizedBox(
-                        width: (Get.width / genderList.length) -
-                            14 -
-                            (genderList.length * 5),
+                        width: (Get.width / genderList.length) - 14 - (genderList.length * 5),
                         child: Center(
                           child: AnimatedDefaultTextStyle(
                             duration: const Duration(milliseconds: 200),
                             style: TextStyle(
-                              color: selectedGender == S.current.both
-                                  ? ColorRes.white
-                                  : ColorRes.darkGrey3,
+                              color: selectedGender == S.current.both ? ColorRes.white : ColorRes.darkGrey3,
                               fontSize: 13,
                               fontFamily: FontRes.bold,
                             ),
@@ -140,16 +127,12 @@ class BottomButtons extends StatelessWidget {
                         onGenderSelect(S.current.girls);
                       },
                       child: SizedBox(
-                        width: (Get.width / genderList.length) -
-                            14 -
-                            (genderList.length * 5),
+                        width: (Get.width / genderList.length) - 14 - (genderList.length * 5),
                         child: Center(
                           child: AnimatedDefaultTextStyle(
                             duration: const Duration(milliseconds: 200),
                             style: TextStyle(
-                              color: selectedGender == S.current.girls
-                                  ? ColorRes.white
-                                  : ColorRes.darkGrey3,
+                              color: selectedGender == S.current.girls ? ColorRes.white : ColorRes.darkGrey3,
                               fontSize: 13,
                               fontFamily: FontRes.bold,
                             ),

@@ -9,10 +9,7 @@ class ItemSelectionDialogAndroid extends StatelessWidget {
   final VoidCallback onCloseBtnClick;
 
   const ItemSelectionDialogAndroid(
-      {Key? key,
-      required this.onCloseBtnClick,
-      required this.onImageBtnClick,
-      required this.onVideoBtnClick})
+      {Key? key, required this.onCloseBtnClick, required this.onImageBtnClick, required this.onVideoBtnClick})
       : super(key: key);
 
   @override
@@ -32,10 +29,7 @@ class ItemSelectionDialogAndroid extends StatelessWidget {
             margin: const EdgeInsets.only(top: 13),
             child: Text(
               S.current.whichItemWouldYouLikeEtc,
-              style: const TextStyle(
-                  color: ColorRes.grey,
-                  fontSize: 16,
-                  fontFamily: FontRes.medium),
+              style: const TextStyle(color: ColorRes.grey, fontSize: 16, fontFamily: FontRes.medium),
               textAlign: TextAlign.center,
             ),
           ),
@@ -46,8 +40,7 @@ class ItemSelectionDialogAndroid extends StatelessWidget {
               child: Center(
                 child: Text(
                   S.current.photos,
-                  style:
-                      const TextStyle(fontFamily: FontRes.medium, fontSize: 17),
+                  style: const TextStyle(fontFamily: FontRes.medium, fontSize: 17),
                 ),
               ),
             ),
@@ -59,8 +52,7 @@ class ItemSelectionDialogAndroid extends StatelessWidget {
               child: Center(
                 child: Text(
                   S.current.videos,
-                  style:
-                      const TextStyle(fontFamily: FontRes.medium, fontSize: 17),
+                  style: const TextStyle(fontFamily: FontRes.medium, fontSize: 17),
                 ),
               ),
             ),
@@ -72,10 +64,7 @@ class ItemSelectionDialogAndroid extends StatelessWidget {
               margin: const EdgeInsets.only(bottom: 20, top: 10),
               child: Text(
                 S.current.close,
-                style: const TextStyle(
-                    fontSize: 17,
-                    color: Colors.blue,
-                    fontFamily: FontRes.semiBold),
+                style: const TextStyle(fontSize: 17, color: Colors.blue, fontFamily: FontRes.semiBold),
               ),
             ),
           ),

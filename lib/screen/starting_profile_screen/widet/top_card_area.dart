@@ -61,8 +61,7 @@ class TopCardArea extends StatelessWidget {
                     const SizedBox(height: 3),
                     Row(
                       children: [
-                        Image.asset(AssetRes.locationPin,
-                            height: 13, width: 13),
+                        Image.asset(AssetRes.locationPin, height: 13, width: 13),
                         const SizedBox(width: 5),
                         Expanded(
                           child: Text(

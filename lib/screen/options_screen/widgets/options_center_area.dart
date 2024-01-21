@@ -42,9 +42,7 @@ class OptionsCenterArea extends StatelessWidget {
           child: Container(
             height: 49,
             width: MediaQuery.of(context).size.width,
-            decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(10),
-                color: ColorRes.grey12),
+            decoration: BoxDecoration(borderRadius: BorderRadius.circular(10), color: ColorRes.grey12),
             child: Row(
               children: [
                 Padding(
@@ -76,14 +74,11 @@ class OptionsCenterArea extends StatelessWidget {
             child: Container(
               height: 49,
               width: MediaQuery.of(context).size.width,
-              decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(10),
-                  color: ColorRes.grey12),
+              decoration: BoxDecoration(borderRadius: BorderRadius.circular(10), color: ColorRes.grey12),
               child: Row(
                 children: [
                   Padding(
-                    padding:
-                        const EdgeInsets.only(left: 13, top: 12, bottom: 12),
+                    padding: const EdgeInsets.only(left: 13, top: 12, bottom: 12),
                     child: Image.asset(
                       AssetRes.tickMark,
                       height: 25,
@@ -135,8 +130,7 @@ class OptionsCenterArea extends StatelessWidget {
                   child: ClipRRect(
                     borderRadius: BorderRadius.circular(15),
                     child: BackdropFilter(
-                      filter: ImageFilter.blur(
-                          sigmaY: 15, sigmaX: 15, tileMode: TileMode.mirror),
+                      filter: ImageFilter.blur(sigmaY: 15, sigmaX: 15, tileMode: TileMode.mirror),
                       child: Padding(
                         padding: const EdgeInsets.only(left: 15, right: 5),
                         child: Row(
@@ -177,8 +171,7 @@ class OptionsCenterArea extends StatelessWidget {
                                     ? ColorRes.red7.withOpacity(0.20)
                                     : verification == 1
                                         ? ColorRes.lightorange.withOpacity(0.20)
-                                        : ColorRes.lightgreen1
-                                            .withOpacity(0.20),
+                                        : ColorRes.lightgreen1.withOpacity(0.20),
                               ),
                               child: Center(
                                 child: Text(
@@ -249,12 +242,10 @@ class OptionsCenterArea extends StatelessWidget {
     );
   }
 
-  Widget permissionTile(int index, String title, String subTitle, bool enable,
-      VoidCallback onTap) {
+  Widget permissionTile(int index, String title, String subTitle, bool enable, VoidCallback onTap) {
     return Container(
       width: Get.width,
-      padding: EdgeInsets.fromLTRB(
-          14, index == 0 ? 21 : 14, 8, index == 0 ? 21 : 18),
+      padding: EdgeInsets.fromLTRB(14, index == 0 ? 21 : 14, 8, index == 0 ? 21 : 18),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(10),
         color: ColorRes.grey12,

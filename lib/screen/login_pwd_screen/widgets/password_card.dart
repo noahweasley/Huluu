@@ -93,8 +93,7 @@ class PasswordCard extends StatelessWidget {
                 ),
               ),
               const SizedBox(height: 15),
-              SubmitButton1(
-                  title: S.current.continueText, onTap: onContinueTap),
+              SubmitButton1(title: S.current.continueText, onTap: onContinueTap),
               const SizedBox(height: 28),
               InkWell(
                 onTap: onForgotPwdTap,
@@ -145,9 +144,7 @@ class PasswordCard extends StatelessWidget {
                 onTap: onChangeEmailTap,
                 child: Container(
                   padding: const EdgeInsets.all(5),
-                  decoration: BoxDecoration(
-                      color: ColorRes.white,
-                      borderRadius: BorderRadius.circular(30)),
+                  decoration: BoxDecoration(color: ColorRes.white, borderRadius: BorderRadius.circular(30)),
                   child: Image.asset(
                     AssetRes.edit,
                     width: 20,

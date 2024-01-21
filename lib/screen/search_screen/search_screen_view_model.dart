@@ -37,8 +37,7 @@ class SearchScreenViewModel extends BaseViewModel {
   void fetchScrollData() {
     userScrollController.addListener(
       () {
-        if (userScrollController.offset ==
-            userScrollController.position.maxScrollExtent) {
+        if (userScrollController.offset == userScrollController.position.maxScrollExtent) {
           if (!isLoading) {
             if (selectedTab.isEmpty) {
               getSearchByUser();
@@ -59,8 +58,7 @@ class SearchScreenViewModel extends BaseViewModel {
       start: searchUsers.length,
     )
         .then((value) {
-      List<String> list =
-          searchUsers.map((e) => e.id?.toString() ?? '').toList();
+      List<String> list = searchUsers.map((e) => e.id?.toString() ?? '').toList();
       value.data?.forEach((element) {
         if (!list.contains(element.id?.toString())) {
           searchUsers.add(element);
@@ -80,8 +78,7 @@ class SearchScreenViewModel extends BaseViewModel {
       start: searchUsers.length,
     )
         .then((value) {
-      List<String> list =
-          searchUsers.map((e) => e.id?.toString() ?? '').toList();
+      List<String> list = searchUsers.map((e) => e.id?.toString() ?? '').toList();
       value.data?.forEach((element) {
         if (!list.contains(element.id?.toString())) {
           searchUsers.add(element);

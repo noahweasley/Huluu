@@ -25,9 +25,7 @@ class ExploreTopArea extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Visibility(
-                visible: PrefService.settingData?.appdata?.isDating == 0
-                    ? false
-                    : true,
+                visible: PrefService.settingData?.appdata?.isDating == 0 ? false : true,
                 child: InkWell(
                   borderRadius: BorderRadius.circular(20),
                   onTap: onNotificationTap,

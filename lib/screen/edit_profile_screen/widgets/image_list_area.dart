@@ -64,10 +64,8 @@ class ImageListArea extends StatelessWidget {
                               borderRadius: BorderRadius.circular(10),
                               child: imageList?[index].id != -123
                                   ? CachedNetworkImage(
-                                      imageUrl:
-                                          '${ConstRes.aImageBaseUrl}${imageList?[index].image}',
-                                      cacheKey:
-                                          '${ConstRes.aImageBaseUrl}${imageList?[index].image}',
+                                      imageUrl: '${ConstRes.aImageBaseUrl}${imageList?[index].image}',
+                                      cacheKey: '${ConstRes.aImageBaseUrl}${imageList?[index].image}',
                                       fit: BoxFit.cover,
                                       height: 58,
                                       width: 58,
@@ -118,8 +116,7 @@ class ImageListArea extends StatelessWidget {
                           borderRadius: BorderRadius.circular(10),
                         ),
                         child: Center(
-                          child:
-                              Image.asset(AssetRes.plus, height: 17, width: 17),
+                          child: Image.asset(AssetRes.plus, height: 17, width: 17),
                         ),
                       ),
                     ),

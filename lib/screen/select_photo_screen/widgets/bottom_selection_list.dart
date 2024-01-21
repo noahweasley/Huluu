@@ -107,8 +107,7 @@ class BottomSelectionList extends StatelessWidget {
                           borderRadius: BorderRadius.circular(10),
                         ),
                         child: Center(
-                          child:
-                              Image.asset(AssetRes.plus, height: 17, width: 17),
+                          child: Image.asset(AssetRes.plus, height: 17, width: 17),
                         ),
                       ),
                     ),

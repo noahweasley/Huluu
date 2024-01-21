@@ -44,8 +44,7 @@ class LiveStreamDashBoardViewModel extends BaseViewModel {
   }
 
   void onRedeemTap() {
-    Get.to(() => const SubmitRedeemScreen(), arguments: coinValue)
-        ?.then((value) {
+    Get.to(() => const SubmitRedeemScreen(), arguments: coinValue)?.then((value) {
       getProfileApiCall();
     });
   }
@@ -60,8 +59,7 @@ class LiveStreamDashBoardViewModel extends BaseViewModel {
   }
 
   void onDiamondPurchase(GetDiamondPackData? data) {
-    BubblyCamera.inAppPurchase(
-        Platform.isAndroid ? data?.androidProductId : data?.iosProductId);
+    BubblyCamera.inAppPurchase(Platform.isAndroid ? data?.androidProductId : data?.iosProductId);
   }
 
   void onBackBtnTap() {

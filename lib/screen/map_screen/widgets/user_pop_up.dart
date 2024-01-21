@@ -154,8 +154,7 @@ class UserPopUp extends StatelessWidget {
                     onTap: onCancelTap,
                     child: Text(
                       S.current.cancel,
-                      style:
-                          const TextStyle(color: ColorRes.grey20, fontSize: 15),
+                      style: const TextStyle(color: ColorRes.grey20, fontSize: 15),
                     ),
                   ),
                   const Spacer(

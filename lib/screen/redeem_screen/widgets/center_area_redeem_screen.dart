@@ -27,10 +27,7 @@ class CenterAreaRedeemScreen extends StatelessWidget {
                 ),
                 Text(
                   S.current.noRedeemData,
-                  style: const TextStyle(
-                      color: ColorRes.grey14,
-                      fontFamily: FontRes.medium,
-                      fontSize: 16),
+                  style: const TextStyle(color: ColorRes.grey14, fontFamily: FontRes.medium, fontSize: 16),
                 ),
               ],
             )
@@ -44,8 +41,7 @@ class CenterAreaRedeemScreen extends StatelessWidget {
                   return Container(
                     width: Get.width,
                     margin: const EdgeInsets.only(left: 7, right: 7, bottom: 5),
-                    padding: const EdgeInsets.only(
-                        top: 10, left: 11, bottom: 11, right: 13),
+                    padding: const EdgeInsets.only(top: 10, left: 11, bottom: 11, right: 13),
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(8),
                       color: ColorRes.grey26,
@@ -74,13 +70,9 @@ class CenterAreaRedeemScreen extends StatelessWidget {
                               ),
                               child: Center(
                                 child: Text(
-                                  data?.status == 0
-                                      ? S.current.processing
-                                      : S.current.complete,
+                                  data?.status == 0 ? S.current.processing : S.current.complete,
                                   style: TextStyle(
-                                    color: data?.status == 0
-                                        ? ColorRes.lightorange
-                                        : ColorRes.darkgreen,
+                                    color: data?.status == 0 ? ColorRes.lightorange : ColorRes.darkgreen,
                                     fontSize: 12,
                                     fontFamily: FontRes.semiBold,
                                   ),
@@ -89,8 +81,7 @@ class CenterAreaRedeemScreen extends StatelessWidget {
                             ),
                             const Spacer(),
                             Text(
-                              DateFormat(AppRes.dMY)
-                                  .format(DateTime.parse('${data?.createdAt}')),
+                              DateFormat(AppRes.dMY).format(DateTime.parse('${data?.createdAt}')),
                               style: const TextStyle(
                                 fontSize: 14,
                                 color: ColorRes.grey27,
@@ -103,10 +94,7 @@ class CenterAreaRedeemScreen extends StatelessWidget {
                           children: [
                             Text(
                               S.current.diamond1,
-                              style: const TextStyle(
-                                  color: ColorRes.grey27,
-                                  fontSize: 14,
-                                  fontFamily: FontRes.regular),
+                              style: const TextStyle(color: ColorRes.grey27, fontSize: 14, fontFamily: FontRes.regular),
                             ),
                             Text(
                               ' ${data?.coinAmount}',
@@ -125,8 +113,7 @@ class CenterAreaRedeemScreen extends StatelessWidget {
                             children: [
                               Text(
                                 S.current.amount,
-                                style: const TextStyle(
-                                    color: ColorRes.grey27, fontSize: 14),
+                                style: const TextStyle(color: ColorRes.grey27, fontSize: 14),
                               ),
                               Text(
                                 ' ${PrefService.currency}${data?.amountPaid}',

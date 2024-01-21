@@ -46,15 +46,13 @@ class CenterAreaSubmitRedeemScreen extends StatelessWidget {
                 decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(15),
                     color: ColorRes.lightGrey2,
-                    image: const DecorationImage(
-                        image: AssetImage(AssetRes.map3))),
+                    image: const DecorationImage(image: AssetImage(AssetRes.map3))),
                 child: ClipRRect(
                   borderRadius: BorderRadius.circular(15),
                   child: BackdropFilter(
                     filter: ImageFilter.blur(sigmaX: 15, sigmaY: 15),
                     child: Padding(
-                      padding: const EdgeInsets.only(
-                          top: 19, left: 18, right: 17, bottom: 14),
+                      padding: const EdgeInsets.only(top: 19, left: 18, right: 17, bottom: 14),
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
@@ -86,30 +84,20 @@ class CenterAreaSubmitRedeemScreen extends StatelessWidget {
                             crossAxisAlignment: CrossAxisAlignment.end,
                             children: [
                               Text(
-                                NumberFormat.compactCurrency(
-                                        decimalDigits: 0,
-                                        locale: 'en_US',
-                                        name: '')
+                                NumberFormat.compactCurrency(decimalDigits: 0, locale: 'en_US', name: '')
                                     .format(int.parse(wallet)),
                                 style: const TextStyle(
-                                    color: ColorRes.lightGrey4,
-                                    letterSpacing: 2,
-                                    fontSize: 22,
-                                    fontFamily: FontRes.bold),
+                                    color: ColorRes.lightGrey4, letterSpacing: 2, fontSize: 22, fontFamily: FontRes.bold),
                               ),
                               const SizedBox(
                                 width: 5,
                               ),
                               Text(
                                 '(${NumberFormat.compactCurrency(decimalDigits: 0, locale: 'en_US', symbol: '\$').format(
-                                  int.parse(wallet) *
-                                      double.parse(PrefService.coinRate),
+                                  int.parse(wallet) * double.parse(PrefService.coinRate),
                                 )})',
                                 style: const TextStyle(
-                                    color: ColorRes.lightGrey5,
-                                    letterSpacing: 2,
-                                    fontSize: 15,
-                                    fontFamily: FontRes.bold),
+                                    color: ColorRes.lightGrey5, letterSpacing: 2, fontSize: 15, fontFamily: FontRes.bold),
                               ),
                             ],
                           ),
@@ -229,26 +217,17 @@ class CenterAreaSubmitRedeemScreen extends StatelessWidget {
                 decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(10),
                     color: ColorRes.lightGrey2,
-                    border: Border.all(
-                        color: isEmpty
-                            ? ColorRes.darkOrange
-                            : ColorRes.transparent)),
+                    border: Border.all(color: isEmpty ? ColorRes.darkOrange : ColorRes.transparent)),
                 child: TextField(
                   controller: accountDetailController,
                   expands: true,
                   maxLines: null,
                   minLines: null,
                   decoration: InputDecoration(
-                    hintText: accountError == ''
-                        ? S.of(context).enterAccountDetails
-                        : accountError,
+                    hintText: accountError == '' ? S.of(context).enterAccountDetails : accountError,
                     border: InputBorder.none,
                     contentPadding: EdgeInsets.zero,
-                    hintStyle: TextStyle(
-                        color: accountError == ''
-                            ? ColorRes.dimGrey3
-                            : ColorRes.darkOrange,
-                        fontSize: 14),
+                    hintStyle: TextStyle(color: accountError == '' ? ColorRes.dimGrey3 : ColorRes.darkOrange, fontSize: 14),
                   ),
                 ),
               ),

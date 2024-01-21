@@ -80,9 +80,7 @@ class UserNotificationData {
     _type = json['type'];
     _createdAt = json['created_at'];
     _updatedAt = json['updated_at'];
-    _dataUser = json['data_user'] != null
-        ? RegistrationUserData.fromJson(json['data_user'])
-        : null;
+    _dataUser = json['data_user'] != null ? RegistrationUserData.fromJson(json['data_user']) : null;
   }
 
   int? _id;

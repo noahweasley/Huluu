@@ -20,8 +20,7 @@ class UserDetailScreen extends StatefulWidget {
   State<UserDetailScreen> createState() => _UserDetailScreenState();
 }
 
-class _UserDetailScreenState extends State<UserDetailScreen>
-    with TickerProviderStateMixin {
+class _UserDetailScreenState extends State<UserDetailScreen> with TickerProviderStateMixin {
   late AnimationController _controller;
   late Animation<Offset> _animation;
 
@@ -36,10 +35,7 @@ class _UserDetailScreenState extends State<UserDetailScreen>
       begin: const Offset(0, 1.0),
       end: const Offset(0.0, 0.0),
     ).animate(
-      CurvedAnimation(
-          parent: _controller,
-          curve: Curves.fastOutSlowIn,
-          reverseCurve: Curves.fastOutSlowIn),
+      CurvedAnimation(parent: _controller, curve: Curves.fastOutSlowIn, reverseCurve: Curves.fastOutSlowIn),
     );
   }
 
@@ -66,8 +62,7 @@ class _UserDetailScreenState extends State<UserDetailScreen>
                           borderRadius: BorderRadius.circular(0),
                         ),
                       )
-                    : model.userData?.images == null ||
-                            model.userData!.images!.isEmpty
+                    : model.userData?.images == null || model.userData!.images!.isEmpty
                         ? Container(
                             height: Get.height,
                             width: double.infinity,
@@ -81,17 +76,13 @@ class _UserDetailScreenState extends State<UserDetailScreen>
                             width: Get.width,
                             color: ColorRes.darkOrange.withOpacity(0.2),
                             child: CachedNetworkImage(
-                              imageUrl:
-                                  '${ConstRes.aImageBaseUrl}${model.userData?.images?[model.selectedImgIndex].image}',
-                              cacheKey:
-                                  '${ConstRes.aImageBaseUrl}${model.userData?.images?[model.selectedImgIndex].image}',
+                              imageUrl: '${ConstRes.aImageBaseUrl}${model.userData?.images?[model.selectedImgIndex].image}',
+                              cacheKey: '${ConstRes.aImageBaseUrl}${model.userData?.images?[model.selectedImgIndex].image}',
                               fit: BoxFit.cover,
                               errorWidget: (context, error, stackTrace) {
                                 return Container(
-                                  decoration: BoxDecoration(
-                                      shape: BoxShape.circle,
-                                      color:
-                                          ColorRes.darkOrange.withOpacity(0.2)),
+                                  decoration:
+                                      BoxDecoration(shape: BoxShape.circle, color: ColorRes.darkOrange.withOpacity(0.2)),
                                   child: Image.asset(
                                     AssetRes.themeLabel,
                                   ),
@@ -108,11 +99,8 @@ class _UserDetailScreenState extends State<UserDetailScreen>
                           onBackTap: model.onBackTap,
                           onMoreBtnTap: model.onMoreBtnTap,
                           fullName: model.userData?.fullname,
-                          age: model.userData?.age != null
-                              ? '${model.userData?.age}'
-                              : '',
-                          isVerified:
-                              model.userData?.isVerified == 2 ? true : false,
+                          age: model.userData?.age != null ? '${model.userData?.age}' : '',
+                          isVerified: model.userData?.isVerified == 2 ? true : false,
                           blockUnblock: model.blockUnBlock,
                           moreInfo: model.moreInfo),
                       !model.moreInfo

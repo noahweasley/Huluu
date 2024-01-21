@@ -66,8 +66,7 @@ class AddCoinSheet extends StatelessWidget {
                       shadowColor: ColorRes.transparent,
                       surfaceTintColor: ColorRes.transparent,
                       child: Container(
-                        margin: const EdgeInsets.symmetric(
-                            vertical: 3, horizontal: 10),
+                        margin: const EdgeInsets.symmetric(vertical: 3, horizontal: 10),
                         child: Stack(
                           children: [
                             SizedBox(
@@ -75,8 +74,7 @@ class AddCoinSheet extends StatelessWidget {
                               width: Get.width,
                               child: ClipRRect(
                                 borderRadius: BorderRadius.circular(15),
-                                child: Image.asset(AssetRes.map1,
-                                    fit: BoxFit.cover),
+                                child: Image.asset(AssetRes.map1, fit: BoxFit.cover),
                               ),
                             ),
                             Container(
@@ -93,27 +91,21 @@ class AddCoinSheet extends StatelessWidget {
                               child: ClipRRect(
                                 borderRadius: BorderRadius.circular(15),
                                 child: BackdropFilter(
-                                  filter:
-                                      ImageFilter.blur(sigmaY: 15, sigmaX: 15),
+                                  filter: ImageFilter.blur(sigmaY: 15, sigmaX: 15),
                                   child: Padding(
-                                    padding: const EdgeInsets.only(
-                                        left: 13, right: 3),
+                                    padding: const EdgeInsets.only(left: 13, right: 3),
                                     child: Row(
                                       children: [
-                                        Image.asset(AssetRes.diamond,
-                                            height: 24, width: 24),
+                                        Image.asset(AssetRes.diamond, height: 24, width: 24),
                                         const SizedBox(width: 7),
                                         Text(
                                           "10 ${S.current.diamondsCamel}",
                                           style: const TextStyle(
-                                              fontSize: 15,
-                                              color: ColorRes.lightGrey5,
-                                              fontFamily: FontRes.medium),
+                                              fontSize: 15, color: ColorRes.lightGrey5, fontFamily: FontRes.medium),
                                         ),
                                         const Spacer(),
                                         InkWell(
-                                          borderRadius:
-                                              BorderRadius.circular(30),
+                                          borderRadius: BorderRadius.circular(30),
                                           onTap: () {
                                             // onDiamondPurchase(diamondList?[index]);
                                           },
@@ -121,8 +113,7 @@ class AddCoinSheet extends StatelessWidget {
                                             width: 131,
                                             height: 35,
                                             decoration: BoxDecoration(
-                                              borderRadius:
-                                                  BorderRadius.circular(30),
+                                              borderRadius: BorderRadius.circular(30),
                                               gradient: const LinearGradient(
                                                 begin: Alignment.topCenter,
                                                 end: Alignment.bottomCenter,

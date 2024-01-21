@@ -35,9 +35,7 @@ class MessageScreenViewModel extends BaseViewModel {
   }
 
   void onNotificationTap() {
-    userData?.isBlock == 1
-        ? SnackBarWidget().snackBarWidget(S.current.userBlock)
-        : Get.to(() => const NotificationScreen());
+    userData?.isBlock == 1 ? SnackBarWidget().snackBarWidget(S.current.userBlock) : Get.to(() => const NotificationScreen());
   }
 
   void getProfileApi() {
@@ -48,9 +46,7 @@ class MessageScreenViewModel extends BaseViewModel {
   }
 
   void onSearchTap() {
-    userData?.isBlock == 1
-        ? SnackBarWidget().snackBarWidget(S.current.userBlock)
-        : Get.to(() => const SearchScreen());
+    userData?.isBlock == 1 ? SnackBarWidget().snackBarWidget(S.current.userBlock) : Get.to(() => const SearchScreen());
   }
 
   void onUserTap(Conversation? conversation) {
@@ -68,8 +64,7 @@ class MessageScreenViewModel extends BaseViewModel {
           .collection(FirebaseRes.userList)
           .orderBy(FirebaseRes.time, descending: true)
           .withConverter(
-              fromFirestore: Conversation.fromFirestore,
-              toFirestore: (Conversation value, options) => value.toFirestore())
+              fromFirestore: Conversation.fromFirestore, toFirestore: (Conversation value, options) => value.toFirestore())
           .snapshots()
           .listen((element) {
         userList = [];

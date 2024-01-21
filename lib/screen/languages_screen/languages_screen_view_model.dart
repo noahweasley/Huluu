@@ -86,16 +86,14 @@ class LanguagesScreenViewModel extends BaseViewModel {
 
   void onLanguageChange(int? value) async {
     this.value = value;
-    await PrefService.saveString(
-        PrefConst.languageCode, languageCode[value ?? 0]);
+    await PrefService.saveString(PrefConst.languageCode, languageCode[value ?? 0]);
     selectedLanguage = languageCode[value ?? 0];
     RestartWidget.restartApp(Get.context!);
     notifyListeners();
   }
 
   void prefData() async {
-    selectedLanguage = await PrefService.getString(PrefConst.languageCode) ??
-        Platform.localeName.split('_')[0];
+    selectedLanguage = await PrefService.getString(PrefConst.languageCode) ?? Platform.localeName.split('_')[0];
     value = languageCode.indexOf(selectedLanguage);
     notifyListeners();
   }

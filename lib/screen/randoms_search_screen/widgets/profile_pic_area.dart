@@ -88,8 +88,7 @@ class ProfilePicArea extends StatelessWidget {
                     shape: BoxShape.circle,
                     image: DecorationImage(
                       fit: BoxFit.cover,
-                      image: NetworkImage(
-                          '${ConstRes.aImageBaseUrl}${Get.arguments[0][FirebaseRes.image]}'),
+                      image: NetworkImage('${ConstRes.aImageBaseUrl}${Get.arguments[0][FirebaseRes.image]}'),
                     ),
                   ),
                 ),
@@ -113,9 +112,7 @@ class ProfilePicArea extends StatelessWidget {
                             child: Container(
                               width: Get.width - 100,
                               height: Get.height - 256,
-                              decoration: BoxDecoration(
-                                  shape: BoxShape.circle,
-                                  color: ColorRes.darkOrange.withOpacity(0.2)),
+                              decoration: BoxDecoration(shape: BoxShape.circle, color: ColorRes.darkOrange.withOpacity(0.2)),
                               child: Image.asset(
                                 AssetRes.themeLabel,
                               ),
@@ -130,17 +127,14 @@ class ProfilePicArea extends StatelessWidget {
                           itemCount: userData?.images?.length,
                           physics: const NeverScrollableScrollPhysics(),
                           itemBuilder: (context, index) {
-                            String? profileImage =
-                                userData?.images?[index].image;
+                            String? profileImage = userData?.images?[index].image;
                             return FractionallySizedBox(
                               widthFactor: 1 / pageController.viewportFraction,
                               child: Stack(
                                 children: [
                                   CachedNetworkImage(
-                                    imageUrl:
-                                        '${ConstRes.aImageBaseUrl}$profileImage',
-                                    cacheKey:
-                                        '${ConstRes.aImageBaseUrl}$profileImage',
+                                    imageUrl: '${ConstRes.aImageBaseUrl}$profileImage',
+                                    cacheKey: '${ConstRes.aImageBaseUrl}$profileImage',
                                     fit: BoxFit.cover,
                                     width: Get.width,
                                     height: Get.height - 256,
@@ -155,14 +149,12 @@ class ProfilePicArea extends StatelessWidget {
                                         ),
                                       );
                                     },
-                                    progressIndicatorBuilder:
-                                        (context, child, loadingProgress) {
+                                    progressIndicatorBuilder: (context, child, loadingProgress) {
                                       return ShimmerScreen.rectangular(
                                         width: Get.width,
                                         height: Get.height - 256,
                                         shapeBorder: RoundedRectangleBorder(
-                                          borderRadius:
-                                              BorderRadius.circular(21),
+                                          borderRadius: BorderRadius.circular(21),
                                         ),
                                       );
                                     },
@@ -201,9 +193,7 @@ class ProfilePicArea extends StatelessWidget {
                   child: Column(
                     children: [
                       const SizedBox(height: 14),
-                      TopStoryLine(
-                          pageController: pageController,
-                          images: userData?.images ?? []),
+                      TopStoryLine(pageController: pageController, images: userData?.images ?? []),
                       const Spacer(),
                       Padding(
                         padding: const EdgeInsets.only(left: 9),
@@ -213,28 +203,24 @@ class ProfilePicArea extends StatelessWidget {
                                 icon: AssetRes.instaLogo,
                                 size: 15,
                                 onSocialIconTap: onInstagramTap,
-                                isVisible:
-                                    isSocialBtnVisible(userData?.instagram)),
+                                isVisible: isSocialBtnVisible(userData?.instagram)),
                             SocialIcon(
                                 icon: AssetRes.facebookLogo,
                                 size: 21.0,
                                 onSocialIconTap: onFacebookTap,
-                                isVisible:
-                                    isSocialBtnVisible(userData?.facebook)),
+                                isVisible: isSocialBtnVisible(userData?.facebook)),
                             SocialIcon(
                                 icon: AssetRes.youtubeLogo,
                                 size: 20.16,
                                 onSocialIconTap: onYoutubeTap,
-                                isVisible:
-                                    isSocialBtnVisible(userData?.youtube)),
+                                isVisible: isSocialBtnVisible(userData?.youtube)),
                             const Spacer(),
                             Visibility(
                               visible: userData?.isLiveNow == 0 ? false : true,
                               child: ClipRRect(
                                 borderRadius: BorderRadius.circular(20),
                                 child: BackdropFilter(
-                                  filter:
-                                      ImageFilter.blur(sigmaX: 10, sigmaY: 10),
+                                  filter: ImageFilter.blur(sigmaX: 10, sigmaY: 10),
                                   child: InkWell(
                                     onTap: onLiveBtnTap,
                                     child: Container(

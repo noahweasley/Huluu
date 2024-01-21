@@ -30,18 +30,15 @@ class ConfirmationDialog extends StatefulWidget {
   State<ConfirmationDialog> createState() => _ConfirmationDialogState();
 }
 
-class _ConfirmationDialogState extends State<ConfirmationDialog>
-    with SingleTickerProviderStateMixin {
+class _ConfirmationDialogState extends State<ConfirmationDialog> with SingleTickerProviderStateMixin {
   late AnimationController controller;
   late Animation<double> scaleAnimation;
 
   @override
   void initState() {
     super.initState();
-    controller = AnimationController(
-        vsync: this, duration: const Duration(milliseconds: 500));
-    scaleAnimation =
-        CurvedAnimation(parent: controller, curve: Curves.elasticInOut);
+    controller = AnimationController(vsync: this, duration: const Duration(milliseconds: 500));
+    scaleAnimation = CurvedAnimation(parent: controller, curve: Curves.elasticInOut);
     controller.addListener(() {
       setState(() {});
     });
@@ -55,10 +52,8 @@ class _ConfirmationDialogState extends State<ConfirmationDialog>
       child: ScaleTransition(
         scale: scaleAnimation,
         child: Dialog(
-          insetPadding:
-              EdgeInsets.symmetric(horizontal: widget.horizontalPadding),
-          shape:
-              RoundedRectangleBorder(borderRadius: BorderRadius.circular(15)),
+          insetPadding: EdgeInsets.symmetric(horizontal: widget.horizontalPadding),
+          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(15)),
           child: AspectRatio(
             aspectRatio: widget.aspectRatio,
             child: Column(
@@ -68,18 +63,14 @@ class _ConfirmationDialogState extends State<ConfirmationDialog>
                 ),
                 Text(
                   widget.heading,
-                  style: const TextStyle(
-                      color: ColorRes.darkGrey10,
-                      fontFamily: FontRes.bold,
-                      fontSize: 18),
+                  style: const TextStyle(color: ColorRes.darkGrey10, fontFamily: FontRes.bold, fontSize: 18),
                 ),
                 const Spacer(),
                 Container(
                   margin: const EdgeInsets.symmetric(horizontal: 20),
                   child: Text(
                     widget.subDescription,
-                    style: const TextStyle(
-                        fontFamily: FontRes.medium, color: ColorRes.grey15),
+                    style: const TextStyle(fontFamily: FontRes.medium, color: ColorRes.grey15),
                     textAlign: TextAlign.center,
                   ),
                 ),
@@ -100,9 +91,7 @@ class _ConfirmationDialogState extends State<ConfirmationDialog>
                           ),
                           child: Text(
                             widget.clickText2,
-                            style: const TextStyle(
-                                color: ColorRes.grey15,
-                                fontFamily: FontRes.semiBold),
+                            style: const TextStyle(color: ColorRes.grey15, fontFamily: FontRes.semiBold),
                           ),
                         ),
                       ),
@@ -130,9 +119,7 @@ class _ConfirmationDialogState extends State<ConfirmationDialog>
                           ),
                           child: Text(
                             widget.clickText1,
-                            style: const TextStyle(
-                                color: ColorRes.white,
-                                fontFamily: FontRes.semiBold),
+                            style: const TextStyle(color: ColorRes.white, fontFamily: FontRes.semiBold),
                           ),
                         ),
                       ),

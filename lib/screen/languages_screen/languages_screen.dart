@@ -46,10 +46,8 @@ class LanguagesScreen extends StatelessWidget {
                         dense: true,
                         onChanged: viewModel.onLanguageChange,
                         title: Text(viewModel.languages[index],
-                            style: const TextStyle(
-                                color: ColorRes.veryDarkGrey,
-                                fontFamily: FontRes.semiBold,
-                                fontSize: 15)),
+                            style:
+                                const TextStyle(color: ColorRes.veryDarkGrey, fontFamily: FontRes.semiBold, fontSize: 15)),
                         subtitle: Text(
                           viewModel.subLanguage[index],
                           style: const TextStyle(

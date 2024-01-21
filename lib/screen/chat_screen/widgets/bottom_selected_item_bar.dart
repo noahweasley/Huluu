@@ -10,10 +10,7 @@ class BottomSelectedItemBar extends StatelessWidget {
   final VoidCallback onItemDelete;
 
   const BottomSelectedItemBar(
-      {Key? key,
-      required this.onCancelBtnClick,
-      required this.selectedItemCount,
-      required this.onItemDelete})
+      {Key? key, required this.onCancelBtnClick, required this.selectedItemCount, required this.onItemDelete})
       : super(key: key);
 
   @override
@@ -37,17 +34,13 @@ class BottomSelectedItemBar extends StatelessWidget {
                   onTap: onCancelBtnClick,
                   child: Text(
                     S.current.cancel,
-                    style: const TextStyle(
-                        fontSize: 15,
-                        color: ColorRes.grey24,
-                        fontFamily: FontRes.semiBold),
+                    style: const TextStyle(fontSize: 15, color: ColorRes.grey24, fontFamily: FontRes.semiBold),
                   ),
                 ),
                 const Spacer(),
                 AnimatedSwitcher(
                   duration: const Duration(milliseconds: 300),
-                  transitionBuilder:
-                      (Widget child, Animation<double> animation) {
+                  transitionBuilder: (Widget child, Animation<double> animation) {
                     return ScaleTransition(scale: animation, child: child);
                   },
                   child: Text(
@@ -62,10 +55,7 @@ class BottomSelectedItemBar extends StatelessWidget {
                 ),
                 Text(
                   S.current.selected,
-                  style: const TextStyle(
-                      fontSize: 15,
-                      color: ColorRes.grey24,
-                      fontFamily: FontRes.semiBold),
+                  style: const TextStyle(fontSize: 15, color: ColorRes.grey24, fontFamily: FontRes.semiBold),
                 ),
                 const Spacer(),
                 InkWell(

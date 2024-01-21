@@ -40,9 +40,7 @@ class SubmitRedeemScreenViewModel extends BaseViewModel {
   void onSubmitBtnTap() async {
     if (!isValid()) return;
     Loader().lottieLoader();
-    ApiProvider()
-        .placeRedeemRequest(paymentGateway, accountDetailController.text)
-        .then((value) {
+    ApiProvider().placeRedeemRequest(paymentGateway, accountDetailController.text).then((value) {
       if (value.status == true) {
         Get.back();
         if (interstitialAd != null) {

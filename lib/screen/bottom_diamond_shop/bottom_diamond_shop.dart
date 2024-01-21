@@ -41,8 +41,7 @@ class BottomDiamondShop extends StatelessWidget {
                     color: ColorRes.black.withOpacity(0.3),
                   ),
                   Container(
-                    padding: const EdgeInsets.symmetric(
-                        horizontal: 12, vertical: 20),
+                    padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 20),
                     width: Get.width,
                     decoration: const BoxDecoration(
                       borderRadius: BorderRadius.only(
@@ -85,16 +84,14 @@ class BottomDiamondShop extends StatelessWidget {
                             itemBuilder: (context, index) {
                               return Container(
                                 margin: const EdgeInsets.only(bottom: 8),
-                                padding:
-                                    const EdgeInsets.fromLTRB(17, 13, 9, 14),
+                                padding: const EdgeInsets.fromLTRB(17, 13, 9, 14),
                                 decoration: BoxDecoration(
                                   borderRadius: BorderRadius.circular(15),
                                   color: ColorRes.white.withOpacity(0.14),
                                 ),
                                 child: Row(
                                   children: [
-                                    Image.asset(AssetRes.diamond,
-                                        height: 24, width: 24),
+                                    Image.asset(AssetRes.diamond, height: 24, width: 24),
                                     const SizedBox(width: 7),
                                     Text(
                                       "${model.diamondPriceList?[index].amount} ${S.current.diamondsCamel}",
@@ -106,15 +103,13 @@ class BottomDiamondShop extends StatelessWidget {
                                     InkWell(
                                       borderRadius: BorderRadius.circular(30),
                                       onTap: () {
-                                        model.onDiamondPurchase(
-                                            model.diamondPriceList?[index]);
+                                        model.onDiamondPurchase(model.diamondPriceList?[index]);
                                       },
                                       child: Container(
                                         width: 131,
                                         height: 35,
                                         decoration: BoxDecoration(
-                                          borderRadius:
-                                              BorderRadius.circular(30),
+                                          borderRadius: BorderRadius.circular(30),
                                           gradient: const LinearGradient(
                                             begin: Alignment.topCenter,
                                             end: Alignment.bottomCenter,

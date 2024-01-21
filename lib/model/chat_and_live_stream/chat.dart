@@ -329,8 +329,7 @@ class ChatMessage {
       if (msgType != null) "msgType": _msgType,
       if (time != null) "time": _time,
       if (senderUser != null) "senderUser": _senderUser,
-      if (notDeletedIdentities != null)
-        "not_deleted_identities": _notDeletedIdentities?.map((v) => v).toList()
+      if (notDeletedIdentities != null) "not_deleted_identities": _notDeletedIdentities?.map((v) => v).toList()
     };
   }
 

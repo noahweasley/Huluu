@@ -6,8 +6,7 @@ class SubmitButton1 extends StatelessWidget {
   final String title;
   final VoidCallback onTap;
 
-  const SubmitButton1({Key? key, required this.title, required this.onTap})
-      : super(key: key);
+  const SubmitButton1({Key? key, required this.title, required this.onTap}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -45,8 +44,7 @@ class SubmitButton2 extends StatelessWidget {
   final String title;
   final VoidCallback onTap;
 
-  const SubmitButton2({Key? key, required this.title, required this.onTap})
-      : super(key: key);
+  const SubmitButton2({Key? key, required this.title, required this.onTap}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

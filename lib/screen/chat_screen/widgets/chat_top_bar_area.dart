@@ -50,21 +50,18 @@ class ChatTopBarArea extends StatelessWidget {
                 const SizedBox(width: 15),
                 ClipRRect(
                   borderRadius: BorderRadius.circular(30),
-                  child: conversation?.user?.image == null ||
-                          conversation!.user!.image!.isEmpty
+                  child: conversation?.user?.image == null || conversation!.user!.image!.isEmpty
                       ? Image.asset(
                           AssetRes.themeLabel,
                           height: 37,
                           width: 37,
                         )
                       : CachedNetworkImage(
-                          imageUrl:
-                              '${ConstRes.aImageBaseUrl}${conversation?.user?.image}',
+                          imageUrl: '${ConstRes.aImageBaseUrl}${conversation?.user?.image}',
                           height: 37,
                           width: 37,
                           fit: BoxFit.cover,
-                          cacheKey:
-                              '${ConstRes.aImageBaseUrl}${conversation?.user?.image}',
+                          cacheKey: '${ConstRes.aImageBaseUrl}${conversation?.user?.image}',
                           errorWidget: (context, url, error) {
                             return Image.asset(
                               AssetRes.themeLabel,
@@ -84,9 +81,7 @@ class ChatTopBarArea extends StatelessWidget {
                       Row(
                         children: [
                           Text(
-                            conversation?.user?.username != null
-                                ? '${conversation?.user?.username} '
-                                : ' ',
+                            conversation?.user?.username != null ? '${conversation?.user?.username} ' : ' ',
                             style: const TextStyle(
                               color: ColorRes.darkGrey4,
                               fontSize: 16,
@@ -94,9 +89,7 @@ class ChatTopBarArea extends StatelessWidget {
                             ),
                           ),
                           Text(
-                            conversation?.user?.age != null
-                                ? "${conversation?.user?.age}"
-                                : '',
+                            conversation?.user?.age != null ? "${conversation?.user?.age}" : '',
                             style: const TextStyle(
                               color: ColorRes.darkGrey4,
                               fontSize: 16,
@@ -108,14 +101,11 @@ class ChatTopBarArea extends StatelessWidget {
                                   conversation?.user != null &&
                                   conversation?.user?.isHost != null &&
                                   conversation!.user!.isHost!,
-                              child: Image.asset(AssetRes.tickMark,
-                                  height: 15, width: 15)),
+                              child: Image.asset(AssetRes.tickMark, height: 15, width: 15)),
                         ],
                       ),
                       Text(
-                        conversation?.user?.city != null
-                            ? "${conversation?.user?.city}"
-                            : '',
+                        conversation?.user?.city != null ? "${conversation?.user?.city}" : '',
                         style: const TextStyle(
                           color: ColorRes.grey6,
                           fontSize: 13,

@@ -32,8 +32,7 @@ class EditProfileScreen extends StatelessWidget {
                 children: [
                   Column(
                     children: [
-                      TopBarArea(
-                          title: S.current.edit, title2: S.current.profileCap),
+                      TopBarArea(title: S.current.edit, title2: S.current.profileCap),
                       Container(
                         height: 1,
                         margin: const EdgeInsets.symmetric(horizontal: 7),
@@ -42,11 +41,9 @@ class EditProfileScreen extends StatelessWidget {
                       ),
                       Expanded(
                         child: model.isLoading
-                            ? Lottie.asset(AssetRes.loadingLottie,
-                                height: 70, width: 70)
+                            ? Lottie.asset(AssetRes.loadingLottie, height: 70, width: 70)
                             : SingleChildScrollView(
-                                keyboardDismissBehavior:
-                                    ScrollViewKeyboardDismissBehavior.onDrag,
+                                keyboardDismissBehavior: ScrollViewKeyboardDismissBehavior.onDrag,
                                 physics: const BouncingScrollPhysics(),
                                 child: Column(
                                   children: [

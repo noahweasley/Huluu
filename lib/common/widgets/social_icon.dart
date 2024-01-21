@@ -8,11 +8,7 @@ class SocialIcon extends StatelessWidget {
   final bool isVisible;
 
   const SocialIcon(
-      {Key? key,
-      required this.size,
-      required this.isVisible,
-      required this.icon,
-      required this.onSocialIconTap})
+      {Key? key, required this.size, required this.isVisible, required this.icon, required this.onSocialIconTap})
       : super(key: key);
 
   @override

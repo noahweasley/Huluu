@@ -89,9 +89,7 @@ class ReportSheetViewModel extends BaseViewModel {
     bool validation = isValid();
     notifyListeners();
     if (validation) {
-      ApiProvider()
-          .addReport(reason, explainController.text, conversation?.user?.userid)
-          .then(
+      ApiProvider().addReport(reason, explainController.text, conversation?.user?.userid).then(
         (value) {
           SnackBarWidget().snackBarWidget('${value.message}');
           Get.back();

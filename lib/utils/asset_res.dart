@@ -138,11 +138,9 @@ class AssetRes {
   static const String themeLabel = "${getStarted}get_started1_label.png";
   static const String getStarted2BG = "${getStarted}get_started2_bg.png";
   static const String getStarted3BG = "${getStarted}get_started3_bg.png";
-  static const String getStarted3Marker =
-      "${getStarted}get_started3_marker.png";
+  static const String getStarted3Marker = "${getStarted}get_started3_marker.png";
   static const String getStarted4BG = "${getStarted}get_started4_bg.png";
-  static const String getStarted4Camera =
-      "${getStarted}get_started4_camera.png";
+  static const String getStarted4Camera = "${getStarted}get_started4_camera.png";
 
   ///______________________________ auth screens ______________________________///
 

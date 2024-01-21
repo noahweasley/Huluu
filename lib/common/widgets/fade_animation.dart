@@ -10,8 +10,7 @@ class FadeAnimation extends StatefulWidget {
 }
 
 /// AnimationControllers can be created with `vsync: this` because of TickerProviderStateMixin.
-class _FadeAnimationState extends State<FadeAnimation>
-    with TickerProviderStateMixin {
+class _FadeAnimationState extends State<FadeAnimation> with TickerProviderStateMixin {
   late final AnimationController _controller = AnimationController(
     duration: Duration(seconds: widget.delay),
     vsync: this,

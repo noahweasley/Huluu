@@ -64,8 +64,7 @@ class TopBar extends StatelessWidget {
                       ),
                       const Spacer(),
                       Visibility(
-                        visible:
-                            PrefService.userId == userData?.id ? false : true,
+                        visible: PrefService.userId == userData?.id ? false : true,
                         child: Visibility(
                           visible: moreInfo == true ? false : true,
                           child: PopupMenuButton<String>(
@@ -82,14 +81,10 @@ class TopBar extends StatelessWidget {
                                 (String choice) {
                                   return PopupMenuItem<String>(
                                     value: choice,
-                                    textStyle: const TextStyle(
-                                        fontFamily: FontRes.medium,
-                                        color: ColorRes.white),
+                                    textStyle: const TextStyle(fontFamily: FontRes.medium, color: ColorRes.white),
                                     child: Text(
                                       choice,
-                                      style: const TextStyle(
-                                          fontFamily: FontRes.medium,
-                                          color: ColorRes.white),
+                                      style: const TextStyle(fontFamily: FontRes.medium, color: ColorRes.white),
                                     ),
                                   );
                                 },
@@ -128,8 +123,7 @@ class TopBar extends StatelessWidget {
                       const SizedBox(width: 5.7),
                       Visibility(
                         visible: isVerified,
-                        child: Image.asset(AssetRes.tickMark,
-                            height: 16, width: 16),
+                        child: Image.asset(AssetRes.tickMark, height: 16, width: 16),
                       ),
                     ],
                   ),

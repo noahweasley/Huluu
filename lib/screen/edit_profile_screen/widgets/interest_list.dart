@@ -55,8 +55,7 @@ class InterestList extends StatelessWidget {
                         ),
                   borderRadius: BorderRadius.circular(30),
                 ),
-                padding:
-                    const EdgeInsets.symmetric(horizontal: 15, vertical: 8),
+                padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 8),
                 child: Text(
                   "${e.title}",
                   style: TextStyle(

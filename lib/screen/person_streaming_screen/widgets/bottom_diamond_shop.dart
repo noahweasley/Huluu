@@ -28,8 +28,7 @@ class BottomDiamondShop extends StatefulWidget {
 class _BottomDiamondShopState extends State<BottomDiamondShop> {
   @override
   void initState() {
-    const MethodChannel(Urls.aBubblyCamera)
-        .setMethodCallHandler((payload) async {
+    const MethodChannel(Urls.aBubblyCamera).setMethodCallHandler((payload) async {
       return;
     });
     super.initState();
@@ -105,8 +104,7 @@ class _BottomDiamondShopState extends State<BottomDiamondShop> {
                           ),
                           child: Row(
                             children: [
-                              Image.asset(AssetRes.diamond,
-                                  height: 24, width: 24),
+                              Image.asset(AssetRes.diamond, height: 24, width: 24),
                               const SizedBox(width: 7),
                               Text(
                                 "${widget.diamondList?[index].amount} ${S.current.diamondsCamel}",

@@ -58,8 +58,7 @@ class FullImageView extends StatelessWidget {
               physics: const NeverScrollableScrollPhysics(),
               onIndexChanged: onIndexChange,
               itemBuilder: (context, currentProfileIndex) {
-                List<Images>? imagesProfile =
-                    userData?[currentProfileIndex].images;
+                List<Images>? imagesProfile = userData?[currentProfileIndex].images;
                 final PageController pageController = PageController();
                 return Stack(
                   children: [
@@ -77,15 +76,13 @@ class FullImageView extends StatelessWidget {
                             borderRadius: BorderRadius.circular(20),
                             child: PageView.builder(
                               controller: pageController,
-                              itemCount:
-                                  userData?[currentProfileIndex].images?.length,
+                              itemCount: userData?[currentProfileIndex].images?.length,
                               physics: const NeverScrollableScrollPhysics(),
                               itemBuilder: (context, currentImageIndex) {
                                 return Stack(
                                   children: [
                                     FadeInImage(
-                                      placeholder: const AssetImage(
-                                          AssetRes.placeholder),
+                                      placeholder: const AssetImage(AssetRes.placeholder),
                                       image: NetworkImage(
                                         '${ConstRes.aImageBaseUrl}${imagesProfile[currentImageIndex].image}',
                                       ),
@@ -93,8 +90,7 @@ class FullImageView extends StatelessWidget {
                                       width: double.infinity,
                                       height: double.infinity,
                                       // filterQuality: FilterQuality.medium,
-                                      imageErrorBuilder:
-                                          (context, error, stackTrace) {
+                                      imageErrorBuilder: (context, error, stackTrace) {
                                         return Container(
                                           color: ColorRes.grey13,
                                           child: Image.asset(
@@ -114,9 +110,7 @@ class FullImageView extends StatelessWidget {
                                                 return;
                                               }
                                               pageController.previousPage(
-                                                  duration: const Duration(
-                                                      milliseconds: 500),
-                                                  curve: Curves.linear);
+                                                  duration: const Duration(milliseconds: 500), curve: Curves.linear);
                                             },
                                             child: Container(
                                               height: Get.height - 256,
@@ -127,14 +121,11 @@ class FullImageView extends StatelessWidget {
                                         Expanded(
                                           child: InkWell(
                                             onTap: () {
-                                              if (imagesProfile.length - 1 ==
-                                                  currentImageIndex) {
+                                              if (imagesProfile.length - 1 == currentImageIndex) {
                                                 return;
                                               }
                                               pageController.nextPage(
-                                                  duration: const Duration(
-                                                      milliseconds: 500),
-                                                  curve: Curves.linear);
+                                                  duration: const Duration(milliseconds: 500), curve: Curves.linear);
                                             },
                                             child: Container(
                                               height: Get.height - 256,
@@ -165,33 +156,24 @@ class FullImageView extends StatelessWidget {
                                   icon: AssetRes.instaLogo,
                                   size: 15,
                                   onSocialIconTap: onInstagramTap,
-                                  isVisible: isSocialBtnVisible(
-                                      userData?[currentProfileIndex]
-                                          .instagram)),
+                                  isVisible: isSocialBtnVisible(userData?[currentProfileIndex].instagram)),
                               SocialIcon(
                                   icon: AssetRes.facebookLogo,
                                   size: 21.0,
                                   onSocialIconTap: onFacebookTap,
-                                  isVisible: isSocialBtnVisible(
-                                      userData?[currentProfileIndex].facebook)),
+                                  isVisible: isSocialBtnVisible(userData?[currentProfileIndex].facebook)),
                               SocialIcon(
                                   icon: AssetRes.youtubeLogo,
                                   size: 20.16,
                                   onSocialIconTap: onYoutubeTap,
-                                  isVisible: isSocialBtnVisible(
-                                      userData?[currentProfileIndex].youtube)),
+                                  isVisible: isSocialBtnVisible(userData?[currentProfileIndex].youtube)),
                               const Spacer(),
                               Visibility(
-                                visible:
-                                    userData?[currentProfileIndex].isLiveNow ==
-                                            1
-                                        ? true
-                                        : false,
+                                visible: userData?[currentProfileIndex].isLiveNow == 1 ? true : false,
                                 child: ClipRRect(
                                   borderRadius: BorderRadius.circular(20),
                                   child: BackdropFilter(
-                                    filter: ImageFilter.blur(
-                                        sigmaX: 10, sigmaY: 10),
+                                    filter: ImageFilter.blur(sigmaX: 10, sigmaY: 10),
                                     child: InkWell(
                                       onTap: onLiveBtnTap,
                                       child: Container(
@@ -199,10 +181,8 @@ class FullImageView extends StatelessWidget {
                                         width: 113,
                                         padding: const EdgeInsets.all(4),
                                         decoration: BoxDecoration(
-                                          borderRadius:
-                                              BorderRadius.circular(40),
-                                          color:
-                                              ColorRes.black.withOpacity(0.33),
+                                          borderRadius: BorderRadius.circular(40),
+                                          color: ColorRes.black.withOpacity(0.33),
                                         ),
                                         child: Row(
                                           children: [

@@ -35,8 +35,7 @@ class SelectHobbiesScreen extends StatelessWidget {
               ),
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 17),
-                child: SubmitButton2(
-                    title: S.current.next, onTap: model.onNextTap),
+                child: SubmitButton2(title: S.current.next, onTap: model.onNextTap),
               ),
               const SizedBox(height: 27),
               InkWell(

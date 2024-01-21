@@ -11,12 +11,7 @@ class LiveGridTopArea extends StatelessWidget {
   final VoidCallback onGoLiveTap;
   final RegistrationUserData? userData;
 
-  const LiveGridTopArea(
-      {Key? key,
-      required this.onBackBtnTap,
-      required this.onGoLiveTap,
-      this.userData})
-      : super(key: key);
+  const LiveGridTopArea({Key? key, required this.onBackBtnTap, required this.onGoLiveTap, this.userData}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -58,12 +53,10 @@ class LiveGridTopArea extends StatelessWidget {
               onTap: () {
                 if (userData?.isFake != 1) {
                   userData?.canGoLive == 0
-                      ? SnackBarWidget().snackBarWidget(S
-                          .of(context)
-                          .pleaseApplyForLiveStreamFromLivestreamDashboardFromProfile)
+                      ? SnackBarWidget()
+                          .snackBarWidget(S.of(context).pleaseApplyForLiveStreamFromLivestreamDashboardFromProfile)
                       : userData?.canGoLive == 1
-                          ? SnackBarWidget().snackBarWidget(
-                              S.of(context).yourApplicationIsPendingPleaseWait)
+                          ? SnackBarWidget().snackBarWidget(S.of(context).yourApplicationIsPendingPleaseWait)
                           : onGoLiveTap();
                 } else {
                   onGoLiveTap();

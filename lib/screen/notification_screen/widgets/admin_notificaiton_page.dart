@@ -11,9 +11,7 @@ class AdminNotificationPage extends StatelessWidget {
   final List<AdminNotificationData>? adminNotification;
   final ScrollController controller;
 
-  const AdminNotificationPage(
-      {Key? key, this.adminNotification, required this.controller})
-      : super(key: key);
+  const AdminNotificationPage({Key? key, this.adminNotification, required this.controller}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -68,8 +66,7 @@ class AdminNotificationPage extends StatelessWidget {
                               const Spacer(),
                               Text(
                                 adminNotification != null
-                                    ? CommonFun.timeAgo(DateTime.parse(
-                                        '${adminNotification?[index].createdAt}'))
+                                    ? CommonFun.timeAgo(DateTime.parse('${adminNotification?[index].createdAt}'))
                                     : '',
                                 style: const TextStyle(
                                   fontSize: 11,

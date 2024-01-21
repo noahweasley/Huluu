@@ -13,9 +13,7 @@ class EulaSheet extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final Set<Factory<OneSequenceGestureRecognizer>> gestureRecognizers = {
-      Factory(() => EagerGestureRecognizer())
-    };
+    final Set<Factory<OneSequenceGestureRecognizer>> gestureRecognizers = {Factory(() => EagerGestureRecognizer())};
 
     UniqueKey key = UniqueKey();
     return Container(
@@ -52,8 +50,7 @@ class EulaSheet extends StatelessWidget {
                     },
                   ),
                 )
-                ..loadRequest(Uri.parse(
-                    'https://www.apple.com/legal/internet-services/itunes/dev/stdeula/')),
+                ..loadRequest(Uri.parse('https://www.apple.com/legal/internet-services/itunes/dev/stdeula/')),
               gestureRecognizers: gestureRecognizers,
             ),
           ),

@@ -49,8 +49,7 @@ class ChatScreen extends StatelessWidget {
               if (model.timeStamp.isNotEmpty)
                 AnimatedSwitcher(
                   duration: const Duration(milliseconds: 500),
-                  transitionBuilder:
-                      (Widget child, Animation<double> animation) {
+                  transitionBuilder: (Widget child, Animation<double> animation) {
                     return SlideTransition(
                         position: Tween<Offset>(
                           begin: const Offset(0, 1),
@@ -71,8 +70,7 @@ class ChatScreen extends StatelessWidget {
               else
                 AnimatedSwitcher(
                   duration: const Duration(milliseconds: 500),
-                  transitionBuilder:
-                      (Widget child, Animation<double> animation) {
+                  transitionBuilder: (Widget child, Animation<double> animation) {
                     return SlideTransition(
                         position: Tween<Offset>(
                           begin: const Offset(0, 1),
@@ -92,8 +90,7 @@ class ChatScreen extends StatelessWidget {
                             splashColor: ColorRes.transparent,
                             highlightColor: ColorRes.transparent,
                             child: Container(
-                              padding: const EdgeInsets.symmetric(
-                                  horizontal: 38, vertical: 8),
+                              padding: const EdgeInsets.symmetric(horizontal: 38, vertical: 8),
                               decoration: BoxDecoration(
                                 color: ColorRes.grey13,
                                 borderRadius: BorderRadius.circular(5),
@@ -101,8 +98,7 @@ class ChatScreen extends StatelessWidget {
                               margin: const EdgeInsets.symmetric(vertical: 13),
                               child: Text(
                                 S.current.youBlockThisUser,
-                                style: const TextStyle(
-                                    color: ColorRes.grey14, fontSize: 12),
+                                style: const TextStyle(color: ColorRes.grey14, fontSize: 12),
                               ),
                             ),
                           ),

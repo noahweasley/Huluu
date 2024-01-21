@@ -51,10 +51,8 @@ class GetStartedScreenViewModel extends BaseViewModel {
       PrefService.minThreshold = value.data?.appdata?.minThreshold ?? 0;
       PrefService.coinRate = value.data?.appdata?.coinRate ?? '';
       PrefService.messagePrice = value.data?.appdata?.messagePrice ?? 0;
-      PrefService.liveWatchingPrice =
-          value.data?.appdata?.liveWatchingPrice ?? 0;
-      PrefService.reverseSwipePrice =
-          value.data?.appdata?.reverseSwipePrice ?? 0;
+      PrefService.liveWatchingPrice = value.data?.appdata?.liveWatchingPrice ?? 0;
+      PrefService.reverseSwipePrice = value.data?.appdata?.reverseSwipePrice ?? 0;
       PrefService.isDating == value.data?.appdata?.isDating;
       notifyListeners();
     });
@@ -83,8 +81,7 @@ class GetStartedScreenViewModel extends BaseViewModel {
 
   Future<void> initPlugin() async {
     try {
-      final TrackingStatus status =
-          await AppTrackingTransparency.trackingAuthorizationStatus;
+      final TrackingStatus status = await AppTrackingTransparency.trackingAuthorizationStatus;
       notifyListeners();
       if (status == TrackingStatus.notDetermined) {
         await AppTrackingTransparency.requestTrackingAuthorization();
@@ -126,11 +123,9 @@ class GetStartedScreenViewModel extends BaseViewModel {
         (value) {
           if (value?.data?.age == null) {
             Get.off(() => const StartingProfileScreen());
-          } else if (value?.data?.images == null ||
-              value!.data!.images!.isEmpty) {
+          } else if (value?.data?.images == null || value!.data!.images!.isEmpty) {
             Get.off(() => const SelectPhotoScreen());
-          } else if (value.data?.interests == null ||
-              value.data!.interests!.isEmpty) {
+          } else if (value.data?.interests == null || value.data!.interests!.isEmpty) {
             Get.off(() => const SelectHobbiesScreen());
           } else {
             Get.off(() => const DashboardScreen());
@@ -148,8 +143,7 @@ class GetStartedScreenViewModel extends BaseViewModel {
   }
 
   void eulaSheet() {
-    Get.bottomSheet(EulaSheet(eulaAcceptClick: eulaAcceptClick),
-        isScrollControlled: true, isDismissible: false);
+    Get.bottomSheet(EulaSheet(eulaAcceptClick: eulaAcceptClick), isScrollControlled: true, isDismissible: false);
   }
 
   void eulaAcceptClick() async {
@@ -195,9 +189,7 @@ class GetStartedScreenViewModel extends BaseViewModel {
       }
     }
     Loader().lottieLoader();
-    await geo.Geolocator.getCurrentPosition(
-            desiredAccuracy: geo.LocationAccuracy.high)
-        .then((value) async {
+    await geo.Geolocator.getCurrentPosition(desiredAccuracy: geo.LocationAccuracy.high).then((value) async {
       await PrefService.setLatitude(value.latitude.toString());
       await PrefService.setLongitude(value.longitude.toString());
       Get.back();
@@ -218,8 +210,7 @@ class GetStartedScreenViewModel extends BaseViewModel {
     if (statuses[p.Permission.camera] == p.PermissionStatus.denied &&
         statuses[p.Permission.storage] == p.PermissionStatus.denied &&
         statuses[p.Permission.microphone] == p.PermissionStatus.denied &&
-        statuses[p.Permission.manageExternalStorage] ==
-            p.PermissionStatus.denied) {
+        statuses[p.Permission.manageExternalStorage] == p.PermissionStatus.denied) {
       await p.openAppSettings();
     } else {
       Get.off(() => const LoginDashboardScreen());

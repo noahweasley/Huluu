@@ -50,10 +50,8 @@ class StartingProfileScreen extends StatelessWidget {
                     ageError: model.ageError,
                   ),
                   Padding(
-                    padding:
-                        const EdgeInsets.only(left: 16, right: 16, bottom: 22),
-                    child: SubmitButton2(
-                        title: S.current.next, onTap: model.onNextTap),
+                    padding: const EdgeInsets.only(left: 16, right: 16, bottom: 22),
+                    child: SubmitButton2(title: S.current.next, onTap: model.onNextTap),
                   )
                 ],
               ),

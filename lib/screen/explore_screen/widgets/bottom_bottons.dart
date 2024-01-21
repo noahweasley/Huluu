@@ -24,8 +24,7 @@ class BottomButtons extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
       children: [
         Visibility(
-            visible:
-                PrefService.settingData?.appdata?.isDating == 0 ? false : true,
+            visible: PrefService.settingData?.appdata?.isDating == 0 ? false : true,
             child: PlayBtnClick(onPlayBtnClick: onPlayBtnTap)),
         UnicornOutlineButton(
           strokeWidth: 3,
@@ -51,8 +50,7 @@ class BottomButtons extends StatelessWidget {
           ),
         ),
         Visibility(
-          visible:
-              PrefService.settingData?.appdata?.isDating == 0 ? false : true,
+          visible: PrefService.settingData?.appdata?.isDating == 0 ? false : true,
           child: InkWell(
             onTap: onEyeTap,
             borderRadius: BorderRadius.circular(10),
@@ -88,15 +86,13 @@ class BottomButtons extends StatelessWidget {
 class PlayBtnClick extends StatefulWidget {
   final VoidCallback onPlayBtnClick;
 
-  const PlayBtnClick({Key? key, required this.onPlayBtnClick})
-      : super(key: key);
+  const PlayBtnClick({Key? key, required this.onPlayBtnClick}) : super(key: key);
 
   @override
   State<PlayBtnClick> createState() => _PlayBtnClickState();
 }
 
-class _PlayBtnClickState extends State<PlayBtnClick>
-    with SingleTickerProviderStateMixin {
+class _PlayBtnClickState extends State<PlayBtnClick> with SingleTickerProviderStateMixin {
   late double _scale;
   late AnimationController _controller;
 

@@ -47,30 +47,23 @@ class RegisterScreenViewModel extends BaseViewModel {
   }
 
   void onTermsOfUseTap() {
-    Get.to(() => WebViewScreen(
-        appBarTitle: S.current.termsOfUse, url: Urls.aTermsOfUse));
+    Get.to(() => WebViewScreen(appBarTitle: S.current.termsOfUse, url: Urls.aTermsOfUse));
   }
 
   void onPrivacyPolicyTap() {
     Get.to(
-      () => WebViewScreen(
-          appBarTitle: S.current.privacyPolicy, url: Urls.aPrivacyPolicy),
+      () => WebViewScreen(appBarTitle: S.current.privacyPolicy, url: Urls.aPrivacyPolicy),
     );
   }
 
   Future<void> onContinueTap() async {
     if (isValid()) {
       Loader().lottieLoader();
-      signUp(email: emailController.text, password: pwdController.text)
-          .then((value) {
+      signUp(email: emailController.text, password: pwdController.text).then((value) {
         if (value == null) return;
         value.user?.sendEmailVerification();
         ApiProvider()
-            .registration(
-                email: emailController.text,
-                fullName: fullNameController.text,
-                deviceToken: tokenId,
-                loginType: 5)
+            .registration(email: emailController.text, fullName: fullNameController.text, deviceToken: tokenId, loginType: 5)
             .then((value) async {
           SnackBarWidget().snackBarWidget(S.current.registrationSuccessfully);
           PrefService.userId = value.data?.id ?? -1;
@@ -146,11 +139,9 @@ class RegisterScreenViewModel extends BaseViewModel {
     return count == 0 ? true : false;
   }
 
-  Future<UserCredential?> signUp(
-      {required String email, required String password}) async {
+  Future<UserCredential?> signUp({required String email, required String password}) async {
     try {
-      return await _auth.createUserWithEmailAndPassword(
-          email: email, password: password);
+      return await _auth.createUserWithEmailAndPassword(email: email, password: password);
     } on FirebaseAuthException catch (e) {
       SnackBarWidget().snackBarWidget('${e.message}');
       Get.offAll(() => const LoginDashboardScreen());

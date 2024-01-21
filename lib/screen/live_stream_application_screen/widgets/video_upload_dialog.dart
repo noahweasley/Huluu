@@ -10,9 +10,7 @@ class VideoUploadDialog extends StatelessWidget {
   final VoidCallback selectAnother;
   final VoidCallback cancelBtnTap;
 
-  const VideoUploadDialog(
-      {Key? key, required this.cancelBtnTap, required this.selectAnother})
-      : super(key: key);
+  const VideoUploadDialog({Key? key, required this.cancelBtnTap, required this.selectAnother}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -28,8 +26,7 @@ class VideoUploadDialog extends StatelessWidget {
               const Spacer(flex: 2),
               RichText(
                 text: TextSpan(
-                  style: const TextStyle(
-                      fontFamily: FontRes.semiBold, fontSize: 18),
+                  style: const TextStyle(fontFamily: FontRes.semiBold, fontSize: 18),
                   children: [
                     TextSpan(
                       text: S.of(context).tooLarge,
@@ -54,8 +51,7 @@ class VideoUploadDialog extends StatelessWidget {
                 margin: const EdgeInsets.symmetric(horizontal: 16),
                 child: Text(
                   S.of(context).thisVideoIsGreaterThan50MbnpleaseSelectAnother,
-                  style: const TextStyle(
-                      fontFamily: FontRes.semiBold, color: ColorRes.grey15),
+                  style: const TextStyle(fontFamily: FontRes.semiBold, color: ColorRes.grey15),
                   textAlign: TextAlign.center,
                 ),
               ),
@@ -81,8 +77,7 @@ class VideoUploadDialog extends StatelessWidget {
                   ),
                   child: Text(
                     S.of(context).selectAnother,
-                    style: const TextStyle(
-                        color: ColorRes.white, fontFamily: FontRes.semiBold),
+                    style: const TextStyle(color: ColorRes.white, fontFamily: FontRes.semiBold),
                   ),
                 ),
               ),
@@ -100,8 +95,7 @@ class VideoUploadDialog extends StatelessWidget {
                   ),
                   child: Text(
                     S.current.cancel,
-                    style: const TextStyle(
-                        color: ColorRes.grey15, fontFamily: FontRes.semiBold),
+                    style: const TextStyle(color: ColorRes.grey15, fontFamily: FontRes.semiBold),
                   ),
                 ),
               ),

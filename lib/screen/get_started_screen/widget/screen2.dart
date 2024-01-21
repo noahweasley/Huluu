@@ -104,17 +104,14 @@ class Screen2 extends StatelessWidget {
     return Container(
       height: 39,
       width: 116,
-      decoration: BoxDecoration(
-          color: ColorRes.white,
-          borderRadius: BorderRadius.circular(30),
-          boxShadow: [
-            BoxShadow(
-              color: ColorRes.black.withOpacity(0.10),
-              offset: const Offset(0, 0.5),
-              blurRadius: 3,
-              spreadRadius: 2,
-            )
-          ]),
+      decoration: BoxDecoration(color: ColorRes.white, borderRadius: BorderRadius.circular(30), boxShadow: [
+        BoxShadow(
+          color: ColorRes.black.withOpacity(0.10),
+          offset: const Offset(0, 0.5),
+          blurRadius: 3,
+          spreadRadius: 2,
+        )
+      ]),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [

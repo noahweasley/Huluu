@@ -16,8 +16,7 @@ class LivestreamEndScreen extends StatefulWidget {
   State<LivestreamEndScreen> createState() => _LivestreamEndScreenState();
 }
 
-class _LivestreamEndScreenState extends State<LivestreamEndScreen>
-    with TickerProviderStateMixin {
+class _LivestreamEndScreenState extends State<LivestreamEndScreen> with TickerProviderStateMixin {
   late final AnimationController _controller = AnimationController(
     duration: const Duration(seconds: 1),
     vsync: this,
@@ -62,8 +61,7 @@ class _LivestreamEndScreenState extends State<LivestreamEndScreen>
                             //color: ColorRes.o,
                             itemBuilder: (BuildContext context, int index) {
                               return CircleAvatar(
-                                backgroundColor:
-                                    ColorRes.grey21.withOpacity(0.40),
+                                backgroundColor: ColorRes.grey21.withOpacity(0.40),
                               );
                             },
                           ),
@@ -74,8 +72,7 @@ class _LivestreamEndScreenState extends State<LivestreamEndScreen>
                             //color: ColorRes.o,
                             itemBuilder: (BuildContext context, int index) {
                               return CircleAvatar(
-                                backgroundColor:
-                                    ColorRes.grey21.withOpacity(0.30),
+                                backgroundColor: ColorRes.grey21.withOpacity(0.30),
                               );
                             },
                           ),
@@ -102,11 +99,8 @@ class _LivestreamEndScreenState extends State<LivestreamEndScreen>
                     ScaleTransition(
                       scale: _animation,
                       child: Text(
-                        S
-                            .of(context)
-                            .yourLiveStreamHasBeenEndednbelowIsASummaryOf,
-                        style: const TextStyle(
-                            fontFamily: FontRes.semiBold, fontSize: 18),
+                        S.of(context).yourLiveStreamHasBeenEndednbelowIsASummaryOf,
+                        style: const TextStyle(fontFamily: FontRes.semiBold, fontSize: 18),
                         textAlign: TextAlign.center,
                       ),
                     ),
@@ -120,15 +114,11 @@ class _LivestreamEndScreenState extends State<LivestreamEndScreen>
                               sizeFactor: _animation,
                               axis: Axis.horizontal,
                               axisAlignment: -1,
-                              child: Text(model.time,
-                                  style: const TextStyle(
-                                      fontFamily: FontRes.semiBold,
-                                      fontSize: 15)),
+                              child: Text(model.time, style: const TextStyle(fontFamily: FontRes.semiBold, fontSize: 15)),
                             ),
                             Text(
                               S.of(context).streamFor,
-                              style: const TextStyle(
-                                  fontFamily: FontRes.semiBold, fontSize: 15),
+                              style: const TextStyle(fontFamily: FontRes.semiBold, fontSize: 15),
                             ),
                           ],
                         ),
@@ -138,15 +128,12 @@ class _LivestreamEndScreenState extends State<LivestreamEndScreen>
                               sizeFactor: _animation,
                               axis: Axis.horizontal,
                               axisAlignment: -1,
-                              child: Text(model.watching,
-                                  style: const TextStyle(
-                                      fontFamily: FontRes.semiBold,
-                                      fontSize: 15)),
+                              child:
+                                  Text(model.watching, style: const TextStyle(fontFamily: FontRes.semiBold, fontSize: 15)),
                             ),
                             Text(
                               S.of(context).users,
-                              style: const TextStyle(
-                                  fontFamily: FontRes.semiBold, fontSize: 15),
+                              style: const TextStyle(fontFamily: FontRes.semiBold, fontSize: 15),
                             ),
                           ],
                         ),
@@ -156,15 +143,11 @@ class _LivestreamEndScreenState extends State<LivestreamEndScreen>
                               sizeFactor: _animation,
                               axis: Axis.horizontal,
                               axisAlignment: -1,
-                              child: Text(model.diamond,
-                                  style: const TextStyle(
-                                      fontFamily: FontRes.semiBold,
-                                      fontSize: 15)),
+                              child: Text(model.diamond, style: const TextStyle(fontFamily: FontRes.semiBold, fontSize: 15)),
                             ),
                             Text(
                               '💎 ${S.of(context).collected}',
-                              style: const TextStyle(
-                                  fontFamily: FontRes.semiBold, fontSize: 15),
+                              style: const TextStyle(fontFamily: FontRes.semiBold, fontSize: 15),
                             ),
                           ],
                         ),
@@ -172,8 +155,7 @@ class _LivestreamEndScreenState extends State<LivestreamEndScreen>
                     ),
                     const Spacer(),
                     Padding(
-                      padding: const EdgeInsets.symmetric(
-                          horizontal: 28, vertical: 10),
+                      padding: const EdgeInsets.symmetric(horizontal: 28, vertical: 10),
                       child: InkWell(
                         borderRadius: BorderRadius.circular(10),
                         onTap: model.onOkBtnClick,
@@ -189,10 +171,7 @@ class _LivestreamEndScreenState extends State<LivestreamEndScreen>
                             child: Text(
                               S.current.ok,
                               style: const TextStyle(
-                                  color: ColorRes.orange3,
-                                  fontFamily: FontRes.heavy,
-                                  letterSpacing: 0.8,
-                                  fontSize: 16),
+                                  color: ColorRes.orange3, fontFamily: FontRes.heavy, letterSpacing: 0.8, fontSize: 16),
                             ),
                           ),
                         ),

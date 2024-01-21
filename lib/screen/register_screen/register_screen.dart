@@ -34,8 +34,7 @@ class RegisterScreen extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Container(
-                    margin: EdgeInsets.only(
-                        left: 15, top: AppBar().preferredSize.height),
+                    margin: EdgeInsets.only(left: 15, top: AppBar().preferredSize.height),
                     child: InkWell(
                       onTap: () {
                         Get.back();
@@ -53,8 +52,7 @@ class RegisterScreen extends StatelessWidget {
                       height: Get.height,
                       width: Get.width,
                       child: SingleChildScrollView(
-                        keyboardDismissBehavior:
-                            ScrollViewKeyboardDismissBehavior.onDrag,
+                        keyboardDismissBehavior: ScrollViewKeyboardDismissBehavior.onDrag,
                         child: Column(
                           children: [
                             SizedBox(height: Get.height * 0.07),

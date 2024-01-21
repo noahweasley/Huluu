@@ -50,13 +50,8 @@ class MapScreenViewModel extends BaseViewModel {
     notifyListeners();
   }
 
-  Future<void> getUserByCoordinatesApiCall(
-      {required double latitude,
-      required double longitude,
-      required int km}) async {
-    ApiProvider()
-        .getUserByLatLong(latitude: latitude, longitude: longitude, km: km)
-        .then((value) async {
+  Future<void> getUserByCoordinatesApiCall({required double latitude, required double longitude, required int km}) async {
+    ApiProvider().getUserByLatLong(latitude: latitude, longitude: longitude, km: km).then((value) async {
       userData = value.data;
       items = [];
       for (int i = 0; i < userData!.length; i++) {
@@ -81,10 +76,7 @@ class MapScreenViewModel extends BaseViewModel {
 
   void onMapCreated(GoogleMapController controller) async {
     position = await getUserCurrentLocation();
-    getUserByCoordinatesApiCall(
-        latitude: position.latitude,
-        longitude: position.longitude,
-        km: selectedDistance);
+    getUserByCoordinatesApiCall(latitude: position.latitude, longitude: position.longitude, km: selectedDistance);
     updateProfileApiCall();
     await PrefService.setLatitude(
       position.latitude.toString(),
@@ -109,19 +101,14 @@ class MapScreenViewModel extends BaseViewModel {
   }
 
   void updateProfileApiCall() async {
-    await ApiProvider().updateProfile(
-        latitude: position.latitude.toString(),
-        longitude: position.longitude.toString());
+    await ApiProvider().updateProfile(latitude: position.latitude.toString(), longitude: position.longitude.toString());
   }
 
   void onDistanceChange(int value) async {
     Loader().lottieLoader();
     position = await getUserCurrentLocation();
     selectedDistance = value;
-    getUserByCoordinatesApiCall(
-        latitude: position.latitude,
-        longitude: position.longitude,
-        km: selectedDistance);
+    getUserByCoordinatesApiCall(latitude: position.latitude, longitude: position.longitude, km: selectedDistance);
     mapController.animateCamera(
       CameraUpdate.newCameraPosition(
         CameraPosition(
@@ -134,8 +121,7 @@ class MapScreenViewModel extends BaseViewModel {
     notifyListeners();
   }
 
-  void onUserProfileTap(
-      {RegistrationUserData? data, required bool isMultiple}) {
+  void onUserProfileTap({RegistrationUserData? data, required bool isMultiple}) {
     isMultiple
         ? null
         : Get.dialog(
@@ -144,9 +130,7 @@ class MapScreenViewModel extends BaseViewModel {
                   onMoreInfoTap(data);
                 },
                 onCancelTap: onBackBtnTap,
-                image: data?.images == null || data!.images!.isEmpty
-                    ? ''
-                    : data.images?[0].image,
+                image: data?.images == null || data!.images!.isEmpty ? '' : data.images?[0].image,
                 userName: data?.fullname,
                 live: data?.live,
                 age: data?.age ?? 0),
@@ -171,25 +155,21 @@ class MapScreenViewModel extends BaseViewModel {
     return zoomLevel;
   }
 
-  Future<Marker> Function(Cluster<Place>) get _markerBuilder =>
-      (cluster) async {
+  Future<Marker> Function(Cluster<Place>) get _markerBuilder => (cluster) async {
         return Marker(
           markerId: MarkerId(cluster.getId()),
           position: cluster.location,
           onTap: () {
             for (var user in cluster.items) {
-              onUserProfileTap(
-                  data: user.userData, isMultiple: cluster.isMultiple);
+              onUserProfileTap(data: user.userData, isMultiple: cluster.isMultiple);
             }
           },
-          icon: await _getMarkerBitmap(
-              cluster.isMultiple ? 125 : 75, cluster.items.toList(),
+          icon: await _getMarkerBitmap(cluster.isMultiple ? 125 : 75, cluster.items.toList(),
               text: cluster.isMultiple ? cluster.count.toString() : null),
         );
       };
 
-  Future<BitmapDescriptor> _getMarkerBitmap(int size, List<Place> places,
-      {String? text}) async {
+  Future<BitmapDescriptor> _getMarkerBitmap(int size, List<Place> places, {String? text}) async {
     final PictureRecorder pictureRecorder = PictureRecorder();
     final Canvas canvas = Canvas(pictureRecorder);
     final Paint paint1 = Paint()..color = Colors.deepOrange;
@@ -203,10 +183,7 @@ class MapScreenViewModel extends BaseViewModel {
       TextPainter painter = TextPainter(textDirection: TextDirection.ltr);
       painter.text = TextSpan(
         text: text,
-        style: TextStyle(
-            fontSize: size / 3,
-            color: Colors.white,
-            fontWeight: FontWeight.normal),
+        style: TextStyle(fontSize: size / 3, color: Colors.white, fontWeight: FontWeight.normal),
       );
       painter.layout();
       painter.paint(
@@ -219,10 +196,8 @@ class MapScreenViewModel extends BaseViewModel {
     final data = await img.toByteData(format: ImageByteFormat.png) as ByteData;
 
     if (size == 75) {
-      if (places[0].userData?.images == null ||
-          places[0].userData!.images!.isEmpty) {
-        return await MarkerIcon.pictureAsset(
-            width: 110, height: 110, assetPath: AssetRes.personLocationPin);
+      if (places[0].userData?.images == null || places[0].userData!.images!.isEmpty) {
+        return await MarkerIcon.pictureAsset(width: 110, height: 110, assetPath: AssetRes.personLocationPin);
       }
       return await MarkerIcon.downloadResizePictureCircle(
         ConstRes.aImageBaseUrl + (places[0].userData?.images?[0].image ?? ''),
@@ -234,14 +209,11 @@ class MapScreenViewModel extends BaseViewModel {
   }
 
   Future<Position> getUserCurrentLocation() async {
-    await Geolocator.requestPermission()
-        .then((value) {})
-        .onError((error, stackTrace) async {
+    await Geolocator.requestPermission().then((value) {}).onError((error, stackTrace) async {
       await Geolocator.requestPermission();
       SnackBarWidget().snackBarWidget('$error');
     });
-    return await Geolocator.getCurrentPosition(
-        desiredAccuracy: LocationAccuracy.best);
+    return await Geolocator.getCurrentPosition(desiredAccuracy: LocationAccuracy.best);
   }
 
   @override

@@ -7,11 +7,7 @@ class ChatDeleteDialog extends StatelessWidget {
   final VoidCallback onCancelBtnCLick;
   final VoidCallback onDeleteBtnClick;
 
-  const ChatDeleteDialog(
-      {Key? key,
-      required this.onCancelBtnCLick,
-      required this.onDeleteBtnClick})
-      : super(key: key);
+  const ChatDeleteDialog({Key? key, required this.onCancelBtnCLick, required this.onDeleteBtnClick}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -31,16 +27,12 @@ class ChatDeleteDialog extends StatelessWidget {
               const Spacer(),
               Text(
                 S.current.deleteMessage,
-                style: const TextStyle(
-                    fontSize: 18, fontFamily: FontRes.extraBold),
+                style: const TextStyle(fontSize: 18, fontFamily: FontRes.extraBold),
               ),
               const Spacer(),
               Text(
                 S.current.areYouSureYouEtc,
-                style: const TextStyle(
-                    color: ColorRes.grey,
-                    fontFamily: FontRes.medium,
-                    fontSize: 15),
+                style: const TextStyle(color: ColorRes.grey, fontFamily: FontRes.medium, fontSize: 15),
               ),
               const Spacer(),
               Row(
@@ -52,8 +44,7 @@ class ChatDeleteDialog extends StatelessWidget {
                     highlightColor: ColorRes.transparent,
                     child: Text(
                       S.current.cancelCap,
-                      style: const TextStyle(
-                          color: ColorRes.grey, fontFamily: FontRes.bold),
+                      style: const TextStyle(color: ColorRes.grey, fontFamily: FontRes.bold),
                     ),
                   ),
                   const SizedBox(
@@ -63,8 +54,7 @@ class ChatDeleteDialog extends StatelessWidget {
                     onTap: onDeleteBtnClick,
                     child: Text(
                       S.current.deleteCap,
-                      style: const TextStyle(
-                          color: ColorRes.orange2, fontFamily: FontRes.bold),
+                      style: const TextStyle(color: ColorRes.orange2, fontFamily: FontRes.bold),
                     ),
                   ),
                 ],

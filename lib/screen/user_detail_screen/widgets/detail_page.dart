@@ -82,9 +82,7 @@ class DetailPage extends StatelessWidget {
                                   ),
                                   Flexible(
                                     child: Text(
-                                      userData?.age == null
-                                          ? ''
-                                          : " ${userData?.age} ",
+                                      userData?.age == null ? '' : " ${userData?.age} ",
                                       style: const TextStyle(
                                           color: ColorRes.white,
                                           fontSize: 22,
@@ -95,9 +93,7 @@ class DetailPage extends StatelessWidget {
                                   ),
                                   Flexible(
                                     child: Visibility(
-                                      visible: userData?.isVerified == 2
-                                          ? true
-                                          : false,
+                                      visible: userData?.isVerified == 2 ? true : false,
                                       child: Image.asset(
                                         AssetRes.tickMark,
                                         height: 20,
@@ -109,9 +105,7 @@ class DetailPage extends StatelessWidget {
                               ),
                             ),
                             Visibility(
-                              visible: PrefService.userId == userData?.id
-                                  ? false
-                                  : true,
+                              visible: PrefService.userId == userData?.id ? false : true,
                               child: InkWell(
                                 borderRadius: BorderRadius.circular(30),
                                 onTap: onSaveTap,
@@ -125,9 +119,7 @@ class DetailPage extends StatelessWidget {
                                   ),
                                   child: Image.asset(
                                     AssetRes.save,
-                                    color: save
-                                        ? null
-                                        : ColorRes.dimGrey5.withOpacity(0.70),
+                                    color: save ? null : ColorRes.dimGrey5.withOpacity(0.70),
                                   ),
                                 ),
                               ),
@@ -161,13 +153,9 @@ class DetailPage extends StatelessWidget {
                                   const SizedBox(width: 7),
                                   Flexible(
                                     child: Text(
-                                      userData?.live == null ||
-                                              userData!.live!.isEmpty
-                                          ? ''
-                                          : '${userData?.live}',
+                                      userData?.live == null || userData!.live!.isEmpty ? '' : '${userData?.live}',
                                       style: TextStyle(
-                                          color:
-                                              ColorRes.white.withOpacity(0.80),
+                                          color: ColorRes.white.withOpacity(0.80),
                                           fontSize: 14,
                                           overflow: TextOverflow.ellipsis),
                                       maxLines: 2,
@@ -181,9 +169,7 @@ class DetailPage extends StatelessWidget {
                             ),
                             Expanded(
                               child: Visibility(
-                                visible: PrefService.userId == userData?.id
-                                    ? false
-                                    : true,
+                                visible: PrefService.userId == userData?.id ? false : true,
                                 child: Row(
                                   children: [
                                     Container(
@@ -208,8 +194,7 @@ class DetailPage extends StatelessWidget {
                                             ? S.of(context).noLocation
                                             : '${distance.toStringAsFixed(2)} ${S.of(context).kmsAway}',
                                         style: TextStyle(
-                                            color: ColorRes.white
-                                                .withOpacity(0.80),
+                                            color: ColorRes.white.withOpacity(0.80),
                                             fontSize: 14,
                                             overflow: TextOverflow.ellipsis),
                                         maxLines: 2,
@@ -251,8 +236,7 @@ class DetailPage extends StatelessWidget {
                         interestButtons(userData?.interests ?? []),
                         const SizedBox(height: 6),
                         Visibility(
-                          visible:
-                              PrefService.userId == userData?.id ? false : true,
+                          visible: PrefService.userId == userData?.id ? false : true,
                           child: InkWell(
                             onTap: onChatWithTap,
                             borderRadius: BorderRadius.circular(10),
@@ -303,8 +287,7 @@ class DetailPage extends StatelessWidget {
                         ),
                         const SizedBox(height: 27),
                         Visibility(
-                          visible:
-                              PrefService.userId == userData?.id ? false : true,
+                          visible: PrefService.userId == userData?.id ? false : true,
                           child: Center(
                             child: InkWell(
                               onTap: onReportTap,
@@ -367,8 +350,7 @@ class HideInfoChip extends StatefulWidget {
   State<HideInfoChip> createState() => _HideInfoChipState();
 }
 
-class _HideInfoChipState extends State<HideInfoChip>
-    with SingleTickerProviderStateMixin {
+class _HideInfoChipState extends State<HideInfoChip> with SingleTickerProviderStateMixin {
   double? _scale;
   AnimationController? _controller;
 

@@ -55,8 +55,7 @@ class OptionScreen extends StatelessWidget {
                                   verification: model.verificationProcess,
                                 ),
                                 const SizedBox(height: 20),
-                                LanguageSection(
-                                    navigateLanguage: model.navigateLanguage),
+                                LanguageSection(navigateLanguage: model.navigateLanguage),
                                 const SizedBox(height: 20),
                                 BottomLegalArea(
                                   onPrivacyPolicyTap: model.onPrivacyPolicyTap,

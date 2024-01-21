@@ -34,8 +34,7 @@ class UserCard extends StatelessWidget {
       children: [
         Container(
           margin: const EdgeInsets.only(bottom: 6),
-          padding:
-              const EdgeInsets.only(top: 8, left: 12, right: 12, bottom: 11),
+          padding: const EdgeInsets.only(top: 8, left: 12, right: 12, bottom: 11),
           height: 74,
           width: Get.width,
           decoration: BoxDecoration(
@@ -119,8 +118,7 @@ class UserCard extends StatelessWidget {
                             CommonFun.readTimestamp(
                               double.parse(time ?? ''),
                             ),
-                            style: const TextStyle(
-                                fontSize: 12, color: ColorRes.grey4),
+                            style: const TextStyle(fontSize: 12, color: ColorRes.grey4),
                           ),
                         ],
                       ),

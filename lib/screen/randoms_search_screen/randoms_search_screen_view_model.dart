@@ -63,16 +63,14 @@ class RandomsSearchScreenViewModel extends BaseViewModel {
   void onLeftBtnClick() {
     if (currentPageIndex == 0) return;
     currentPageIndex--;
-    pageController.animateToPage(currentPageIndex,
-        duration: const Duration(milliseconds: 200), curve: Curves.easeIn);
+    pageController.animateToPage(currentPageIndex, duration: const Duration(milliseconds: 200), curve: Curves.easeIn);
     notifyListeners();
   }
 
   void onRightBtnClick() {
     if (userData!.images!.length - 1 == currentPageIndex) return;
     currentPageIndex++;
-    pageController.animateToPage(currentPageIndex,
-        duration: const Duration(milliseconds: 200), curve: Curves.easeIn);
+    pageController.animateToPage(currentPageIndex, duration: const Duration(milliseconds: 200), curve: Curves.easeIn);
     notifyListeners();
   }
 

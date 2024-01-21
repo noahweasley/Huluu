@@ -8,9 +8,7 @@ class Loader {
     return showDialog(
         context: Get.context!,
         builder: (context) {
-          return Center(
-              child: Lottie.asset(AssetRes.loadingLottie,
-                  height: 100, width: 100));
+          return Center(child: Lottie.asset(AssetRes.loadingLottie, height: 100, width: 100));
         },
         barrierLabel: '');
   }

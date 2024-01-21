@@ -9,11 +9,7 @@ class BottomArea extends StatelessWidget {
   final VoidCallback onNextTap;
   final bool isLoading;
 
-  const BottomArea(
-      {Key? key,
-      required this.onCancelTap,
-      required this.isLoading,
-      required this.onNextTap})
+  const BottomArea({Key? key, required this.onCancelTap, required this.isLoading, required this.onNextTap})
       : super(key: key);
 
   @override
@@ -38,14 +34,12 @@ class BottomArea extends StatelessWidget {
                 child: Center(
                   child: AnimatedSwitcher(
                     duration: const Duration(milliseconds: 300),
-                    transitionBuilder:
-                        (Widget child, Animation<double> animation) {
+                    transitionBuilder: (Widget child, Animation<double> animation) {
                       return ScaleTransition(scale: animation, child: child);
                     },
                     child: Text(
                       isLoading ? S.current.cancelCap : S.current.next,
-                      key: ValueKey<String>(
-                          isLoading ? S.current.cancelCap : S.current.next),
+                      key: ValueKey<String>(isLoading ? S.current.cancelCap : S.current.next),
                       style: const TextStyle(
                         color: ColorRes.orange3,
                         fontFamily: FontRes.bold,

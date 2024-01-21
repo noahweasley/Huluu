@@ -8,8 +8,7 @@ import 'package:orange_ui/utils/font_res.dart';
 class LanguageSection extends StatelessWidget {
   final VoidCallback navigateLanguage;
 
-  const LanguageSection({Key? key, required this.navigateLanguage})
-      : super(key: key);
+  const LanguageSection({Key? key, required this.navigateLanguage}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

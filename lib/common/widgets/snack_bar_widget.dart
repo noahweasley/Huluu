@@ -13,8 +13,7 @@ class SnackBarWidget {
               maxLines: 2,
             ),
             backgroundColor: ColorRes.black,
-            shape:
-                RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
+            shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
             elevation: 5,
             behavior: SnackBarBehavior.floating,
             duration: const Duration(milliseconds: 2500),

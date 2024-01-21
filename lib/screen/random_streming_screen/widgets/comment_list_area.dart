@@ -20,13 +20,9 @@ class CommentListArea extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    double tempSize = MediaQuery.of(pageContext).viewInsets.bottom == 0
-        ? 0
-        : MediaQuery.of(pageContext).viewInsets.bottom;
+    double tempSize = MediaQuery.of(pageContext).viewInsets.bottom == 0 ? 0 : MediaQuery.of(pageContext).viewInsets.bottom;
     return SizedBox(
-      height: (tempSize == 0)
-          ? (Get.height - 270) / 2
-          : (Get.height - 270) - tempSize - 50,
+      height: (tempSize == 0) ? (Get.height - 270) / 2 : (Get.height - 270) - tempSize - 50,
       width: Get.width,
       child: ShaderMask(
         shaderCallback: (Rect bounds) {
@@ -71,24 +67,17 @@ class CommentListArea extends StatelessWidget {
                       children: [
                         Text(
                           comment.userName ?? '',
-                          style: const TextStyle(
-                              color: ColorRes.white,
-                              fontSize: 13,
-                              fontFamily: FontRes.semiBold),
+                          style: const TextStyle(color: ColorRes.white, fontSize: 13, fontFamily: FontRes.semiBold),
                         ),
                         comment.commentType == FirebaseRes.msg
                             ? Text(
                                 comment.comment ?? '',
-                                style: const TextStyle(
-                                    color: ColorRes.white,
-                                    fontSize: 12,
-                                    fontFamily: FontRes.medium),
+                                style: const TextStyle(color: ColorRes.white, fontSize: 12, fontFamily: FontRes.medium),
                               )
                             : ClipRRect(
                                 borderRadius: BorderRadius.circular(15),
                                 child: BackdropFilter(
-                                  filter:
-                                      ImageFilter.blur(sigmaY: 15, sigmaX: 15),
+                                  filter: ImageFilter.blur(sigmaY: 15, sigmaX: 15),
                                   child: Container(
                                     height: 54,
                                     width: 54,

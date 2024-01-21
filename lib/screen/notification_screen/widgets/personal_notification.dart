@@ -16,11 +16,7 @@ class PersonalNotificationPage extends StatelessWidget {
   final ScrollController controller;
   final Function(RegistrationUserData? data) onUserTap;
 
-  const PersonalNotificationPage(
-      {Key? key,
-      this.userNotification,
-      required this.controller,
-      required this.onUserTap})
+  const PersonalNotificationPage({Key? key, this.userNotification, required this.controller, required this.onUserTap})
       : super(key: key);
 
   @override
@@ -44,8 +40,7 @@ class PersonalNotificationPage extends StatelessWidget {
                   onUserTap(data);
                 },
                 child: Container(
-                  margin:
-                      const EdgeInsets.only(left: 16, right: 19, bottom: 18),
+                  margin: const EdgeInsets.only(left: 16, right: 19, bottom: 18),
                   child: Row(
                     children: [
                       data?.images == null || data!.images!.isEmpty
@@ -67,10 +62,8 @@ class PersonalNotificationPage extends StatelessWidget {
                           : ClipRRect(
                               borderRadius: BorderRadius.circular(30),
                               child: CachedNetworkImage(
-                                imageUrl:
-                                    '${ConstRes.aImageBaseUrl}${data.images?[0].image}',
-                                cacheKey:
-                                    '${ConstRes.aImageBaseUrl}${data.images?[0].image}',
+                                imageUrl: '${ConstRes.aImageBaseUrl}${data.images?[0].image}',
+                                cacheKey: '${ConstRes.aImageBaseUrl}${data.images?[0].image}',
                                 height: 40,
                                 width: 40,
                                 fit: BoxFit.cover,
@@ -121,8 +114,7 @@ class PersonalNotificationPage extends StatelessWidget {
                                 Text(
                                   userNotification != null
                                       ? CommonFun.timeAgo(
-                                          DateTime.parse(
-                                              '${userNotification?[index].createdAt}'),
+                                          DateTime.parse('${userNotification?[index].createdAt}'),
                                         )
                                       : '',
                                   style: const TextStyle(
@@ -136,10 +128,7 @@ class PersonalNotificationPage extends StatelessWidget {
                               userNotification?[index].type == 1
                                   ? '${data?.fullname} ${S.of(context).hasLikedYourProfileYouShouldCheckTheirProfile}'
                                   : '',
-                              style: const TextStyle(
-                                  fontSize: 13,
-                                  color: ColorRes.grey6,
-                                  overflow: TextOverflow.ellipsis),
+                              style: const TextStyle(fontSize: 13, color: ColorRes.grey6, overflow: TextOverflow.ellipsis),
                               maxLines: 2,
                             )
                           ],

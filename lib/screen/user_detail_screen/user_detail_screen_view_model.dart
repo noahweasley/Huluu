@@ -64,18 +64,13 @@ class UserDetailScreenViewModel extends BaseViewModel {
       contentDescription: userData?.about ?? '',
       publiclyIndex: true,
       locallyIndex: true,
-      contentMetadata: BranchContentMetaData()
-        ..addCustomMetadata('user_id', userData?.id),
+      contentMetadata: BranchContentMetaData()..addCustomMetadata('user_id', userData?.id),
     );
-    BranchLinkProperties lp = BranchLinkProperties(
-        channel: 'facebook',
-        feature: 'sharing',
-        stage: 'new share',
-        tags: ['one', 'two', 'three']);
+    BranchLinkProperties lp =
+        BranchLinkProperties(channel: 'facebook', feature: 'sharing', stage: 'new share', tags: ['one', 'two', 'three']);
     lp.addControlParam('url', 'http://www.google.com');
     lp.addControlParam('url2', 'http://flutter.dev');
-    BranchResponse response =
-        await FlutterBranchSdk.getShortUrl(buo: buo, linkProperties: lp);
+    BranchResponse response = await FlutterBranchSdk.getShortUrl(buo: buo, linkProperties: lp);
     if (response.success) {
       Share.share(
         '${S.current.checkOutThisProfile} ${response.result}',
@@ -98,10 +93,7 @@ class UserDetailScreenViewModel extends BaseViewModel {
   Future<void> registrationUserApiCall() async {
     await ApiProvider().getProfile(userID: PrefService.userId).then((value) {
       _registrationUserData = value?.data;
-      blockUnBlock =
-          value?.data?.blockedUsers?.contains('${userData?.id}') == true
-              ? S.current.unBlock
-              : S.current.block;
+      blockUnBlock = value?.data?.blockedUsers?.contains('${userData?.id}') == true ? S.current.unBlock : S.current.block;
       save = value?.data?.savedprofile?.contains('${userData?.id}') ?? false;
       like = value?.data?.likedprofile?.contains('${userData?.id}') ?? false;
       notifyListeners();
@@ -170,11 +162,8 @@ class UserDetailScreenViewModel extends BaseViewModel {
         FirebaseRes.watchingCount: liveStreamUser!.watchingCount! + 1
       },
     ).then((value) {
-      Get.to(() => const PersonStreamingScreen(), arguments: {
-        Urls.aChannelId: userData?.identity,
-        Urls.aIsBroadcasting: false,
-        Urls.aUserInfo: liveStreamUser
-      });
+      Get.to(() => const PersonStreamingScreen(),
+          arguments: {Urls.aChannelId: userData?.identity, Urls.aIsBroadcasting: false, Urls.aUserInfo: liveStreamUser});
     }).catchError((e) {
       SnackBarWidget().snackBarWidget(S.current.userNotLive);
     });
@@ -230,10 +219,7 @@ class UserDetailScreenViewModel extends BaseViewModel {
     await ApiProvider().updateLikedProfile(userData?.id);
     like = !like;
     notifyListeners();
-    like == true
-        ? null
-        : await ApiProvider()
-            .notifyLikeUser(userId: userData?.id ?? 0, type: 1);
+    like == true ? null : await ApiProvider().notifyLikeUser(userId: userData?.id ?? 0, type: 1);
   }
 
   void onSaveTap() {
@@ -247,9 +233,7 @@ class UserDetailScreenViewModel extends BaseViewModel {
       ChatUser chatUser = ChatUser(
         age: '${userData?.age ?? ''}',
         city: userData?.live ?? '',
-        image: userData?.images == null || userData!.images!.isEmpty
-            ? ''
-            : userData?.images?[0].image,
+        image: userData?.images == null || userData!.images!.isEmpty ? '' : userData?.images?[0].image,
         userIdentity: userData?.identity,
         userid: userData?.id,
         isNewMsg: false,
@@ -258,16 +242,8 @@ class UserDetailScreenViewModel extends BaseViewModel {
         username: userData?.fullname,
       );
       Conversation conversation = Conversation(
-        block:
-            _registrationUserData?.blockedUsers?.contains('${userData?.id}') ==
-                    true
-                ? true
-                : false,
-        blockFromOther:
-            userData?.blockedUsers?.contains('${_registrationUserData?.id}') ==
-                    true
-                ? true
-                : false,
+        block: _registrationUserData?.blockedUsers?.contains('${userData?.id}') == true ? true : false,
+        blockFromOther: userData?.blockedUsers?.contains('${_registrationUserData?.id}') == true ? true : false,
         conversationId: '${value?.identity}${userData?.identity}',
         deletedId: '',
         time: DateTime.now().millisecondsSinceEpoch.toDouble(),
@@ -294,10 +270,7 @@ class UserDetailScreenViewModel extends BaseViewModel {
       settings: RouteSettings(
         arguments: {
           AppRes.reportName: userData?.fullname,
-          AppRes.reportImage:
-              userData?.images == null || userData!.images!.isEmpty
-                  ? ''
-                  : userData?.images?[0].image,
+          AppRes.reportImage: userData?.images == null || userData!.images!.isEmpty ? '' : userData?.images?[0].image,
           AppRes.reportAge: userData?.age ?? '',
           AppRes.reportAddress: userData?.live
         },
@@ -308,9 +281,7 @@ class UserDetailScreenViewModel extends BaseViewModel {
   double calculateDistance({lat1, lon1, lat2, lon2}) {
     var p = 0.017453292519943295;
     var c = cos;
-    var a = 0.5 -
-        c((lat2 - lat1) * p) / 2 +
-        c(lat1 * p) * c(lat2 * p) * (1 - c((lon2 - lon1) * p)) / 2;
+    var a = 0.5 - c((lat2 - lat1) * p) / 2 + c(lat1 * p) * c(lat2 * p) * (1 - c((lon2 - lon1) * p)) / 2;
     return 12742 * asin(sqrt(a));
   }
 }

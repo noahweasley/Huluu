@@ -35,8 +35,7 @@ class UserList extends StatelessWidget {
                 onUserTap(userList?[index]);
               },
               child: Container(
-                padding:
-                    const EdgeInsets.symmetric(horizontal: 13, vertical: 10),
+                padding: const EdgeInsets.symmetric(horizontal: 13, vertical: 10),
                 decoration: BoxDecoration(
                   color: ColorRes.lightGrey2,
                   borderRadius: BorderRadius.circular(12),
@@ -49,9 +48,7 @@ class UserList extends StatelessWidget {
                           ? Container(
                               height: 40,
                               width: 40,
-                              decoration: const BoxDecoration(
-                                  shape: BoxShape.circle,
-                                  color: ColorRes.white),
+                              decoration: const BoxDecoration(shape: BoxShape.circle, color: ColorRes.white),
                               child: Image.asset(
                                 AssetRes.themeLabel,
                                 height: 40,
@@ -59,13 +56,11 @@ class UserList extends StatelessWidget {
                               ),
                             )
                           : CachedNetworkImage(
-                              imageUrl:
-                                  '${ConstRes.aImageBaseUrl}${images[0].image ?? ''}',
+                              imageUrl: '${ConstRes.aImageBaseUrl}${images[0].image ?? ''}',
                               width: 40,
                               height: 40,
                               fit: BoxFit.cover,
-                              cacheKey:
-                                  '${ConstRes.aImageBaseUrl}${images[0].image ?? ''}',
+                              cacheKey: '${ConstRes.aImageBaseUrl}${images[0].image ?? ''}',
                               errorWidget: (context, url, error) {
                                 return Image.asset(
                                   AssetRes.themeLabel,
@@ -100,27 +95,21 @@ class UserList extends StatelessWidget {
                                 child: Text(
                                   '${userList?[index].age ?? ''}',
                                   style: const TextStyle(
-                                      color: ColorRes.darkGrey4,
-                                      fontSize: 18,
-                                      overflow: TextOverflow.ellipsis),
+                                      color: ColorRes.darkGrey4, fontSize: 18, overflow: TextOverflow.ellipsis),
                                   maxLines: 1,
                                 ),
                               ),
                               const SizedBox(width: 3),
                               Flexible(
                                 child: userList?[index].isVerified == 2
-                                    ? Image.asset(AssetRes.tickMark,
-                                        height: 18, width: 18)
+                                    ? Image.asset(AssetRes.tickMark, height: 18, width: 18)
                                     : const SizedBox(),
                               ),
                             ],
                           ),
                           Text(
                             userList?[index].live ?? '',
-                            style: const TextStyle(
-                                color: ColorRes.grey6,
-                                fontSize: 13,
-                                overflow: TextOverflow.ellipsis),
+                            style: const TextStyle(color: ColorRes.grey6, fontSize: 13, overflow: TextOverflow.ellipsis),
                             maxLines: 1,
                           ),
                         ],

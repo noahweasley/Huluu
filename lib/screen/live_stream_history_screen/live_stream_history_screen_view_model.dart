@@ -19,8 +19,7 @@ class LiveStreamHistoryViewModel extends BaseViewModel {
 
   void fetchNextPage() {
     scrollController.addListener(() {
-      if (scrollController.offset ==
-          scrollController.position.maxScrollExtent) {
+      if (scrollController.offset == scrollController.position.maxScrollExtent) {
         if (!isLoading) {
           fetchLiveStreamApiCall();
         } else {}

@@ -8,10 +8,7 @@ class ItemSelectionDialogIos extends StatelessWidget {
   final VoidCallback onCloseBtnClickIos;
 
   const ItemSelectionDialogIos(
-      {Key? key,
-      required this.onCloseBtnClickIos,
-      required this.onImageBtnClickIos,
-      required this.onVideoBtnClickIos})
+      {Key? key, required this.onCloseBtnClickIos, required this.onImageBtnClickIos, required this.onVideoBtnClickIos})
       : super(key: key);
 
   @override

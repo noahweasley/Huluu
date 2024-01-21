@@ -39,10 +39,7 @@ class MessageScreen extends StatelessWidget {
                       ? Center(
                           child: Text(
                             S.of(context).noData,
-                            style: const TextStyle(
-                                color: ColorRes.grey14,
-                                fontFamily: FontRes.semiBold,
-                                fontSize: 17),
+                            style: const TextStyle(color: ColorRes.grey14, fontFamily: FontRes.semiBold, fontSize: 17),
                           ),
                         )
                       : ListView.builder(
@@ -62,9 +59,7 @@ class MessageScreen extends StatelessWidget {
                               child: UserCard(
                                 name: chatUser?.username ?? '',
                                 age: chatUser?.age ?? '',
-                                msg: conversation!.lastMsg!.isEmpty
-                                    ? ''
-                                    : conversation.lastMsg,
+                                msg: conversation!.lastMsg!.isEmpty ? '' : conversation.lastMsg,
                                 time: conversation.time.toString(),
                                 image: chatUser?.image ?? '',
                                 newMsg: chatUser?.isNewMsg ?? false,

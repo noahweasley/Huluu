@@ -50,9 +50,7 @@ class FullImageViewShimmer extends StatelessWidget {
                       width: double.infinity,
                       height: 5,
                       decoration: ShapeDecoration(
-                          color: ColorRes.white,
-                          shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(4))),
+                          color: ColorRes.white, shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(4))),
                     ),
                   ),
                 ),
@@ -64,9 +62,7 @@ class FullImageViewShimmer extends StatelessWidget {
                   margin: const EdgeInsets.all(15),
                   padding: const EdgeInsets.all(5),
                   width: double.infinity,
-                  decoration: BoxDecoration(
-                      color: ColorRes.white.withOpacity(0.5),
-                      borderRadius: BorderRadius.circular(10)),
+                  decoration: BoxDecoration(color: ColorRes.white.withOpacity(0.5), borderRadius: BorderRadius.circular(10)),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
@@ -75,18 +71,15 @@ class FullImageViewShimmer extends StatelessWidget {
                         child: ShimmerScreen.rectangular(
                           height: 20,
                           width: 200,
-                          shapeBorder: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(4)),
+                          shapeBorder: RoundedRectangleBorder(borderRadius: BorderRadius.circular(4)),
                         ),
                       ),
                       Padding(
-                        padding:
-                            const EdgeInsets.only(left: 5, top: 5, bottom: 5),
+                        padding: const EdgeInsets.only(left: 5, top: 5, bottom: 5),
                         child: ShimmerScreen.rectangular(
                           height: 15,
                           width: 175,
-                          shapeBorder: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(4)),
+                          shapeBorder: RoundedRectangleBorder(borderRadius: BorderRadius.circular(4)),
                         ),
                       ),
                       const Padding(

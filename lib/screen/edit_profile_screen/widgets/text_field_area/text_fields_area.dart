@@ -22,8 +22,7 @@ class TextFieldsArea extends StatelessWidget {
     required this.model,
   }) : super(key: key);
 
-  final ProfileTextFieldController controller =
-      Get.put(ProfileTextFieldController());
+  final ProfileTextFieldController controller = Get.put(ProfileTextFieldController());
 
   @override
   Widget build(BuildContext context) {
@@ -104,15 +103,12 @@ class TextFieldsArea extends StatelessWidget {
               style: kTextFieldFontStyle,
               textCapitalization: TextCapitalization.sentences,
               decoration: InputDecoration(
-                hintText:
-                    model.bioError == '' ? S.current.enterBio : model.bioError,
+                hintText: model.bioError == '' ? S.current.enterBio : model.bioError,
                 hintStyle: TextStyle(
-                  color:
-                      model.bioError == "" ? ColorRes.dimGrey2 : ColorRes.red,
+                  color: model.bioError == "" ? ColorRes.dimGrey2 : ColorRes.red,
                 ),
                 border: InputBorder.none,
-                contentPadding:
-                    const EdgeInsets.only(bottom: 10, left: 10, top: 9),
+                contentPadding: const EdgeInsets.only(bottom: 10, left: 10, top: 9),
                 counterText: "",
               ),
             ),
@@ -164,24 +160,18 @@ class TextFieldsArea extends StatelessWidget {
               onChanged: controller.onAboutChange,
               style: kTextFieldFontStyle,
               decoration: InputDecoration(
-                hintText: model.aboutError == ''
-                    ? S.current.enterAbout
-                    : model.aboutError,
+                hintText: model.aboutError == '' ? S.current.enterAbout : model.aboutError,
                 hintStyle: TextStyle(
-                  color:
-                      model.aboutError == "" ? ColorRes.dimGrey2 : ColorRes.red,
+                  color: model.aboutError == "" ? ColorRes.dimGrey2 : ColorRes.red,
                 ),
                 border: InputBorder.none,
-                contentPadding:
-                    const EdgeInsets.only(bottom: 10, left: 10, top: 9),
+                contentPadding: const EdgeInsets.only(bottom: 10, left: 10, top: 9),
                 counterText: "",
               ),
             ),
           ),
           const SizedBox(height: 10),
-          _textView(
-              title: S.current.whereDoYouLive,
-              optional: ' (${S.current.optional})'),
+          _textView(title: S.current.whereDoYouLive, optional: ' (${S.current.optional})'),
           _textField(
               controller: model.addressController,
               focusNode: model.addressFocus,
@@ -237,19 +227,13 @@ class TextFieldsArea extends StatelessWidget {
                   ),
                   const SizedBox(height: 10),
                   _textView(title: S.current.instagram, optional: ''),
-                  socialLinkTextField(
-                      controller: model.instagramController,
-                      focusNode: model.instagramFocus),
+                  socialLinkTextField(controller: model.instagramController, focusNode: model.instagramFocus),
                   const SizedBox(height: 10),
                   _textView(title: S.current.facebook, optional: ''),
-                  socialLinkTextField(
-                      controller: model.facebookController,
-                      focusNode: model.facebookFocus),
+                  socialLinkTextField(controller: model.facebookController, focusNode: model.facebookFocus),
                   const SizedBox(height: 10),
                   _textView(title: S.current.youtube, optional: ''),
-                  socialLinkTextField(
-                      controller: model.youtubeController,
-                      focusNode: model.youtubeFocus),
+                  socialLinkTextField(controller: model.youtubeController, focusNode: model.youtubeFocus),
                 ],
               ),
               model.showDropdown

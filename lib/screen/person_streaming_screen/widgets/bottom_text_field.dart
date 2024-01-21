@@ -61,8 +61,7 @@ class BottomTextField extends StatelessWidget {
                             isDense: true,
                             border: InputBorder.none,
                             hintText: S.current.comment,
-                            contentPadding: const EdgeInsets.only(
-                                left: 14, bottom: 10, top: 0),
+                            contentPadding: const EdgeInsets.only(left: 14, bottom: 10, top: 0),
                             hintStyle: TextStyle(
                               color: ColorRes.white.withOpacity(0.45),
                               fontSize: 13,

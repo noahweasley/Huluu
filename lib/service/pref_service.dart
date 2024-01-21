@@ -122,9 +122,7 @@ class PrefService {
             .then((value) {
           ChatUser? user = value.data()?.user;
           user?.username = registrationUserData?.fullname ?? '';
-          user?.age = registrationUserData?.age != null
-              ? registrationUserData?.age.toString()
-              : '';
+          user?.age = registrationUserData?.age != null ? registrationUserData?.age.toString() : '';
           user?.image = registrationUserData?.images?[0].image ?? '';
           user?.city = registrationUserData?.live ?? '';
           db

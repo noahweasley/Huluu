@@ -74,8 +74,7 @@ class OptionalScreenViewModel extends BaseViewModel {
   void onApplyForVerTap() {
     userData?.isBlock == 1
         ? SnackBarWidget().snackBarWidget(S.current.userBlock)
-        : Get.to(() => const VerificationScreen(), arguments: userData)
-            ?.then((value) {
+        : Get.to(() => const VerificationScreen(), arguments: userData)?.then((value) {
             getProfileApiCall();
           });
   }
@@ -83,12 +82,9 @@ class OptionalScreenViewModel extends BaseViewModel {
   void onNotificationTap() {
     userData?.isBlock == 1
         ? SnackBarWidget().snackBarWidget(S.current.userBlock)
-        : ApiProvider()
-            .onOffNotification(notificationEnable ? 0 : 1)
-            .then((value) async {
+        : ApiProvider().onOffNotification(notificationEnable ? 0 : 1).then((value) async {
             if (value.status == true) {
-              notificationEnable =
-                  value.data?.isNotification == 1 ? true : false;
+              notificationEnable = value.data?.isNotification == 1 ? true : false;
               await PrefService.saveUser(value.data);
               notifyListeners();
               SnackBarWidget().snackBarWidget(value.message!);
@@ -99,9 +95,7 @@ class OptionalScreenViewModel extends BaseViewModel {
   void onShowMeOnMapTap() {
     userData?.isBlock == 1
         ? SnackBarWidget().snackBarWidget(S.current.userBlock)
-        : ApiProvider()
-            .onOffShowMeOnMap(showMeOnMap ? 0 : 1)
-            .then((value) async {
+        : ApiProvider().onOffShowMeOnMap(showMeOnMap ? 0 : 1).then((value) async {
             if (value.status == true) {
               showMeOnMap = value.data?.showOnMap == 1 ? true : false;
               await PrefService.saveUser(value.data);

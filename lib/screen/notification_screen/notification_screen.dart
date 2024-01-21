@@ -57,17 +57,13 @@ class NotificationScreen extends StatelessWidget {
                         width: 132,
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(10),
-                          color: model.tabIndex == 0
-                              ? ColorRes.darkGrey10
-                              : ColorRes.grey32,
+                          color: model.tabIndex == 0 ? ColorRes.darkGrey10 : ColorRes.grey32,
                         ),
                         child: Center(
                           child: Text(
                             S.current.personal,
                             style: TextStyle(
-                              color: model.tabIndex == 0
-                                  ? ColorRes.white
-                                  : ColorRes.darkGrey10,
+                              color: model.tabIndex == 0 ? ColorRes.white : ColorRes.darkGrey10,
                               fontFamily: FontRes.regular,
                             ),
                           ),
@@ -82,17 +78,13 @@ class NotificationScreen extends StatelessWidget {
                         width: 112,
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(10),
-                          color: model.tabIndex == 1
-                              ? ColorRes.darkGrey10
-                              : ColorRes.grey32,
+                          color: model.tabIndex == 1 ? ColorRes.darkGrey10 : ColorRes.grey32,
                         ),
                         child: Center(
                           child: Text(
                             S.current.platform,
                             style: TextStyle(
-                              color: model.tabIndex == 1
-                                  ? ColorRes.white
-                                  : ColorRes.darkGrey10,
+                              color: model.tabIndex == 1 ? ColorRes.white : ColorRes.darkGrey10,
                               fontFamily: FontRes.regular,
                             ),
                           ),
@@ -105,9 +97,7 @@ class NotificationScreen extends StatelessWidget {
               const SizedBox(height: 8),
               model.isLoading
                   ? Expanded(
-                      child: Center(
-                          child: Lottie.asset(AssetRes.loadingLottie,
-                              width: 100, height: 100)),
+                      child: Center(child: Lottie.asset(AssetRes.loadingLottie, width: 100, height: 100)),
                     )
                   : Expanded(
                       child: model.tabIndex == 0

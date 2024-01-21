@@ -58,27 +58,19 @@ class ProfileScreenViewModel extends BaseViewModel {
   }
 
   void onInstagramTap() {
-    userData?.isBlock == 1
-        ? SnackBarWidget().snackBarWidget(S.current.userBlock)
-        : _launchUrl(userData?.instagram ?? '');
+    userData?.isBlock == 1 ? SnackBarWidget().snackBarWidget(S.current.userBlock) : _launchUrl(userData?.instagram ?? '');
   }
 
   void onFBTap() {
-    userData?.isBlock == 1
-        ? SnackBarWidget().snackBarWidget(S.current.userBlock)
-        : _launchUrl(userData?.facebook ?? '');
+    userData?.isBlock == 1 ? SnackBarWidget().snackBarWidget(S.current.userBlock) : _launchUrl(userData?.facebook ?? '');
   }
 
   void onYoutubeTap() {
-    userData?.isBlock == 1
-        ? SnackBarWidget().snackBarWidget(S.current.userBlock)
-        : _launchUrl(userData?.youtube ?? '');
+    userData?.isBlock == 1 ? SnackBarWidget().snackBarWidget(S.current.userBlock) : _launchUrl(userData?.youtube ?? '');
   }
 
   void onSearchBtnTap() {
-    userData?.isBlock == 1
-        ? SnackBarWidget().snackBarWidget(S.current.userBlock)
-        : Get.to(() => const SearchScreen());
+    userData?.isBlock == 1 ? SnackBarWidget().snackBarWidget(S.current.userBlock) : Get.to(() => const SearchScreen());
   }
 
   void onMainImageChange() {
@@ -89,9 +81,7 @@ class ProfileScreenViewModel extends BaseViewModel {
   }
 
   void onNotificationTap() {
-    userData?.isBlock == 1
-        ? SnackBarWidget().snackBarWidget(S.current.userBlock)
-        : Get.to(() => const NotificationScreen());
+    userData?.isBlock == 1 ? SnackBarWidget().snackBarWidget(S.current.userBlock) : Get.to(() => const NotificationScreen());
   }
 
   void onImageTap() {

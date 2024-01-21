@@ -9,15 +9,10 @@ class ShimmerScreen extends StatelessWidget {
   final double height;
   final ShapeBorder shapeBorder;
 
-  const ShimmerScreen.rectangular(
-      {this.width = double.infinity,
-      required this.height,
-      required this.shapeBorder});
+  const ShimmerScreen.rectangular({this.width = double.infinity, required this.height, required this.shapeBorder});
 
   const ShimmerScreen.circular(
-      {this.width = double.infinity,
-      required this.height,
-      this.shapeBorder = const CircleBorder()});
+      {this.width = double.infinity, required this.height, this.shapeBorder = const CircleBorder()});
 
   @override
   Widget build(BuildContext context) {

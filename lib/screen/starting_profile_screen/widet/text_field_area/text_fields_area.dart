@@ -88,19 +88,13 @@ class TextFieldsArea extends StatelessWidget {
                   focusNode: addressFocus,
                   onTap: onTextFieldTap,
                   onChanged: controller.onAddressChange,
-                  style: const TextStyle(
-                      color: ColorRes.dimGrey3,
-                      fontSize: 15,
-                      fontFamily: FontRes.semiBold),
+                  style: const TextStyle(color: ColorRes.dimGrey3, fontSize: 15, fontFamily: FontRes.semiBold),
                   keyboardType: TextInputType.streetAddress,
                   textCapitalization: TextCapitalization.sentences,
                   decoration: InputDecoration(
-                    hintText: addressError == ''
-                        ? S.current.enterAddress
-                        : addressError,
+                    hintText: addressError == '' ? S.current.enterAddress : addressError,
                     hintStyle: TextStyle(
-                      color:
-                          addressError == "" ? ColorRes.dimGrey2 : ColorRes.red,
+                      color: addressError == "" ? ColorRes.dimGrey2 : ColorRes.red,
                       fontSize: 14,
                       fontFamily: FontRes.semiBold,
                     ),
@@ -158,14 +152,10 @@ class TextFieldsArea extends StatelessWidget {
                   keyboardType: TextInputType.streetAddress,
                   textCapitalization: TextCapitalization.sentences,
                   onChanged: controller.onBioChange,
-                  style: const TextStyle(
-                      color: ColorRes.dimGrey3,
-                      fontSize: 15,
-                      fontFamily: FontRes.semiBold),
+                  style: const TextStyle(color: ColorRes.dimGrey3, fontSize: 15, fontFamily: FontRes.semiBold),
                   decoration: InputDecoration(
                     border: InputBorder.none,
-                    contentPadding:
-                        const EdgeInsets.only(bottom: 10, left: 10, top: 9),
+                    contentPadding: const EdgeInsets.only(bottom: 10, left: 10, top: 9),
                     counterText: "",
                     hintText: bioError == '' ? S.current.enterBio : bioError,
                     hintStyle: TextStyle(
@@ -198,10 +188,7 @@ class TextFieldsArea extends StatelessWidget {
                   onChanged: controller.onAgeChange,
                   onTap: onTextFieldTap,
                   keyboardType: TextInputType.phone,
-                  style: const TextStyle(
-                      color: ColorRes.dimGrey3,
-                      fontSize: 15,
-                      fontFamily: FontRes.semiBold),
+                  style: const TextStyle(color: ColorRes.dimGrey3, fontSize: 15, fontFamily: FontRes.semiBold),
                   decoration: InputDecoration(
                     hintText: ageError == '' ? S.current.enterAge : ageError,
                     hintStyle: TextStyle(

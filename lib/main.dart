@@ -24,9 +24,7 @@ import 'package:orange_ui/utils/pref_res.dart';
 class MyHttpOverrides extends HttpOverrides {
   @override
   HttpClient createHttpClient(SecurityContext? context) {
-    return super.createHttpClient(context)
-      ..badCertificateCallback =
-          (X509Certificate cert, String host, int port) => true;
+    return super.createHttpClient(context)..badCertificateCallback = (X509Certificate cert, String host, int port) => true;
   }
 }
 
@@ -41,12 +39,10 @@ Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   MobileAds.instance.initialize();
   LanguagesScreenViewModel.selectedLanguage =
-      await PrefService.getString(PrefConst.languageCode) ??
-          Platform.localeName.split('_')[0];
+      await PrefService.getString(PrefConst.languageCode) ?? Platform.localeName.split('_')[0];
   await Firebase.initializeApp();
 
-  SystemChrome.setPreferredOrientations(
-      [DeviceOrientation.portraitUp, DeviceOrientation.portraitDown]);
+  SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp, DeviceOrientation.portraitDown]);
   // This should be used while in development mode
   HttpOverrides.global = MyHttpOverrides();
   runApp(
@@ -63,8 +59,7 @@ class MyApp extends StatefulWidget {
 
 class _MyAppState extends State<MyApp> {
   FirebaseMessaging firebaseMessaging = FirebaseMessaging.instance;
-  final FlutterLocalNotificationsPlugin flutterLocalNotificationsPlugin =
-      FlutterLocalNotificationsPlugin();
+  final FlutterLocalNotificationsPlugin flutterLocalNotificationsPlugin = FlutterLocalNotificationsPlugin();
 
   @override
   void initState() {
@@ -94,8 +89,7 @@ class _MyAppState extends State<MyApp> {
   }
 
   void saveTokenUpdate() async {
-    await FirebaseMessaging.instance
-        .subscribeToTopic(ConstRes.subscribeToTopic);
+    await FirebaseMessaging.instance.subscribeToTopic(ConstRes.subscribeToTopic);
 
     await firebaseMessaging.requestPermission(
       alert: true,
@@ -119,20 +113,16 @@ class _MyAppState extends State<MyApp> {
 
     FirebaseMessaging.onMessage.listen(
       (RemoteMessage message) {
-        var initializationSettingsAndroid =
-            const AndroidInitializationSettings('@mipmap/ic_launcher');
+        var initializationSettingsAndroid = const AndroidInitializationSettings('@mipmap/ic_launcher');
         var initializationSettingsIOS = const DarwinInitializationSettings();
-        var initializationSettings = InitializationSettings(
-            android: initializationSettingsAndroid,
-            iOS: initializationSettingsIOS);
+        var initializationSettings =
+            InitializationSettings(android: initializationSettingsAndroid, iOS: initializationSettingsIOS);
         flutterLocalNotificationsPlugin.initialize(initializationSettings);
         RemoteNotification? notification = message.notification;
         AndroidNotification? android = message.notification?.android;
         AppleNotification? apple = message.notification?.apple;
 
-        if (notification != null &&
-            apple != null &&
-            !ChatScreenViewModel.isScreen) {
+        if (notification != null && apple != null && !ChatScreenViewModel.isScreen) {
           flutterLocalNotificationsPlugin.show(
             1,
             notification.title,
@@ -146,9 +136,7 @@ class _MyAppState extends State<MyApp> {
             ),
           );
         }
-        if (notification != null &&
-            android != null &&
-            !ChatScreenViewModel.isScreen) {
+        if (notification != null && android != null && !ChatScreenViewModel.isScreen) {
           flutterLocalNotificationsPlugin.show(
             1,
             notification.title,
@@ -165,8 +153,7 @@ class _MyAppState extends State<MyApp> {
       },
     );
     await flutterLocalNotificationsPlugin
-        .resolvePlatformSpecificImplementation<
-            AndroidFlutterLocalNotificationsPlugin>()
+        .resolvePlatformSpecificImplementation<AndroidFlutterLocalNotificationsPlugin>()
         ?.createNotificationChannel(channel);
   }
 }

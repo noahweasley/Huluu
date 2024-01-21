@@ -7,9 +7,7 @@ class LiveStreamEndSheet extends StatelessWidget {
   final String name;
   final VoidCallback onExitBtn;
 
-  const LiveStreamEndSheet(
-      {Key? key, required this.name, required this.onExitBtn})
-      : super(key: key);
+  const LiveStreamEndSheet({Key? key, required this.name, required this.onExitBtn}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -43,17 +41,11 @@ class LiveStreamEndSheet extends StatelessWidget {
             const Spacer(),
             Text(
               name,
-              style: const TextStyle(
-                  color: ColorRes.black2,
-                  fontSize: 20,
-                  fontFamily: FontRes.bold),
+              style: const TextStyle(color: ColorRes.black2, fontSize: 20, fontFamily: FontRes.bold),
             ),
             Text(
               S.of(context).liveStreamEnded,
-              style: const TextStyle(
-                  color: ColorRes.black2,
-                  fontSize: 19,
-                  fontFamily: FontRes.regular),
+              style: const TextStyle(color: ColorRes.black2, fontSize: 19, fontFamily: FontRes.regular),
             ),
             const Spacer(),
           ],

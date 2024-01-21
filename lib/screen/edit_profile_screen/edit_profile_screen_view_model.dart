@@ -193,8 +193,7 @@ class EditProfileScreenViewModel extends BaseViewModel {
       }
     }
 
-    final selectedImages = await imagePicker.pickMultiImage(
-        imageQuality: quality, maxHeight: maxHeight, maxWidth: maxWidth);
+    final selectedImages = await imagePicker.pickMultiImage(imageQuality: quality, maxHeight: maxHeight, maxWidth: maxWidth);
     if (selectedImages.isEmpty) return;
     if (selectedImages.isNotEmpty) {
       for (XFile image in selectedImages) {

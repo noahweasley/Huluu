@@ -5,8 +5,7 @@ import 'package:intl/intl.dart';
 import 'package:orange_ui/service/pref_service.dart';
 
 class CommonFun {
-  static Future<void> interstitialAd(
-      Function(InterstitialAd ad) onAdLoaded) async {
+  static Future<void> interstitialAd(Function(InterstitialAd ad) onAdLoaded) async {
     InterstitialAd.load(
       adUnitId: Platform.isIOS
           ? "${PrefService.settingData?.appdata?.admobIntIos}"
@@ -67,18 +66,15 @@ class CommonFun {
     var date = DateTime.fromMicrosecondsSinceEpoch(timestamp.toInt() * 1000);
     var time = '';
     if (now.day == date.day) {
-      time = DateFormat('hh:mm a')
-          .format(DateTime.fromMillisecondsSinceEpoch(timestamp.toInt()));
+      time = DateFormat('hh:mm a').format(DateTime.fromMillisecondsSinceEpoch(timestamp.toInt()));
       return time;
     }
     if (now.weekday > date.weekday) {
-      time = DateFormat('EEEE')
-          .format(DateTime.fromMillisecondsSinceEpoch(timestamp.toInt()));
+      time = DateFormat('EEEE').format(DateTime.fromMillisecondsSinceEpoch(timestamp.toInt()));
       return time;
     }
     if (now.month == date.month) {
-      time = DateFormat('dd/MMM/yyyy')
-          .format(DateTime.fromMillisecondsSinceEpoch(timestamp.toInt()));
+      time = DateFormat('dd/MMM/yyyy').format(DateTime.fromMillisecondsSinceEpoch(timestamp.toInt()));
       return time;
     }
     return time;

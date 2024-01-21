@@ -26,18 +26,15 @@ class DeleteDialog extends StatefulWidget {
   State<DeleteDialog> createState() => _DeleteDialogState();
 }
 
-class _DeleteDialogState extends State<DeleteDialog>
-    with SingleTickerProviderStateMixin {
+class _DeleteDialogState extends State<DeleteDialog> with SingleTickerProviderStateMixin {
   late AnimationController controller;
   late Animation<double> scaleAnimation;
 
   @override
   void initState() {
     super.initState();
-    controller = AnimationController(
-        vsync: this, duration: const Duration(milliseconds: 500));
-    scaleAnimation =
-        CurvedAnimation(parent: controller, curve: Curves.elasticInOut);
+    controller = AnimationController(vsync: this, duration: const Duration(milliseconds: 500));
+    scaleAnimation = CurvedAnimation(parent: controller, curve: Curves.elasticInOut);
     controller.addListener(() {
       setState(() {});
     });
@@ -51,10 +48,8 @@ class _DeleteDialogState extends State<DeleteDialog>
       child: ScaleTransition(
         scale: scaleAnimation,
         child: Dialog(
-          insetPadding:
-              EdgeInsets.symmetric(horizontal: widget.horizontalPadding),
-          shape:
-              RoundedRectangleBorder(borderRadius: BorderRadius.circular(15)),
+          insetPadding: EdgeInsets.symmetric(horizontal: widget.horizontalPadding),
+          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(15)),
           child: AspectRatio(
             aspectRatio: widget.aspectRatio,
             child: Column(
@@ -62,8 +57,7 @@ class _DeleteDialogState extends State<DeleteDialog>
                 const Spacer(flex: 2),
                 RichText(
                   text: TextSpan(
-                    style: const TextStyle(
-                        fontFamily: FontRes.semiBold, fontSize: 18),
+                    style: const TextStyle(fontFamily: FontRes.semiBold, fontSize: 18),
                     children: [
                       TextSpan(
                         text: S.of(context).areYou,
@@ -88,8 +82,7 @@ class _DeleteDialogState extends State<DeleteDialog>
                   margin: const EdgeInsets.symmetric(horizontal: 16),
                   child: Text(
                     widget.subDescription,
-                    style: const TextStyle(
-                        fontFamily: FontRes.semiBold, color: ColorRes.grey15),
+                    style: const TextStyle(fontFamily: FontRes.semiBold, color: ColorRes.grey15),
                     textAlign: TextAlign.center,
                   ),
                 ),
@@ -115,8 +108,7 @@ class _DeleteDialogState extends State<DeleteDialog>
                     ),
                     child: Text(
                       S.of(context).yes,
-                      style: const TextStyle(
-                          color: ColorRes.white, fontFamily: FontRes.semiBold),
+                      style: const TextStyle(color: ColorRes.white, fontFamily: FontRes.semiBold),
                     ),
                   ),
                 ),
@@ -134,8 +126,7 @@ class _DeleteDialogState extends State<DeleteDialog>
                     ),
                     child: Text(
                       S.of(context).no,
-                      style: const TextStyle(
-                          color: ColorRes.grey15, fontFamily: FontRes.semiBold),
+                      style: const TextStyle(color: ColorRes.grey15, fontFamily: FontRes.semiBold),
                     ),
                   ),
                 ),

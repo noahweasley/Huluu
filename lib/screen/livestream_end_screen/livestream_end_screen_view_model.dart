@@ -37,9 +37,7 @@ class LivestreamEndScreenViewModel extends BaseViewModel {
 
   void addLiveStreamHistoryApiCall() async {
     await ApiProvider().addLiveStreamHistory(
-        amountCollected: diamond,
-        startedAt: DateFormat('h:mm a').format(DateTime.parse(date)),
-        streamFor: dateTime(time));
+        amountCollected: diamond, startedAt: DateFormat('h:mm a').format(DateTime.parse(date)), streamFor: dateTime(time));
   }
 
   String dateTime(String date) {

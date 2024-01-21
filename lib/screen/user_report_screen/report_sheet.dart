@@ -33,8 +33,7 @@ class UserReportSheet extends StatelessWidget {
             onCheckBoxChange: model.onCheckBoxChange,
             onReasonChange: model.onReasonChange,
             onSubmitBtnTap: model.onSubmitBtnTap,
-            fullName:
-                '${Get.arguments[AppRes.reportName]}  ( ${Get.arguments[AppRes.reportAge]} )',
+            fullName: '${Get.arguments[AppRes.reportName]}  ( ${Get.arguments[AppRes.reportAge]} )',
             profileImage: Get.arguments[AppRes.reportImage],
             address: Get.arguments[AppRes.reportAddress] ?? '',
             explainMoreFocus: model.explainMoreFocus,

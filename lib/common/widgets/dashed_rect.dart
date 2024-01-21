@@ -7,20 +7,14 @@ class DashedRect extends StatelessWidget {
   final double strokeWidth;
   final double gap;
 
-  const DashedRect(
-      {Key? key,
-      this.color = Colors.black,
-      this.strokeWidth = 1.0,
-      this.gap = 5.0})
-      : super(key: key);
+  const DashedRect({Key? key, this.color = Colors.black, this.strokeWidth = 1.0, this.gap = 5.0}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Padding(
       padding: EdgeInsets.all(strokeWidth / 2),
       child: CustomPaint(
-        painter:
-            DashRectPainter(color: color, strokeWidth: strokeWidth, gap: gap),
+        painter: DashRectPainter(color: color, strokeWidth: strokeWidth, gap: gap),
       ),
     );
   }
@@ -31,8 +25,7 @@ class DashRectPainter extends CustomPainter {
   Color color;
   double gap;
 
-  DashRectPainter(
-      {this.strokeWidth = 5.0, this.color = Colors.red, this.gap = 5.0});
+  DashRectPainter({this.strokeWidth = 5.0, this.color = Colors.red, this.gap = 5.0});
 
   @override
   void paint(Canvas canvas, Size size) {
@@ -87,13 +80,9 @@ class DashRectPainter extends CustomPainter {
 
     num radians = math.atan(size.height / size.width);
 
-    num dx = math.cos(radians) * gap < 0
-        ? math.cos(radians) * gap * -1
-        : math.cos(radians) * gap;
+    num dx = math.cos(radians) * gap < 0 ? math.cos(radians) * gap * -1 : math.cos(radians) * gap;
 
-    num dy = math.sin(radians) * gap < 0
-        ? math.sin(radians) * gap * -1
-        : math.sin(radians) * gap;
+    num dy = math.sin(radians) * gap < 0 ? math.sin(radians) * gap * -1 : math.sin(radians) * gap;
 
     while (currentPoint.x <= b.x && currentPoint.y <= b.y) {
       shouldDraw

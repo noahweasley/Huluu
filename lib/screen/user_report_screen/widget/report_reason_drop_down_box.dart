@@ -42,9 +42,7 @@ class ReportReasonDropDownBox extends StatelessWidget {
               child: Text(
                 reasonList[index],
                 style: TextStyle(
-                  color: reason == reasonList[index]
-                      ? ColorRes.white
-                      : ColorRes.grey,
+                  color: reason == reasonList[index] ? ColorRes.white : ColorRes.grey,
                 ),
               ),
             ),

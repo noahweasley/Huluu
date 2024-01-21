@@ -55,27 +55,24 @@ class ApiProvider {
     if (password != null && password.isNotEmpty) {
       map[Urls.aPassword] = password;
     }
-    http.Response response = await http.post(Uri.parse(Urls.aRegister),
-        headers: {Urls.aApiKeyName: ConstRes.apiKey}, body: map);
+    http.Response response =
+        await http.post(Uri.parse(Urls.aRegister), headers: {Urls.aApiKeyName: ConstRes.apiKey}, body: map);
     print("Reg Log: ${response.body}");
     return RegistrationUser.fromJson(jsonDecode(response.body));
   }
 
   Future<GetInterest?> getInterest() async {
-    http.Response response = await http.post(Uri.parse(Urls.aGetInterests),
-        headers: {Urls.aApiKeyName: ConstRes.apiKey});
+    http.Response response = await http.post(Uri.parse(Urls.aGetInterests), headers: {Urls.aApiKeyName: ConstRes.apiKey});
     //print(response.body);
     return GetInterest.fromJson(jsonDecode(response.body));
   }
 
   Future<GetPackage> getPackage() async {
-    http.Response response = await http.post(Uri.parse(Urls.aGetPackage),
-        headers: {Urls.aApiKeyName: ConstRes.apiKey});
+    http.Response response = await http.post(Uri.parse(Urls.aGetPackage), headers: {Urls.aApiKeyName: ConstRes.apiKey});
     return GetPackage.fromJson(jsonDecode(response.body));
   }
 
-  Future<ApplyForLive> applyForLive(File? introVideo, String aboutYou,
-      String languages, String socialLinks) async {
+  Future<ApplyForLive> applyForLive(File? introVideo, String aboutYou, String languages, String socialLinks) async {
     var request = http.MultipartRequest(
       Urls.aPost,
       Uri.parse(Urls.aApplyForLive),
@@ -87,8 +84,7 @@ class ApiProvider {
     request.fields[Urls.aSocialLink] = socialLinks;
     if (introVideo != null) {
       request.files.add(
-        http.MultipartFile(Urls.aIntroVideo,
-            introVideo.readAsBytes().asStream(), introVideo.lengthSync(),
+        http.MultipartFile(Urls.aIntroVideo, introVideo.readAsBytes().asStream(), introVideo.lengthSync(),
             filename: introVideo.path.split("/").last),
       );
     }
@@ -173,8 +169,7 @@ class ApiProvider {
     if (images != null) {
       for (int i = 0; i < images.length; i++) {
         File imageFile = images[i];
-        var multipartFile = http.MultipartFile(Urls.aImages,
-            imageFile.readAsBytes().asStream(), imageFile.lengthSync(),
+        var multipartFile = http.MultipartFile(Urls.aImages, imageFile.readAsBytes().asStream(), imageFile.lengthSync(),
             filename: imageFile.path.split('/').last);
         newList.add(multipartFile);
       }
@@ -192,84 +187,54 @@ class ApiProvider {
 
   Future<GetProfile?> getProfile({int? userID}) async {
     http.Response response = await http.post(Uri.parse(Urls.aGetProfile),
-        headers: {Urls.aApiKeyName: ConstRes.apiKey},
-        body: {Urls.aUserIdName: userID.toString()});
+        headers: {Urls.aApiKeyName: ConstRes.apiKey}, body: {Urls.aUserIdName: userID.toString()});
     return GetProfile.fromJson(jsonDecode(response.body));
   }
 
   Future<OnOffNotification> onOffNotification(int state) async {
     http.Response response = await http.post(Uri.parse(Urls.aOnOffNotification),
-        headers: {
-          Urls.aApiKeyName: ConstRes.apiKey
-        },
-        body: {
-          Urls.aUserIdName: PrefService.userId.toString(),
-          Urls.aState: state.toString()
-        });
+        headers: {Urls.aApiKeyName: ConstRes.apiKey},
+        body: {Urls.aUserIdName: PrefService.userId.toString(), Urls.aState: state.toString()});
     return OnOffNotification.fromJson(jsonDecode(response.body));
   }
 
   Future<OnOffShowMeMap> onOffShowMeOnMap(int state) async {
     http.Response response = await http.post(Uri.parse(Urls.aOnOffShowMeOnMap),
-        headers: {
-          Urls.aApiKeyName: ConstRes.apiKey
-        },
-        body: {
-          Urls.aUserIdName: PrefService.userId.toString(),
-          Urls.aState: state.toString()
-        });
+        headers: {Urls.aApiKeyName: ConstRes.apiKey},
+        body: {Urls.aUserIdName: PrefService.userId.toString(), Urls.aState: state.toString()});
     return OnOffShowMeMap.fromJson(jsonDecode(response.body));
   }
 
   Future<OnOffAnonymous> onOffAnonymous(int? state) async {
     http.Response response = await http.post(Uri.parse(Urls.aOnOffAnonymous),
-        headers: {
-          Urls.aApiKeyName: ConstRes.apiKey
-        },
-        body: {
-          Urls.aUserIdName: PrefService.userId.toString(),
-          Urls.aState: state.toString()
-        });
+        headers: {Urls.aApiKeyName: ConstRes.apiKey},
+        body: {Urls.aUserIdName: PrefService.userId.toString(), Urls.aState: state.toString()});
 
     return OnOffAnonymous.fromJson(jsonDecode(response.body));
   }
 
   Future<Report> addReport(String reason, String description, int? id) async {
-    http.Response response =
-        await http.post(Uri.parse(Urls.aAddReport), headers: {
-      Urls.aApiKeyName: ConstRes.apiKey
-    }, body: {
-      Urls.aReason: reason,
-      Urls.aDescription: description,
-      Urls.aUserIdName: id.toString()
-    });
+    http.Response response = await http.post(Uri.parse(Urls.aAddReport),
+        headers: {Urls.aApiKeyName: ConstRes.apiKey},
+        body: {Urls.aReason: reason, Urls.aDescription: description, Urls.aUserIdName: id.toString()});
     return Report.fromJson(jsonDecode(response.body));
   }
 
   Future<AdminNotification> adminNotification(int start) async {
-    http.Response response = await http.post(
-        Uri.parse(Urls.aGetAdminNotification),
-        headers: {Urls.aApiKeyName: ConstRes.apiKey},
-        body: {Urls.aStart: start.toString(), Urls.aCount: Urls.aFifteen});
+    http.Response response = await http.post(Uri.parse(Urls.aGetAdminNotification),
+        headers: {Urls.aApiKeyName: ConstRes.apiKey}, body: {Urls.aStart: start.toString(), Urls.aCount: Urls.aFifteen});
     return AdminNotification.fromJson(jsonDecode(response.body));
   }
 
   Future<UserNotification> getUserNotification(int start) async {
-    http.Response response =
-        await http.post(Uri.parse(Urls.aGetUserNotification), headers: {
-      Urls.aApiKeyName: ConstRes.apiKey
-    }, body: {
-      Urls.aUserIdName: PrefService.userId.toString(),
-      Urls.aStart: start.toString(),
-      Urls.aCount: Urls.aFifteen
-    });
+    http.Response response = await http.post(Uri.parse(Urls.aGetUserNotification),
+        headers: {Urls.aApiKeyName: ConstRes.apiKey},
+        body: {Urls.aUserIdName: PrefService.userId.toString(), Urls.aStart: start.toString(), Urls.aCount: Urls.aFifteen});
     return UserNotification.fromJson(jsonDecode(response.body));
   }
 
-  Future<PlaceRedeemRequest> placeRedeemRequest(
-      String? paymentGateway, String accountDetails) async {
-    http.Response response =
-        await http.post(Uri.parse(Urls.aPlaceRedeemRequest), headers: {
+  Future<PlaceRedeemRequest> placeRedeemRequest(String? paymentGateway, String accountDetails) async {
+    http.Response response = await http.post(Uri.parse(Urls.aPlaceRedeemRequest), headers: {
       Urls.aApiKeyName: ConstRes.apiKey
     }, body: {
       Urls.aUserIdName: PrefService.userId.toString(),
@@ -289,25 +254,15 @@ class ApiProvider {
     return setting;
   }
 
-  Future<SearchUser> searchUser(
-      {required String searchKeyword, required int start}) async {
-    http.Response response =
-        await http.post(Uri.parse(Urls.aSearchUsers), headers: {
-      Urls.aApiKeyName: ConstRes.apiKey
-    }, body: {
-      Urls.aKeyword: searchKeyword,
-      Urls.aStart: start.toString(),
-      Urls.aCount: Urls.aFifteen
-    });
+  Future<SearchUser> searchUser({required String searchKeyword, required int start}) async {
+    http.Response response = await http.post(Uri.parse(Urls.aSearchUsers),
+        headers: {Urls.aApiKeyName: ConstRes.apiKey},
+        body: {Urls.aKeyword: searchKeyword, Urls.aStart: start.toString(), Urls.aCount: Urls.aFifteen});
     return SearchUser.fromJson(jsonDecode(response.body));
   }
 
-  Future<SearchUserById> searchUserById(
-      {required String searchKeyword,
-      int? interestId,
-      required int start}) async {
-    http.Response response =
-        await http.post(Uri.parse(Urls.aSearchUsersForInterest), headers: {
+  Future<SearchUserById> searchUserById({required String searchKeyword, int? interestId, required int start}) async {
+    http.Response response = await http.post(Uri.parse(Urls.aSearchUsersForInterest), headers: {
       Urls.aApiKeyName: ConstRes.apiKey
     }, body: {
       Urls.aKeyword: searchKeyword,
@@ -322,9 +277,7 @@ class ApiProvider {
     var userData = await PrefService.getUserData();
     String? likedProfile = userData?.likedprofile;
     List<int> list = [];
-    if (likedProfile != null &&
-        likedProfile.isNotEmpty &&
-        !likedProfile.contains(profileId.toString())) {
+    if (likedProfile != null && likedProfile.isNotEmpty && !likedProfile.contains(profileId.toString())) {
       likedProfile += ',$profileId';
     } else {
       if (likedProfile == null || likedProfile.isEmpty) {
@@ -342,16 +295,14 @@ class ApiProvider {
         likedProfile = list.join(",");
       }
     }
-    http.Response response =
-        await http.post(Uri.parse(Urls.aUpdateLikedProfile), headers: {
+    http.Response response = await http.post(Uri.parse(Urls.aUpdateLikedProfile), headers: {
       Urls.aApiKeyName: ConstRes.apiKey
     }, body: {
       Urls.aUserIdName: PrefService.userId.toString(),
       Urls.aProfiles: likedProfile,
     });
 
-    UpdateSavedProfile updateSavedProfile =
-        UpdateSavedProfile.fromJson(jsonDecode(response.body));
+    UpdateSavedProfile updateSavedProfile = UpdateSavedProfile.fromJson(jsonDecode(response.body));
     PrefService.saveUser(updateSavedProfile.data);
     return updateSavedProfile;
   }
@@ -360,9 +311,7 @@ class ApiProvider {
     var userData = await PrefService.getUserData();
     String? savedProfile = userData?.savedprofile;
     List<int> savedProfileList = [];
-    if (savedProfile != null &&
-        savedProfile.isNotEmpty &&
-        !savedProfile.contains(profileId.toString())) {
+    if (savedProfile != null && savedProfile.isNotEmpty && !savedProfile.contains(profileId.toString())) {
       savedProfile += ',$profileId';
     } else {
       if (savedProfile == null || savedProfile.isEmpty) {
@@ -381,33 +330,22 @@ class ApiProvider {
       }
     }
 
-    http.Response response = await http
-        .post(Uri.parse(Urls.aUpdateSavedProfile), headers: {
-      Urls.aApiKeyName: ConstRes.apiKey
-    }, body: {
-      Urls.aUserIdName: PrefService.userId.toString(),
-      Urls.aProfiles: savedProfile
-    });
-    UpdateSavedProfile updateSavedProfile =
-        UpdateSavedProfile.fromJson(jsonDecode(response.body));
+    http.Response response = await http.post(Uri.parse(Urls.aUpdateSavedProfile),
+        headers: {Urls.aApiKeyName: ConstRes.apiKey},
+        body: {Urls.aUserIdName: PrefService.userId.toString(), Urls.aProfiles: savedProfile});
+    UpdateSavedProfile updateSavedProfile = UpdateSavedProfile.fromJson(jsonDecode(response.body));
     PrefService.saveUser(updateSavedProfile.data);
     return updateSavedProfile;
   }
 
   Future<FetchLiveStreamHistory> fetchAllLiveStreamHistory(int starting) async {
-    http.Response response =
-        await http.post(Uri.parse(Urls.aFetchAllLiveStreamHistory), headers: {
-      Urls.aApiKeyName: ConstRes.apiKey
-    }, body: {
-      Urls.aUserIdName: PrefService.userId.toString(),
-      Urls.aStart: '$starting',
-      Urls.aCount: Urls.aFifteen
-    });
+    http.Response response = await http.post(Uri.parse(Urls.aFetchAllLiveStreamHistory),
+        headers: {Urls.aApiKeyName: ConstRes.apiKey},
+        body: {Urls.aUserIdName: PrefService.userId.toString(), Urls.aStart: '$starting', Urls.aCount: Urls.aFifteen});
     return FetchLiveStreamHistory.fromJson(jsonDecode(response.body));
   }
 
-  Future<Verification> applyForVerification(
-      File? photo, File? docImage, String fullName, String docType) async {
+  Future<Verification> applyForVerification(File? photo, File? docImage, String fullName, String docType) async {
     var request = http.MultipartRequest(
       Urls.aPost,
       Uri.parse(Urls.aApplyForVerification),
@@ -419,15 +357,13 @@ class ApiProvider {
     request.fields[Urls.aDocumentType] = docType;
     if (photo != null) {
       request.files.add(
-        http.MultipartFile(
-            Urls.aSelfie, photo.readAsBytes().asStream(), photo.lengthSync(),
+        http.MultipartFile(Urls.aSelfie, photo.readAsBytes().asStream(), photo.lengthSync(),
             filename: photo.path.split("/").last),
       );
     }
     if (docImage != null) {
       request.files.add(
-        http.MultipartFile(Urls.aDocument, docImage.readAsBytes().asStream(),
-            docImage.lengthSync(),
+        http.MultipartFile(Urls.aDocument, docImage.readAsBytes().asStream(), docImage.lengthSync(),
             filename: docImage.path.split("/").last),
       );
     }
@@ -442,8 +378,7 @@ class ApiProvider {
 
   Future<DeleteAccount> deleteAccount(int? deleteId) async {
     http.Response response = await http.post(Uri.parse(Urls.aDeleteMyAccount),
-        headers: {Urls.aApiKeyName: ConstRes.apiKey},
-        body: {Urls.aUserIdName: deleteId.toString()});
+        headers: {Urls.aApiKeyName: ConstRes.apiKey}, body: {Urls.aUserIdName: deleteId.toString()});
     return DeleteAccount.fromJson(jsonDecode(response.body));
   }
 
@@ -457,60 +392,41 @@ class ApiProvider {
     });
     if (image != null) {
       request.files.add(
-        http.MultipartFile(
-            Urls.aFile, image.readAsBytes().asStream(), image.lengthSync(),
+        http.MultipartFile(Urls.aFile, image.readAsBytes().asStream(), image.lengthSync(),
             filename: image.path.split("/").last),
       );
     }
     var response = await request.send();
     var respStr = await response.stream.bytesToString();
     final responseJson = jsonDecode(respStr);
-    StoreFileGivePath applyForVerification =
-        StoreFileGivePath.fromJson(responseJson);
+    StoreFileGivePath applyForVerification = StoreFileGivePath.fromJson(responseJson);
     return applyForVerification;
   }
 
   Future<MinusCoinFromWallet> minusCoinFromWallet(int? amount) async {
-    http.Response response = await http
-        .post(Uri.parse(Urls.aMinusCoinsFromWallet), headers: {
-      Urls.aApiKeyName: ConstRes.apiKey
-    }, body: {
-      Urls.aUserIdName: PrefService.userId.toString(),
-      Urls.aAmount: amount.toString()
-    });
+    http.Response response = await http.post(Uri.parse(Urls.aMinusCoinsFromWallet),
+        headers: {Urls.aApiKeyName: ConstRes.apiKey},
+        body: {Urls.aUserIdName: PrefService.userId.toString(), Urls.aAmount: amount.toString()});
     return MinusCoinFromWallet.fromJson(jsonDecode(response.body));
   }
 
   Future<MinusCoinFromWallet> addCoinFromWallet(int? amount) async {
     http.Response response = await http.post(Uri.parse(Urls.aAddCoinsToWallet),
-        headers: {
-          Urls.aApiKeyName: ConstRes.apiKey
-        },
-        body: {
-          Urls.aUserIdName: PrefService.userId.toString(),
-          Urls.aAmount: amount.toString()
-        });
+        headers: {Urls.aApiKeyName: ConstRes.apiKey},
+        body: {Urls.aUserIdName: PrefService.userId.toString(), Urls.aAmount: amount.toString()});
     return MinusCoinFromWallet.fromJson(jsonDecode(response.body));
   }
 
   Future<GetDiamondPack> getDiamondPack() async {
-    http.Response response =
-        await http.post(Uri.parse(Urls.aGetDiamondPacks), headers: {
-      Urls.aApiKeyName: ConstRes.apiKey
-    }, body: {
-      Urls.aUserIdName: PrefService.userId.toString(),
-      Urls.aStart: '0',
-      Urls.aCount: Urls.aFifteen
-    });
+    http.Response response = await http.post(Uri.parse(Urls.aGetDiamondPacks),
+        headers: {Urls.aApiKeyName: ConstRes.apiKey},
+        body: {Urls.aUserIdName: PrefService.userId.toString(), Urls.aStart: '0', Urls.aCount: Urls.aFifteen});
     return GetDiamondPack.fromJson(jsonDecode(response.body));
   }
 
   Future<AddLiveStreamHistory> addLiveStreamHistory(
-      {required String streamFor,
-      required String startedAt,
-      required String amountCollected}) async {
-    http.Response response =
-        await http.post(Uri.parse(Urls.aAddLiveStreamHistory), headers: {
+      {required String streamFor, required String startedAt, required String amountCollected}) async {
+    http.Response response = await http.post(Uri.parse(Urls.aAddLiveStreamHistory), headers: {
       Urls.aApiKeyName: ConstRes.apiKey
     }, body: {
       Urls.aUserIdName: PrefService.userId.toString(),
@@ -523,29 +439,20 @@ class ApiProvider {
 
   Future<GetProfile> getRandomProfile({required int gender}) async {
     http.Response response = await http.post(Uri.parse(Urls.aGetRandomProfile),
-        headers: {
-          Urls.aApiKeyName: ConstRes.apiKey
-        },
-        body: {
-          Urls.aUserIdName: PrefService.userId.toString(),
-          Urls.aGender: gender.toString()
-        });
+        headers: {Urls.aApiKeyName: ConstRes.apiKey},
+        body: {Urls.aUserIdName: PrefService.userId.toString(), Urls.aGender: gender.toString()});
     return GetProfile.fromJson(jsonDecode(response.body));
   }
 
   Future<GetExploreScreen> getExplorePageProfileList() async {
-    http.Response response = await http.post(
-        Uri.parse(Urls.aGetExplorePageProfileList),
-        headers: {Urls.aApiKeyName: ConstRes.apiKey},
-        body: {Urls.aUserIdName: PrefService.userId.toString()});
+    http.Response response = await http.post(Uri.parse(Urls.aGetExplorePageProfileList),
+        headers: {Urls.aApiKeyName: ConstRes.apiKey}, body: {Urls.aUserIdName: PrefService.userId.toString()});
     return GetExploreScreen.fromJson(jsonDecode(response.body));
   }
 
   Future<FetchRedeemRequest> fetchRedeemRequest() async {
-    http.Response response = await http.post(
-        Uri.parse(Urls.aFetchMyRedeemRequests),
-        headers: {Urls.aApiKeyName: ConstRes.apiKey},
-        body: {Urls.aUserIdName: PrefService.userId.toString()});
+    http.Response response = await http.post(Uri.parse(Urls.aFetchMyRedeemRequests),
+        headers: {Urls.aApiKeyName: ConstRes.apiKey}, body: {Urls.aUserIdName: PrefService.userId.toString()});
     return FetchRedeemRequest.fromJson(jsonDecode(response.body));
   }
 
@@ -553,9 +460,7 @@ class ApiProvider {
     var userData = await PrefService.getUserData();
     String? blockProfile = userData?.blockedUsers;
     List<int> blockProfileList = [];
-    if (blockProfile != null &&
-        blockProfile.isNotEmpty &&
-        !blockProfile.contains(blockProfileId.toString())) {
+    if (blockProfile != null && blockProfile.isNotEmpty && !blockProfile.contains(blockProfileId.toString())) {
       blockProfile += ',$blockProfileId';
     } else {
       if (blockProfile == null || blockProfile.isEmpty) {
@@ -574,45 +479,30 @@ class ApiProvider {
       }
     }
 
-    http.Response response =
-        await http.post(Uri.parse(Urls.aUpdateBlockList), headers: {
-      Urls.aApiKeyName: ConstRes.apiKey
-    }, body: {
-      Urls.aUserIdName: PrefService.userId.toString(),
-      Urls.aBlockedUsers: blockProfile
-    });
-    UserBlockList updateBlockProfile =
-        UserBlockList.fromJson(jsonDecode(response.body));
+    http.Response response = await http.post(Uri.parse(Urls.aUpdateBlockList),
+        headers: {Urls.aApiKeyName: ConstRes.apiKey},
+        body: {Urls.aUserIdName: PrefService.userId.toString(), Urls.aBlockedUsers: blockProfile});
+    UserBlockList updateBlockProfile = UserBlockList.fromJson(jsonDecode(response.body));
     PrefService.saveUser(updateBlockProfile.data);
     return updateBlockProfile;
   }
 
   Future<FetchUserCoordinate> getUserByLatLong(
-      {required double latitude,
-      required double longitude,
-      required int km}) async {
-    http.Response response =
-        await http.post(Uri.parse(Urls.aFetchUsersByCoordinates), headers: {
-      Urls.aApiKeyName: ConstRes.apiKey
-    }, body: {
-      Urls.aLat: latitude.toString(),
-      Urls.aLong: longitude.toString(),
-      Urls.aKm: km.toString()
-    });
+      {required double latitude, required double longitude, required int km}) async {
+    http.Response response = await http.post(Uri.parse(Urls.aFetchUsersByCoordinates),
+        headers: {Urls.aApiKeyName: ConstRes.apiKey},
+        body: {Urls.aLat: latitude.toString(), Urls.aLong: longitude.toString(), Urls.aKm: km.toString()});
     return FetchUserCoordinate.fromJson(jsonDecode(response.body));
   }
 
   Future<GetProfile> getUserDetail({required String email}) async {
-    http.Response response = await http.post(Uri.parse(Urls.aGetUserDetails),
-        headers: {Urls.aApiKeyName: ConstRes.apiKey},
-        body: {Urls.aEmail: email});
+    http.Response response = await http
+        .post(Uri.parse(Urls.aGetUserDetails), headers: {Urls.aApiKeyName: ConstRes.apiKey}, body: {Urls.aEmail: email});
     return GetProfile.fromJson(jsonDecode(response.body));
   }
 
-  Future<NotifyLikeUser> notifyLikeUser(
-      {required int? userId, required int type}) async {
-    http.Response response =
-        await http.post(Uri.parse(Urls.aNotifyLikedUser), headers: {
+  Future<NotifyLikeUser> notifyLikeUser({required int? userId, required int type}) async {
+    http.Response response = await http.post(Uri.parse(Urls.aNotifyLikedUser), headers: {
       Urls.aApiKeyName: ConstRes.apiKey
     }, body: {
       Urls.aUserIdName: userId.toString(),
@@ -622,24 +512,13 @@ class ApiProvider {
     return NotifyLikeUser.fromJson(jsonDecode(response.body));
   }
 
-  Future pushNotification(
-      {required String title,
-      required String body,
-      required String token}) async {
+  Future pushNotification({required String title, required String body, required String token}) async {
     await http.post(
       Uri.parse(Urls.aNotificationUrl),
-      headers: {
-        'Authorization': 'key=${ConstRes.authorisationKey}',
-        'content-type': 'application/json'
-      },
+      headers: {'Authorization': 'key=${ConstRes.authorisationKey}', 'content-type': 'application/json'},
       body: json.encode(
         {
-          'notification': {
-            'title': title,
-            'body': body,
-            "sound": "default",
-            "badge": "1"
-          },
+          'notification': {'title': title, 'body': body, "sound": "default", "badge": "1"},
           'to': '/token/$token',
         },
       ),
@@ -648,17 +527,13 @@ class ApiProvider {
 
   Future<Report> logoutUser() async {
     http.Response response = await http.post(Uri.parse(Urls.aLogoutUser),
-        headers: {Urls.aApiKeyName: ConstRes.apiKey},
-        body: {Urls.aUserIdName: PrefService.userId.toString()});
+        headers: {Urls.aApiKeyName: ConstRes.apiKey}, body: {Urls.aUserIdName: PrefService.userId.toString()});
     return Report.fromJson(jsonDecode(response.body));
   }
 
-  Future<Agora> agoraListStreamingCheck(
-      String channelName, String authToken, String agoraAppId) async {
+  Future<Agora> agoraListStreamingCheck(String channelName, String authToken, String agoraAppId) async {
     log('$channelName\n$agoraAppId\n$authToken');
-    http.Response response = await http.get(
-        Uri.parse(
-            'https://api.agora.io/dev/v1/channel/user/$agoraAppId/$channelName'),
+    http.Response response = await http.get(Uri.parse('https://api.agora.io/dev/v1/channel/user/$agoraAppId/$channelName'),
         headers: {'Authorization': 'Basic $authToken'});
     return Agora.fromJson(jsonDecode(response.body));
   }

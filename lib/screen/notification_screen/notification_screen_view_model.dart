@@ -49,8 +49,7 @@ class NotificationScreenViewModel extends BaseViewModel {
   void fetchScrollData() {
     adminScrollController.addListener(
       () {
-        if (adminScrollController.offset ==
-            adminScrollController.position.maxScrollExtent) {
+        if (adminScrollController.offset == adminScrollController.position.maxScrollExtent) {
           if (!isLoading) {
             getAdminNotificationApiCall();
           }
@@ -59,8 +58,7 @@ class NotificationScreenViewModel extends BaseViewModel {
     );
     userScrollController.addListener(
       () {
-        if (userScrollController.offset ==
-            userScrollController.position.maxScrollExtent) {
+        if (userScrollController.offset == userScrollController.position.maxScrollExtent) {
           if (!isUserLoading) {
             getUserNotificationApiCall();
           }
@@ -93,9 +91,7 @@ class NotificationScreenViewModel extends BaseViewModel {
 
   void onTabChange(int index) {
     tabIndex = index;
-    tabIndex == 0
-        ? getUserNotificationApiCall()
-        : getAdminNotificationApiCall();
+    tabIndex == 0 ? getUserNotificationApiCall() : getAdminNotificationApiCall();
     notifyListeners();
   }
 }

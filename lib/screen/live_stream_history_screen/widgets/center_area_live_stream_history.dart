@@ -11,9 +11,7 @@ class CenterAreaLiveStream extends StatelessWidget {
   final List<FetchLiveStreamHistoryData>? dataList;
   final ScrollController controller;
 
-  const CenterAreaLiveStream(
-      {Key? key, required this.dataList, required this.controller})
-      : super(key: key);
+  const CenterAreaLiveStream({Key? key, required this.dataList, required this.controller}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -35,8 +33,7 @@ class CenterAreaLiveStream extends StatelessWidget {
     );
   }
 
-  Widget customContainer(
-      {String? time, String? date, String? streamed, String? collected}) {
+  Widget customContainer({String? time, String? date, String? streamed, String? collected}) {
     return Container(
       width: Get.width,
       margin: const EdgeInsets.all(7),

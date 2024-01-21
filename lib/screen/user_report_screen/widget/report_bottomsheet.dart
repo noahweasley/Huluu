@@ -92,10 +92,7 @@ class ReportBottomSheet extends StatelessWidget {
                       Center(
                         child: Text(
                           S.current.reportUser,
-                          style: const TextStyle(
-                              color: ColorRes.white,
-                              fontFamily: FontRes.bold,
-                              fontSize: 16),
+                          style: const TextStyle(color: ColorRes.white, fontFamily: FontRes.bold, fontSize: 16),
                         ),
                       )
                     ],
@@ -105,8 +102,7 @@ class ReportBottomSheet extends StatelessWidget {
                   ),
                   Text(
                     S.current.youAreReporting,
-                    style: const TextStyle(
-                        color: ColorRes.white, fontFamily: FontRes.semiBold),
+                    style: const TextStyle(color: ColorRes.white, fontFamily: FontRes.semiBold),
                   ),
                   const SizedBox(
                     height: 10,
@@ -124,8 +120,7 @@ class ReportBottomSheet extends StatelessWidget {
                             ? ClipRRect(
                                 borderRadius: BorderRadius.circular(30),
                                 child: Container(
-                                  decoration: const BoxDecoration(
-                                      color: ColorRes.white),
+                                  decoration: const BoxDecoration(color: ColorRes.white),
                                   child: Image.asset(
                                     AssetRes.themeLabel,
                                     height: 50,
@@ -136,10 +131,8 @@ class ReportBottomSheet extends StatelessWidget {
                             : ClipRRect(
                                 borderRadius: BorderRadius.circular(30),
                                 child: CachedNetworkImage(
-                                  imageUrl:
-                                      '${ConstRes.aImageBaseUrl}$profileImage',
-                                  cacheKey:
-                                      '${ConstRes.aImageBaseUrl}$profileImage',
+                                  imageUrl: '${ConstRes.aImageBaseUrl}$profileImage',
+                                  cacheKey: '${ConstRes.aImageBaseUrl}$profileImage',
                                   errorWidget: (context, url, error) {
                                     return Image.asset(
                                       AssetRes.themeLabel,
@@ -177,8 +170,7 @@ class ReportBottomSheet extends StatelessWidget {
                   ),
                   Text(
                     S.current.selectReason,
-                    style: const TextStyle(
-                        color: ColorRes.white, fontFamily: FontRes.semiBold),
+                    style: const TextStyle(color: ColorRes.white, fontFamily: FontRes.semiBold),
                   ),
                   const SizedBox(
                     height: 10,
@@ -193,16 +185,14 @@ class ReportBottomSheet extends StatelessWidget {
                             highlightColor: Colors.transparent,
                             child: Container(
                               height: 40,
-                              padding:
-                                  const EdgeInsets.symmetric(horizontal: 10),
+                              padding: const EdgeInsets.symmetric(horizontal: 10),
                               decoration: BoxDecoration(
                                 color: ColorRes.white.withOpacity(0.15),
                                 borderRadius: BorderRadius.circular(5),
                               ),
                               child: Center(
                                 child: Row(
-                                  mainAxisAlignment:
-                                      MainAxisAlignment.spaceBetween,
+                                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                   children: [
                                     Text(
                                       reason,
@@ -237,8 +227,7 @@ class ReportBottomSheet extends StatelessWidget {
                                 reason: reason,
                                 onChange: onReasonChange,
                                 reasonList: reasonList,
-                                backGroundColor:
-                                    ColorRes.white.withOpacity(0.15),
+                                backGroundColor: ColorRes.white.withOpacity(0.15),
                               ),
                             )
                           : const SizedBox(),
@@ -259,10 +248,7 @@ class ReportBottomSheet extends StatelessWidget {
                     decoration: BoxDecoration(
                         color: ColorRes.white.withOpacity(0.15),
                         borderRadius: BorderRadius.circular(5),
-                        border: Border.all(
-                            color: explainError == false
-                                ? ColorRes.transparent
-                                : ColorRes.red)),
+                        border: Border.all(color: explainError == false ? ColorRes.transparent : ColorRes.red)),
                     child: TextField(
                       controller: explainMoreController,
                       focusNode: explainMoreFocus,
@@ -277,17 +263,12 @@ class ReportBottomSheet extends StatelessWidget {
                       ),
                       textCapitalization: TextCapitalization.sentences,
                       decoration: InputDecoration(
-                        hintText: explainMoreError == ''
-                            ? S.current.explainMore
-                            : explainMoreError,
+                        hintText: explainMoreError == '' ? S.current.explainMore : explainMoreError,
                         hintStyle: TextStyle(
-                          color: explainMoreError == ""
-                              ? ColorRes.dimGrey2
-                              : ColorRes.red,
+                          color: explainMoreError == "" ? ColorRes.dimGrey2 : ColorRes.red,
                         ),
                         border: InputBorder.none,
-                        contentPadding:
-                            const EdgeInsets.only(bottom: 10, left: 10, top: 9),
+                        contentPadding: const EdgeInsets.only(bottom: 10, left: 10, top: 9),
                         counterText: "",
                       ),
                     ),
@@ -299,8 +280,7 @@ class ReportBottomSheet extends StatelessWidget {
                         onChanged: onCheckBoxChange,
                         activeColor: ColorRes.orange,
                         side: MaterialStateBorderSide.resolveWith(
-                          (states) => const BorderSide(
-                              width: 1.5, color: ColorRes.orange),
+                          (states) => const BorderSide(width: 1.5, color: ColorRes.orange),
                         ),
                       ),
                       InkWell(
@@ -319,8 +299,7 @@ class ReportBottomSheet extends StatelessWidget {
                               ),
                               TextSpan(
                                 text: S.current.termAndCondition,
-                                recognizer: TapGestureRecognizer()
-                                  ..onTap = onTermAndConditionClick,
+                                recognizer: TapGestureRecognizer()..onTap = onTermAndConditionClick,
                                 style: const TextStyle(
                                   color: ColorRes.white,
                                   fontSize: 13,

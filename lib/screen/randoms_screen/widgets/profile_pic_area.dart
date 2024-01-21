@@ -12,8 +12,7 @@ class ProfilePicArea extends StatelessWidget {
   final RegistrationUserData? data;
   final bool isLoading;
 
-  const ProfilePicArea({Key? key, required this.data, required this.isLoading})
-      : super(key: key);
+  const ProfilePicArea({Key? key, required this.data, required this.isLoading}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -62,10 +61,8 @@ class ProfilePicArea extends StatelessWidget {
               : ClipRRect(
                   borderRadius: BorderRadius.circular(360),
                   child: CachedNetworkImage(
-                    imageUrl:
-                        '${ConstRes.aImageBaseUrl}${data?.images?[0].image}',
-                    cacheKey:
-                        '${ConstRes.aImageBaseUrl}${data?.images?[0].image}',
+                    imageUrl: '${ConstRes.aImageBaseUrl}${data?.images?[0].image}',
+                    cacheKey: '${ConstRes.aImageBaseUrl}${data?.images?[0].image}',
                     height: Get.width / 2.5,
                     width: Get.width / 2.5,
                     fit: BoxFit.cover,

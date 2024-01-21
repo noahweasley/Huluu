@@ -12,5 +12,4 @@ class WebViewScreenViewModel extends BaseViewModel {
       ..setBackgroundColor(const Color(0x00000000))
       ..loadRequest(Uri.parse(ConstRes.base + url));
   }
-
 }

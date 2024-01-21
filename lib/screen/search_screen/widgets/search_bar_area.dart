@@ -106,8 +106,7 @@ class SearchBarArea extends StatelessWidget {
                     left: 12,
                     right: index == (tabList.length - 1) ? 12 : 0,
                   ),
-                  padding: const EdgeInsets.only(
-                      left: 20, right: 20, top: 10, bottom: 8),
+                  padding: const EdgeInsets.only(left: 20, right: 20, top: 10, bottom: 8),
                   height: 35,
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(50),

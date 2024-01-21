@@ -57,8 +57,7 @@ class VerificationScreenViewModel extends BaseViewModel {
     }
     fullNameFocus.unfocus();
     final ImagePicker picker = ImagePicker();
-    final XFile? photo =
-        await picker.pickImage(source: ImageSource.camera).onError(
+    final XFile? photo = await picker.pickImage(source: ImageSource.camera).onError(
       (PlatformException error, stackTrace) {
         SnackBarWidget().snackBarWidget(error.message ?? '');
         return null;
@@ -97,9 +96,7 @@ class VerificationScreenViewModel extends BaseViewModel {
     }
     fullNameFocus.unfocus();
     final ImagePicker picker = ImagePicker();
-    final XFile? photo = await picker
-        .pickImage(source: ImageSource.gallery)
-        .onError((PlatformException error, stackTrace) {
+    final XFile? photo = await picker.pickImage(source: ImageSource.gallery).onError((PlatformException error, stackTrace) {
       SnackBarWidget().snackBarWidget(error.message ?? '');
       return null;
     });
@@ -112,10 +109,7 @@ class VerificationScreenViewModel extends BaseViewModel {
   void onSubmitBtnClick() {
     if (isVerified()) {
       Loader().lottieLoader();
-      ApiProvider()
-          .applyForVerification(
-              selfieImage, docFile, fullNameController.text, docType)
-          .then((value) {
+      ApiProvider().applyForVerification(selfieImage, docFile, fullNameController.text, docType).then((value) {
         SnackBarWidget().snackBarWidget(value.message ?? '');
         Get.back();
         Get.back();
